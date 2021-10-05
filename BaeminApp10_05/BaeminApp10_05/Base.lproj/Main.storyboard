@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Life Cycle View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BaeminApp10_05" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LifeCycleViewController" customModule="BaeminApp10_05" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,9 +37,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oD0-5x-4jp">
                                                         <rect key="frame" x="289.5" y="0.0" width="84.5" height="100"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="mono_baedal04"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="mono_baedal04" title=""/>
                                                         <connections>
-                                                            <segue destination="JKW-85-ktx" kind="show" id="e0Q-dy-tie"/>
+                                                            <segue destination="JKW-85-ktx" kind="show" id="inx-EC-oc3"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -120,7 +120,7 @@
         <!--한식-->
         <scene sceneID="4a1-dW-r8Z">
             <objects>
-                <viewController id="JKW-85-ktx" sceneMemberID="viewController">
+                <viewController id="JKW-85-ktx" customClass="TwoLifeCycleViewController" customModule="BaeminApp10_05" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eEv-jj-xW9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +204,7 @@
         <!--전화주문-->
         <scene sceneID="JoU-d0-oaU">
             <objects>
-                <viewController id="eOr-Ft-HWN" sceneMemberID="viewController">
+                <viewController id="eOr-Ft-HWN" customClass="ThreeLifeCycleViewController" customModule="BaeminApp10_05" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gaA-Nn-pMi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -305,7 +305,7 @@
         <!--B마트-->
         <scene sceneID="1Wy-fJ-duE">
             <objects>
-                <viewController id="qzo-3Z-izW" sceneMemberID="viewController">
+                <viewController id="qzo-3Z-izW" customClass="FourLifeCycleViewController" customModule="BaeminApp10_05" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="czu-JB-VK4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -370,7 +370,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="cyf-YD-myO" kind="relationship" relationship="rootViewController" id="B6A-Gy-z89"/>
+                        <segue destination="cyf-YD-myO" kind="relationship" relationship="rootViewController" id="aQU-fN-Ej3"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOo-aJ-5KD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -389,7 +389,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8J1-YQ-SLA" kind="relationship" relationship="rootViewController" id="9SZ-eZ-d7D"/>
+                        <segue destination="8J1-YQ-SLA" kind="relationship" relationship="rootViewController" id="xSv-8R-OQf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qsr-wV-VET" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
