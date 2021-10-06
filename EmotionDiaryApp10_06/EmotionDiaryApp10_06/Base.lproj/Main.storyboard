@@ -28,7 +28,7 @@
         <!--감정 다이어리-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EmotionDiaryApp10_06" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EmotionViewController" customModule="EmotionDiaryApp10_06" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,10 +42,15 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wnK-vm-JoL">
                                                 <rect key="frame" x="0.0" y="0.0" width="112.5" height="159.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_slime1" translatesAutoresizingMaskIntoConstraints="NO" id="9XL-vg-OER">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5V-YC-LeL">
                                                         <rect key="frame" x="0.0" y="0.0" width="112.5" height="139.5"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTR-at-duA">
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Button" image="mono_slime1"/>
+                                                        <connections>
+                                                            <action selector="emotionImageCliked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcE-RL-Bdj"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTR-at-duA">
                                                         <rect key="frame" x="0.0" y="139.5" width="112.5" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="fTp-NX-63I"/>
@@ -59,9 +64,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hcc-0d-5zm">
                                                 <rect key="frame" x="120.5" y="0.0" width="113" height="159.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_slime2" translatesAutoresizingMaskIntoConstraints="NO" id="AjN-7P-jvr">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1h-rd-ZpY">
                                                         <rect key="frame" x="0.0" y="0.0" width="113" height="139.5"/>
-                                                    </imageView>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Button" image="mono_slime2"/>
+                                                        <connections>
+                                                            <action selector="emotionImageCliked2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7AE-Cs-UiS"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사랑해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqO-XW-U6e">
                                                         <rect key="frame" x="0.0" y="139.5" width="113" height="20"/>
                                                         <constraints>
@@ -76,9 +86,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9lX-Q0-WVh">
                                                 <rect key="frame" x="241.5" y="0.0" width="112.5" height="159.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_slime3" translatesAutoresizingMaskIntoConstraints="NO" id="hbx-Rx-SRk">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBw-vi-Hwf">
                                                         <rect key="frame" x="0.0" y="0.0" width="112.5" height="139.5"/>
-                                                    </imageView>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Button" image="mono_slime3"/>
+                                                        <connections>
+                                                            <action selector="emotionImageCliked3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TXH-ca-8n8"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoQ-SB-ua2">
                                                         <rect key="frame" x="0.0" y="139.5" width="112.5" height="20"/>
                                                         <constraints>
@@ -98,9 +113,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="k7u-Lj-DxA">
                                                 <rect key="frame" x="0.0" y="0.0" width="112.5" height="159"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_slime4" translatesAutoresizingMaskIntoConstraints="NO" id="aFD-K2-X4L">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PW-JX-Pbu">
                                                         <rect key="frame" x="0.0" y="0.0" width="112.5" height="139"/>
-                                                    </imageView>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Button" image="mono_slime4"/>
+                                                        <connections>
+                                                            <action selector="emotionImageCliked4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XxN-2f-1GV"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당황해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9G-0O-udj">
                                                         <rect key="frame" x="0.0" y="139" width="112.5" height="20"/>
                                                         <constraints>
@@ -115,9 +135,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9DK-dU-ODM">
                                                 <rect key="frame" x="120.5" y="0.0" width="113" height="159"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_slime5" translatesAutoresizingMaskIntoConstraints="NO" id="h6U-qL-VsM">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dct-7v-QfA">
                                                         <rect key="frame" x="0.0" y="0.0" width="113" height="139"/>
-                                                    </imageView>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Button" image="mono_slime5"/>
+                                                        <connections>
+                                                            <action selector="emotionImageCliked5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mjq-Jj-Epf"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="속상해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nD1-VF-agW">
                                                         <rect key="frame" x="0.0" y="139" width="113" height="20"/>
                                                         <constraints>
@@ -132,9 +157,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YM3-tY-KuP">
                                                 <rect key="frame" x="241.5" y="0.0" width="112.5" height="159"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_slime6" translatesAutoresizingMaskIntoConstraints="NO" id="zEf-h1-1Nw">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtS-K1-2IB">
                                                         <rect key="frame" x="0.0" y="0.0" width="112.5" height="139"/>
-                                                    </imageView>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Button" image="mono_slime6"/>
+                                                        <connections>
+                                                            <action selector="emotionImageCliked6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TjQ-yB-xho"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우울해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrt-0e-0qB">
                                                         <rect key="frame" x="0.0" y="139" width="112.5" height="20"/>
                                                         <constraints>
@@ -154,9 +184,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pbd-dB-QhJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="112.5" height="159.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_slime7" translatesAutoresizingMaskIntoConstraints="NO" id="fZh-Pc-P3F">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsG-ay-jJt">
                                                         <rect key="frame" x="0.0" y="0.0" width="112.5" height="139.5"/>
-                                                    </imageView>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Button" image="mono_slime7"/>
+                                                        <connections>
+                                                            <action selector="emotionImageCliked7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oEH-wY-FJ5"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="심심해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEm-nZ-ndz">
                                                         <rect key="frame" x="0.0" y="139.5" width="112.5" height="20"/>
                                                         <constraints>
@@ -171,9 +206,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YIC-rQ-QDm">
                                                 <rect key="frame" x="120.5" y="0.0" width="113" height="159.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_slime8" translatesAutoresizingMaskIntoConstraints="NO" id="SKZ-xz-RXO">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gla-cU-zl1">
                                                         <rect key="frame" x="0.0" y="0.0" width="113" height="139.5"/>
-                                                    </imageView>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Button" image="mono_slime8"/>
+                                                        <connections>
+                                                            <action selector="emotionImageCliked8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C0B-CB-Xpb"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="짜증나 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnE-XF-th9">
                                                         <rect key="frame" x="0.0" y="139.5" width="113" height="20"/>
                                                         <constraints>
@@ -188,9 +228,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Edm-Kd-r6U">
                                                 <rect key="frame" x="241.5" y="0.0" width="112.5" height="159.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_slime9" translatesAutoresizingMaskIntoConstraints="NO" id="X05-z6-qdu">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekQ-qy-lmI">
                                                         <rect key="frame" x="0.0" y="0.0" width="112.5" height="139.5"/>
-                                                    </imageView>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Button" image="mono_slime9"/>
+                                                        <connections>
+                                                            <action selector="emotionImageCliked9:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LqR-Za-fPP"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아파 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMB-4D-J9u">
                                                         <rect key="frame" x="0.0" y="139.5" width="112.5" height="20"/>
                                                         <constraints>
@@ -219,6 +264,17 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="감정 다이어리" id="lCi-ku-Lup"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="emotionLabel" destination="DTR-at-duA" id="x1M-g7-g0D"/>
+                        <outlet property="emotionLabel2" destination="sqO-XW-U6e" id="Jrf-yf-Z9k"/>
+                        <outlet property="emotionLabel3" destination="uoQ-SB-ua2" id="Un1-9z-xSf"/>
+                        <outlet property="emotionLabel4" destination="J9G-0O-udj" id="sJc-R7-WAK"/>
+                        <outlet property="emotionLabel5" destination="nD1-VF-agW" id="806-uA-Lzw"/>
+                        <outlet property="emotionLabel6" destination="hrt-0e-0qB" id="ybY-iI-hmN"/>
+                        <outlet property="emotionLabel7" destination="yEm-nZ-ndz" id="4QN-fu-Tf9"/>
+                        <outlet property="emotionLabel8" destination="TnE-XF-th9" id="qYn-3T-jhR"/>
+                        <outlet property="emotionLabel9" destination="NMB-4D-J9u" id="DBb-2E-Bfe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,6 +286,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3nC-V4-gbT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wJQ-My-biv">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
