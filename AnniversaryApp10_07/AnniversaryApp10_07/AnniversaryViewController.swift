@@ -9,21 +9,20 @@ import UIKit
 
 class AnniversaryViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+
+
+// 이미지뷰안에 스택뷰를 넣는 건 불가능?
+// 아니면 스택뷰의 백그라운드에 이미지를 넣는건 안되나?
