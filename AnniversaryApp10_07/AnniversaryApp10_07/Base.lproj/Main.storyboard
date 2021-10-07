@@ -21,6 +21,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="6FT-VC-Ndj"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="datePickerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Uug-j0-wtV"/>
+                                </connections>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zBh-qy-bW5">
                                 <rect key="frame" x="20" y="294" width="374" height="548"/>
@@ -40,7 +43,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01Y-35-7Pq">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01Y-35-7Pq">
                                                         <rect key="frame" x="0.0" y="40" width="179.5" height="226.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -61,7 +64,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECR-JK-JbE">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECR-JK-JbE">
                                                         <rect key="frame" x="0.0" y="40" width="179.5" height="226.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -87,14 +90,14 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtI-0z-JdT">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtI-0z-JdT">
                                                         <rect key="frame" x="0.0" y="40" width="179.5" height="226.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="0.90965181589999999" blue="0.84049922229999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ygp-X0-TlB">
                                                 <rect key="frame" x="194.5" y="0.0" width="179.5" height="266.5"/>
@@ -108,7 +111,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJc-Ot-8bX">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJc-Ot-8bX">
                                                         <rect key="frame" x="0.0" y="40" width="179.5" height="226.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -134,6 +137,17 @@
                             <constraint firstItem="zBh-qy-bW5" firstAttribute="top" secondItem="wfY-gJ-RcI" secondAttribute="bottom" constant="30" id="sbx-uW-qzv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dDayLabel1" destination="1mx-7w-LoD" id="TIo-DJ-nWk"/>
+                        <outlet property="dDayLabel2" destination="Aly-Tx-l6i" id="9cX-WN-WKH"/>
+                        <outlet property="dDayLabel3" destination="R2v-il-FwE" id="qPh-Z8-sQa"/>
+                        <outlet property="dDayLabel4" destination="IcC-i6-pkh" id="hEn-24-oeH"/>
+                        <outlet property="datePicker" destination="wfY-gJ-RcI" id="dMa-l3-cHj"/>
+                        <outlet property="yearLabel1" destination="01Y-35-7Pq" id="jr6-hT-EGk"/>
+                        <outlet property="yearLabel2" destination="ECR-JK-JbE" id="bMa-bu-pwG"/>
+                        <outlet property="yearLabel3" destination="YtI-0z-JdT" id="dL7-65-tyD"/>
+                        <outlet property="yearLabel4" destination="jJc-Ot-8bX" id="Koj-yp-rgA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
