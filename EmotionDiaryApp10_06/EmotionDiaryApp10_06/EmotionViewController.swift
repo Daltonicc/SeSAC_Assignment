@@ -19,6 +19,15 @@ class EmotionViewController: UIViewController {
     @IBOutlet var emotionLabel8: UILabel!
     @IBOutlet var emotionLabel9: UILabel!
     
+    //피드백
+    //1. 테두리 색상, 2. 커스텀 컬러(RGB: 0~255)
+//    emotionLabel.layer.borderColor = UIColor.red.cgColor()
+//    emotionLabel.backgroundColor = .red
+    
+    // alpha는 투명도를 의미
+//    emotionLabel.backgroundColor = UIColor(red: 174/255 , green: 235/255, blue: 190/255, alpha: 0.8)
+//    emotionLabel.backgroundColor = UIColor(named: "contentBackground")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

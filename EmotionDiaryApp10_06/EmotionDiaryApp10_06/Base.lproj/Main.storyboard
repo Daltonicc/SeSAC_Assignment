@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -50,7 +51,7 @@
                                                             <action selector="emotionImageCliked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcE-RL-Bdj"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTR-at-duA">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTR-at-duA">
                                                         <rect key="frame" x="0.0" y="139.5" width="112.5" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="fTp-NX-63I"/>
@@ -145,6 +146,7 @@
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="속상해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nD1-VF-agW">
                                                         <rect key="frame" x="0.0" y="139" width="113" height="20"/>
+                                                        <color key="backgroundColor" name="contentBackground"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="enf-hv-oil"/>
                                                         </constraints>
@@ -280,6 +282,40 @@
             </objects>
             <point key="canvasLocation" x="886.95652173913049" y="373.66071428571428"/>
         </scene>
+        <!--Day View Controller-->
+        <scene sceneID="zXi-SZ-JaW">
+            <objects>
+                <viewController id="jVv-bZ-nap" customClass="DDayViewController" customModule="EmotionDiaryApp10_06" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KME-Qa-lxq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="mRE-tF-ibQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="311"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mRE-tF-ibQ" secondAttribute="height" multiplier="4:3" id="3xL-2z-49H"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="datePickerValueChanged:" destination="jVv-bZ-nap" eventType="valueChanged" id="7DA-fi-DBN"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rCf-i2-7Hm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mRE-tF-ibQ" firstAttribute="trailing" secondItem="rCf-i2-7Hm" secondAttribute="trailing" id="T5R-V9-Tpi"/>
+                            <constraint firstItem="mRE-tF-ibQ" firstAttribute="leading" secondItem="rCf-i2-7Hm" secondAttribute="leading" id="Uap-vT-Snb"/>
+                            <constraint firstItem="mRE-tF-ibQ" firstAttribute="top" secondItem="rCf-i2-7Hm" secondAttribute="top" id="XvJ-SL-51L"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="mRE-tF-ibQ" id="Ub0-ND-M3c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1I-aB-yqr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1658" y="313"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="EO9-A1-aKr">
             <objects>
@@ -351,6 +387,12 @@
         <image name="mono_slime7" width="278" height="258"/>
         <image name="mono_slime8" width="278" height="258"/>
         <image name="mono_slime9" width="278" height="258"/>
+        <namedColor name="contentBackground">
+            <color red="0.72183459997177124" green="0.93532478809356689" blue="0.72995787858963013" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

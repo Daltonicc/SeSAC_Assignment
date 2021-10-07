@@ -7,113 +7,105 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A6C3D5D270DA4CD0032348E /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 6A6C3D5C270DA4CD0032348E /* SideMenu */; };
-		6A6C3D5F270DAFAF0032348E /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C3D5E270DAFAF0032348E /* EmotionViewController.swift */; };
-		6A8AF00B270E93C3007E700D /* DDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF00A270E93C3007E700D /* DDayViewController.swift */; };
-		6ACACB53270D9AA500B62851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACACB52270D9AA500B62851 /* AppDelegate.swift */; };
-		6ACACB55270D9AA500B62851 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACACB54270D9AA500B62851 /* SceneDelegate.swift */; };
-		6ACACB57270D9AA500B62851 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACACB56270D9AA500B62851 /* ViewController.swift */; };
-		6ACACB5A270D9AA500B62851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACACB58270D9AA500B62851 /* Main.storyboard */; };
-		6ACACB5C270D9AA600B62851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ACACB5B270D9AA600B62851 /* Assets.xcassets */; };
-		6ACACB5F270D9AA600B62851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACACB5D270D9AA600B62851 /* LaunchScreen.storyboard */; };
+		6A8AF019270F33E0007E700D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF018270F33E0007E700D /* AppDelegate.swift */; };
+		6A8AF01B270F33E0007E700D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF01A270F33E0007E700D /* SceneDelegate.swift */; };
+		6A8AF01D270F33E0007E700D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF01C270F33E0007E700D /* ViewController.swift */; };
+		6A8AF020270F33E0007E700D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8AF01E270F33E0007E700D /* Main.storyboard */; };
+		6A8AF022270F33E2007E700D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A8AF021270F33E2007E700D /* Assets.xcassets */; };
+		6A8AF025270F33E2007E700D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8AF023270F33E2007E700D /* LaunchScreen.storyboard */; };
+		6A8AF02D270F341D007E700D /* AnniversaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF02C270F341D007E700D /* AnniversaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A6C3D5E270DAFAF0032348E /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
-		6A8AF00A270E93C3007E700D /* DDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDayViewController.swift; sourceTree = "<group>"; };
-		6ACACB4F270D9AA500B62851 /* EmotionDiaryApp10_06.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionDiaryApp10_06.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6ACACB52270D9AA500B62851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6ACACB54270D9AA500B62851 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6ACACB56270D9AA500B62851 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6ACACB59270D9AA500B62851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6ACACB5B270D9AA600B62851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6ACACB5E270D9AA600B62851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6ACACB60270D9AA600B62851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A8AF015270F33E0007E700D /* AnniversaryApp10_07.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnniversaryApp10_07.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A8AF018270F33E0007E700D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6A8AF01A270F33E0007E700D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6A8AF01C270F33E0007E700D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6A8AF01F270F33E0007E700D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A8AF021270F33E2007E700D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A8AF024270F33E2007E700D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6A8AF026270F33E2007E700D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A8AF02C270F341D007E700D /* AnniversaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6ACACB4C270D9AA500B62851 /* Frameworks */ = {
+		6A8AF012270F33E0007E700D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6C3D5D270DA4CD0032348E /* SideMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6ACACB46270D9AA500B62851 = {
+		6A8AF00C270F33E0007E700D = {
 			isa = PBXGroup;
 			children = (
-				6ACACB51270D9AA500B62851 /* EmotionDiaryApp10_06 */,
-				6ACACB50270D9AA500B62851 /* Products */,
+				6A8AF017270F33E0007E700D /* AnniversaryApp10_07 */,
+				6A8AF016270F33E0007E700D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6ACACB50270D9AA500B62851 /* Products */ = {
+		6A8AF016270F33E0007E700D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6ACACB4F270D9AA500B62851 /* EmotionDiaryApp10_06.app */,
+				6A8AF015270F33E0007E700D /* AnniversaryApp10_07.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6ACACB51270D9AA500B62851 /* EmotionDiaryApp10_06 */ = {
+		6A8AF017270F33E0007E700D /* AnniversaryApp10_07 */ = {
 			isa = PBXGroup;
 			children = (
-				6ACACB52270D9AA500B62851 /* AppDelegate.swift */,
-				6ACACB54270D9AA500B62851 /* SceneDelegate.swift */,
-				6ACACB56270D9AA500B62851 /* ViewController.swift */,
-				6ACACB58270D9AA500B62851 /* Main.storyboard */,
-				6A8AF00A270E93C3007E700D /* DDayViewController.swift */,
-				6A6C3D5E270DAFAF0032348E /* EmotionViewController.swift */,
-				6ACACB5B270D9AA600B62851 /* Assets.xcassets */,
-				6ACACB5D270D9AA600B62851 /* LaunchScreen.storyboard */,
-				6ACACB60270D9AA600B62851 /* Info.plist */,
+				6A8AF018270F33E0007E700D /* AppDelegate.swift */,
+				6A8AF01A270F33E0007E700D /* SceneDelegate.swift */,
+				6A8AF01C270F33E0007E700D /* ViewController.swift */,
+				6A8AF01E270F33E0007E700D /* Main.storyboard */,
+				6A8AF02C270F341D007E700D /* AnniversaryViewController.swift */,
+				6A8AF021270F33E2007E700D /* Assets.xcassets */,
+				6A8AF023270F33E2007E700D /* LaunchScreen.storyboard */,
+				6A8AF026270F33E2007E700D /* Info.plist */,
 			);
-			path = EmotionDiaryApp10_06;
+			path = AnniversaryApp10_07;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6ACACB4E270D9AA500B62851 /* EmotionDiaryApp10_06 */ = {
+		6A8AF014270F33E0007E700D /* AnniversaryApp10_07 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6ACACB63270D9AA600B62851 /* Build configuration list for PBXNativeTarget "EmotionDiaryApp10_06" */;
+			buildConfigurationList = 6A8AF029270F33E2007E700D /* Build configuration list for PBXNativeTarget "AnniversaryApp10_07" */;
 			buildPhases = (
-				6ACACB4B270D9AA500B62851 /* Sources */,
-				6ACACB4C270D9AA500B62851 /* Frameworks */,
-				6ACACB4D270D9AA500B62851 /* Resources */,
+				6A8AF011270F33E0007E700D /* Sources */,
+				6A8AF012270F33E0007E700D /* Frameworks */,
+				6A8AF013270F33E0007E700D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = EmotionDiaryApp10_06;
-			packageProductDependencies = (
-				6A6C3D5C270DA4CD0032348E /* SideMenu */,
-			);
-			productName = EmotionDiaryApp10_06;
-			productReference = 6ACACB4F270D9AA500B62851 /* EmotionDiaryApp10_06.app */;
+			name = AnniversaryApp10_07;
+			productName = AnniversaryApp10_07;
+			productReference = 6A8AF015270F33E0007E700D /* AnniversaryApp10_07.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6ACACB47270D9AA500B62851 /* Project object */ = {
+		6A8AF00D270F33E0007E700D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
-					6ACACB4E270D9AA500B62851 = {
+					6A8AF014270F33E0007E700D = {
 						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
-			buildConfigurationList = 6ACACB4A270D9AA500B62851 /* Build configuration list for PBXProject "EmotionDiaryApp10_06" */;
+			buildConfigurationList = 6A8AF010270F33E0007E700D /* Build configuration list for PBXProject "AnniversaryApp10_07" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,60 +113,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 6ACACB46270D9AA500B62851;
-			packageReferences = (
-				6A6C3D5B270DA4CD0032348E /* XCRemoteSwiftPackageReference "SideMenu" */,
-			);
-			productRefGroup = 6ACACB50270D9AA500B62851 /* Products */;
+			mainGroup = 6A8AF00C270F33E0007E700D;
+			productRefGroup = 6A8AF016270F33E0007E700D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6ACACB4E270D9AA500B62851 /* EmotionDiaryApp10_06 */,
+				6A8AF014270F33E0007E700D /* AnniversaryApp10_07 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6ACACB4D270D9AA500B62851 /* Resources */ = {
+		6A8AF013270F33E0007E700D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ACACB5F270D9AA600B62851 /* LaunchScreen.storyboard in Resources */,
-				6ACACB5C270D9AA600B62851 /* Assets.xcassets in Resources */,
-				6ACACB5A270D9AA500B62851 /* Main.storyboard in Resources */,
+				6A8AF025270F33E2007E700D /* LaunchScreen.storyboard in Resources */,
+				6A8AF022270F33E2007E700D /* Assets.xcassets in Resources */,
+				6A8AF020270F33E0007E700D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6ACACB4B270D9AA500B62851 /* Sources */ = {
+		6A8AF011270F33E0007E700D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A8AF00B270E93C3007E700D /* DDayViewController.swift in Sources */,
-				6A6C3D5F270DAFAF0032348E /* EmotionViewController.swift in Sources */,
-				6ACACB57270D9AA500B62851 /* ViewController.swift in Sources */,
-				6ACACB53270D9AA500B62851 /* AppDelegate.swift in Sources */,
-				6ACACB55270D9AA500B62851 /* SceneDelegate.swift in Sources */,
+				6A8AF01D270F33E0007E700D /* ViewController.swift in Sources */,
+				6A8AF019270F33E0007E700D /* AppDelegate.swift in Sources */,
+				6A8AF01B270F33E0007E700D /* SceneDelegate.swift in Sources */,
+				6A8AF02D270F341D007E700D /* AnniversaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6ACACB58270D9AA500B62851 /* Main.storyboard */ = {
+		6A8AF01E270F33E0007E700D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6ACACB59270D9AA500B62851 /* Base */,
+				6A8AF01F270F33E0007E700D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		6ACACB5D270D9AA600B62851 /* LaunchScreen.storyboard */ = {
+		6A8AF023270F33E2007E700D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6ACACB5E270D9AA600B62851 /* Base */,
+				6A8AF024270F33E2007E700D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -182,7 +170,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6ACACB61270D9AA600B62851 /* Debug */ = {
+		6A8AF027270F33E2007E700D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -243,7 +231,7 @@
 			};
 			name = Debug;
 		};
-		6ACACB62270D9AA600B62851 /* Release */ = {
+		6A8AF028270F33E2007E700D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -298,7 +286,7 @@
 			};
 			name = Release;
 		};
-		6ACACB64270D9AA600B62851 /* Debug */ = {
+		6A8AF02A270F33E2007E700D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -307,7 +295,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PY3HK5UPTR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EmotionDiaryApp10_06/Info.plist;
+				INFOPLIST_FILE = AnniversaryApp10_07/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -318,15 +306,15 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ethan.EmotionDiaryApp10-06";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ethan.AnniversaryApp10-07";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		6ACACB65270D9AA600B62851 /* Release */ = {
+		6A8AF02B270F33E2007E700D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -335,7 +323,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PY3HK5UPTR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EmotionDiaryApp10_06/Info.plist;
+				INFOPLIST_FILE = AnniversaryApp10_07/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -346,55 +334,36 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ethan.EmotionDiaryApp10-06";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ethan.AnniversaryApp10-07";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6ACACB4A270D9AA500B62851 /* Build configuration list for PBXProject "EmotionDiaryApp10_06" */ = {
+		6A8AF010270F33E0007E700D /* Build configuration list for PBXProject "AnniversaryApp10_07" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6ACACB61270D9AA600B62851 /* Debug */,
-				6ACACB62270D9AA600B62851 /* Release */,
+				6A8AF027270F33E2007E700D /* Debug */,
+				6A8AF028270F33E2007E700D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6ACACB63270D9AA600B62851 /* Build configuration list for PBXNativeTarget "EmotionDiaryApp10_06" */ = {
+		6A8AF029270F33E2007E700D /* Build configuration list for PBXNativeTarget "AnniversaryApp10_07" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6ACACB64270D9AA600B62851 /* Debug */,
-				6ACACB65270D9AA600B62851 /* Release */,
+				6A8AF02A270F33E2007E700D /* Debug */,
+				6A8AF02B270F33E2007E700D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6A6C3D5B270DA4CD0032348E /* XCRemoteSwiftPackageReference "SideMenu" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6A6C3D5C270DA4CD0032348E /* SideMenu */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6A6C3D5B270DA4CD0032348E /* XCRemoteSwiftPackageReference "SideMenu" */;
-			productName = SideMenu;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 6ACACB47270D9AA500B62851 /* Project object */;
+	rootObject = 6A8AF00D270F33E0007E700D /* Project object */;
 }
