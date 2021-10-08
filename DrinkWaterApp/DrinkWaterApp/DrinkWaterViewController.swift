@@ -40,7 +40,22 @@ class DrinkWaterViewController: UIViewController {
         removeButton.customView = removebuttonImage
         profileButton.customView = profileButtonImage
         
+        //Label UI
+        topLabel.text = "잘하셨어요!\n오늘 마신 양은"
+        topLabel.numberOfLines = 2
+        topLabel.textColor = .white
+        topLabel.font = UIFont.boldSystemFont(ofSize: 25)
         
+        //imageview UI
+        cactusImageView.layer.cornerRadius = cactusImageView.bounds.width / 2
+        cactusImageView.layer.masksToBounds = true
+        
+        muchWaterLabel.textAlignment = .center
+        
+        haveToDrinkLabel.textAlignment = .center
+        
+        drinkingButton.setTitle("물마시기", for: .normal)
+        drinkingButton.tintColor = .black
         
     }
     
