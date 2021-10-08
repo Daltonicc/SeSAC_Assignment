@@ -32,10 +32,13 @@ class DrinkWaterViewController: UIViewController {
         let removebuttonImage = UIButton(type: .custom)
         removebuttonImage.setImage(UIImage(systemName: "arrow.clockwise"), for: .normal)
         removebuttonImage.tintColor = .white
+        removebuttonImage.addTarget(self, action: #selector(DrinkWaterViewController.viewDidLoad), for: .touchUpInside)
         
         let profileButtonImage = UIButton(type: .custom)
         profileButtonImage.setImage(UIImage(systemName: "person.circle"), for: .normal)
         profileButtonImage.tintColor = .white
+        profileButtonImage.addTarget(self, action: #selector(profiletapButton), for: .touchUpInside)
+        
 
         removeButton.customView = removebuttonImage
         profileButton.customView = profileButtonImage
@@ -59,6 +62,13 @@ class DrinkWaterViewController: UIViewController {
         
     }
     
+    @objc func profiletapButton() {
+        
+        // 인스턴스 타입을 전달해줘야 함. 요런 식으로
+        // let vc = ProfileViewController()
+        navigationController?.pushViewController(ProfileViewController(), animated: true)
+        
+    }
 
 
 }

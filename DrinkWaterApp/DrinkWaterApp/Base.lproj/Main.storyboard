@@ -113,7 +113,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="물 마시기" leftItemsSupplementBackButton="YES" id="3rX-Y3-h44">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="bwH-IB-gHp">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4Cs-Ft-2uP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4Cs-Ft-2uP">
                                 <rect key="frame" x="20" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -128,7 +128,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                             <connections>
-                                <segue destination="ZzB-6f-QJS" kind="show" id="c4e-3g-3Qx"/>
+                                <segue destination="GYz-bn-6uC" kind="show" id="LWK-m7-dgA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -146,32 +146,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513.04347826086962" y="95.758928571428569"/>
+            <point key="canvasLocation" x="717" y="113"/>
         </scene>
         <!--Profile View Controller-->
-        <scene sceneID="s5C-bt-wMR">
+        <scene sceneID="mLT-q7-WYz">
             <objects>
-                <viewController id="ZzB-6f-QJS" customClass="ProfileViewController" customModule="DrinkWaterApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5YS-ib-w6N">
+                <viewController id="GYz-bn-6uC" customClass="ProfileViewController" customModule="DrinkWaterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2VN-VB-W0P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="yRJ-vR-i7F"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="cnF-YL-IgB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MjQ-hq-40W">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="mWN-BJ-63H">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="vQ3-Je-GCS">
-                                <rect key="frame" x="302" y="5" width="92" height="34.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="u9F-ra-hq8"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U1g-Dp-shl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1y-6s-4yr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1339" y="96"/>
+            <point key="canvasLocation" x="1422" y="113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xIT-jP-FmY">
@@ -188,7 +179,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hGs-iN-J2U"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5Su-7l-4rF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zwe-Kg-pF5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
