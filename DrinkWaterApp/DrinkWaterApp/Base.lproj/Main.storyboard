@@ -62,8 +62,21 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Orl-KN-Fyr">
                                 <rect key="frame" x="0.0" y="821" width="414" height="75"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnB-0r-9Mr">
+                                        <rect key="frame" x="150" y="10" width="114" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="dK7-k1-EeM"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="VnB-0r-9Mr" secondAttribute="trailing" constant="150" id="14x-U6-xC2"/>
+                                    <constraint firstItem="VnB-0r-9Mr" firstAttribute="leading" secondItem="Orl-KN-Fyr" secondAttribute="leading" constant="150" id="Ma4-yZ-0o6"/>
+                                    <constraint firstAttribute="bottom" secondItem="VnB-0r-9Mr" secondAttribute="bottom" constant="25" id="jGc-F3-IPv"/>
                                     <constraint firstAttribute="height" constant="75" id="joC-6z-GQB"/>
                                 </constraints>
                             </view>
@@ -78,7 +91,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dt7-aP-qU6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="0Va-IR-FXW"/>
                             <constraint firstItem="T2V-pj-CQz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="8yt-V7-G8b"/>
@@ -98,9 +111,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dt7-aP-qU6" secondAttribute="trailing" constant="70" id="uZr-py-q6a"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="물 마시기" id="3rX-Y3-h44">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="Usl-vm-7lJ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5m7-GW-Esx">
+                    <navigationItem key="navigationItem" title="물 마시기" leftItemsSupplementBackButton="YES" id="3rX-Y3-h44">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="bwH-IB-gHp">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4Cs-Ft-2uP">
                                 <rect key="frame" x="20" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -119,6 +132,17 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bottomLabel" destination="aqV-Uv-BWs" id="Bsf-Jd-sbl"/>
+                        <outlet property="cactusImageView" destination="dt7-aP-qU6" id="aZe-OL-jt1"/>
+                        <outlet property="drinkingButton" destination="VnB-0r-9Mr" id="yJj-BM-tBC"/>
+                        <outlet property="haveToDrinkLabel" destination="oeu-i9-bmL" id="L1U-5z-g2t"/>
+                        <outlet property="middleLabel" destination="aqV-Uv-BWs" id="U0q-xD-jQF"/>
+                        <outlet property="muchWaterLabel" destination="MYa-D1-uLF" id="bOd-PZ-ZxX"/>
+                        <outlet property="profileButton" destination="Idl-m6-xXe" id="0Nx-vo-4VN"/>
+                        <outlet property="removeButton" destination="bwH-IB-gHp" id="my0-bw-y4a"/>
+                        <outlet property="topLabel" destination="tlD-pT-0S9" id="vMN-re-Aav"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,6 +181,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wr2-rw-Mde">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -171,9 +199,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
