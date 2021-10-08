@@ -19,6 +19,11 @@ class EmotionViewController: UIViewController {
     @IBOutlet var emotionLabel8: UILabel!
     @IBOutlet var emotionLabel9: UILabel!
     
+    //notification 관련 학습
+    let userNotificationCenter = UNUserNotificationCenter.current()
+    
+    
+    
     //피드백
     //1. 테두리 색상, 2. 커스텀 컬러(RGB: 0~255)
 //    emotionLabel.layer.borderColor = UIColor.red.cgColor()
@@ -58,7 +63,7 @@ class EmotionViewController: UIViewController {
         let emotionNumber9 = UserDefaults.standard.integer(forKey: "emotion9")
         emotionLabel.text = "아파 \(emotionNumber9)"
         
-        
+        requestNotificationAuthorization()
     }
     
     @IBAction func emotionImageCliked(_ sender: UIButton) {
@@ -159,4 +164,42 @@ class EmotionViewController: UIViewController {
         emotionLabel9.text = "아파 \(updateEmotionNumber1)"
         
     }
+    
+    //Notification 학습
+    func requestNotificationAuthorization() {
+        let authOptions = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
+
+            userNotificationCenter.requestAuthorization(options: authOptions) { success, error in
+                      
+                if success {
+                    self.sendNotification()
+                }
+                
+            }
+    }
+    
+    func sendNotification() {
+        
+        //어떤 정보를 보낼지 컨텐츠 구성
+        let notificationContent = UNMutableNotificationContent()
+
+        notificationContent.title = "물 마실 시간이에요!"
+        notificationContent.body = "하루 2리터 목표 달성을 위해 열심히 달려보아요"
+        notificationContent.badge = 100
+        
+        //언제 보낼 지 구성: 1. 간격, 2. 캘린더, 3.위치
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 15, repeats: false)
+        
+        //알림 요청
+        let request = UNNotificationRequest(identifier: "\(Date())",
+                                                        content: notificationContent,
+                                                        trigger: trigger)
+
+        userNotificationCenter.add(request) { error in
+            if let error = error {
+                print("Notification Error: ", error)
+            }
+        }
+    }
+    
 }

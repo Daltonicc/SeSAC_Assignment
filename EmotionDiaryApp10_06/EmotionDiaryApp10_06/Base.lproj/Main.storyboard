@@ -291,7 +291,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="mRE-tF-ibQ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="311"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="310.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mRE-tF-ibQ" secondAttribute="height" multiplier="4:3" id="3xL-2z-49H"/>
                                 </constraints>
@@ -315,6 +315,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1I-aB-yqr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1658" y="313"/>
+        </scene>
+        <!--Example View Controller-->
+        <scene sceneID="mP9-tF-WZN">
+            <objects>
+                <viewController id="mQR-JX-GBF" customClass="ExampleViewController" customModule="EmotionDiaryApp10_06" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VhX-qN-Di7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sl-D1-akj">
+                                <rect key="frame" x="163" y="239" width="125" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvV-Wv-P7r">
+                                <rect key="frame" x="94" y="443" width="194" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="showAlert:" destination="mQR-JX-GBF" eventType="touchUpInside" id="cL5-gg-I03"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bPr-RM-U1d"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4fi-iH-GHj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2453.6231884057975" y="312.72321428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bBf-gB-sSh">
+            <objects>
+                <viewController id="gEB-bR-Wek" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZqN-yf-NIe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yhB-Lo-UKJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jPC-JK-50a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3233" y="313"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="EO9-A1-aKr">
@@ -388,7 +436,7 @@
         <image name="mono_slime8" width="278" height="258"/>
         <image name="mono_slime9" width="278" height="258"/>
         <namedColor name="contentBackground">
-            <color red="0.72183459997177124" green="0.93532478809356689" blue="0.72995787858963013" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.72200000286102295" green="0.93500000238418579" blue="0.73000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

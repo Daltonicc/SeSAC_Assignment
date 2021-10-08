@@ -7,116 +7,102 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A6C3D5D270DA4CD0032348E /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 6A6C3D5C270DA4CD0032348E /* SideMenu */; };
-		6A6C3D5F270DAFAF0032348E /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C3D5E270DAFAF0032348E /* EmotionViewController.swift */; };
-		6A8AF00B270E93C3007E700D /* DDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF00A270E93C3007E700D /* DDayViewController.swift */; };
-		6A8AF02F270FCA78007E700D /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF02E270FCA78007E700D /* ExampleViewController.swift */; };
-		6ACACB53270D9AA500B62851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACACB52270D9AA500B62851 /* AppDelegate.swift */; };
-		6ACACB55270D9AA500B62851 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACACB54270D9AA500B62851 /* SceneDelegate.swift */; };
-		6ACACB57270D9AA500B62851 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACACB56270D9AA500B62851 /* ViewController.swift */; };
-		6ACACB5A270D9AA500B62851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACACB58270D9AA500B62851 /* Main.storyboard */; };
-		6ACACB5C270D9AA600B62851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ACACB5B270D9AA600B62851 /* Assets.xcassets */; };
-		6ACACB5F270D9AA600B62851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACACB5D270D9AA600B62851 /* LaunchScreen.storyboard */; };
+		6A4F4726271067FE00C6014C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F4725271067FE00C6014C /* AppDelegate.swift */; };
+		6A4F4728271067FE00C6014C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F4727271067FE00C6014C /* SceneDelegate.swift */; };
+		6A4F472A271067FE00C6014C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F4729271067FE00C6014C /* ViewController.swift */; };
+		6A4F472D271067FE00C6014C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4F472B271067FE00C6014C /* Main.storyboard */; };
+		6A4F472F271067FF00C6014C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4F472E271067FF00C6014C /* Assets.xcassets */; };
+		6A4F4732271067FF00C6014C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4F4730271067FF00C6014C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A6C3D5E270DAFAF0032348E /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
-		6A8AF00A270E93C3007E700D /* DDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDayViewController.swift; sourceTree = "<group>"; };
-		6A8AF02E270FCA78007E700D /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
-		6ACACB4F270D9AA500B62851 /* EmotionDiaryApp10_06.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionDiaryApp10_06.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6ACACB52270D9AA500B62851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6ACACB54270D9AA500B62851 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6ACACB56270D9AA500B62851 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6ACACB59270D9AA500B62851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6ACACB5B270D9AA600B62851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6ACACB5E270D9AA600B62851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6ACACB60270D9AA600B62851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A4F4722271067FE00C6014C /* DrinkWaterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkWaterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A4F4725271067FE00C6014C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6A4F4727271067FE00C6014C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6A4F4729271067FE00C6014C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6A4F472C271067FE00C6014C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6A4F472E271067FF00C6014C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6A4F4731271067FF00C6014C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6A4F4733271067FF00C6014C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6ACACB4C270D9AA500B62851 /* Frameworks */ = {
+		6A4F471F271067FE00C6014C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6C3D5D270DA4CD0032348E /* SideMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6ACACB46270D9AA500B62851 = {
+		6A4F4719271067FE00C6014C = {
 			isa = PBXGroup;
 			children = (
-				6ACACB51270D9AA500B62851 /* EmotionDiaryApp10_06 */,
-				6ACACB50270D9AA500B62851 /* Products */,
+				6A4F4724271067FE00C6014C /* DrinkWaterApp */,
+				6A4F4723271067FE00C6014C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6ACACB50270D9AA500B62851 /* Products */ = {
+		6A4F4723271067FE00C6014C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6ACACB4F270D9AA500B62851 /* EmotionDiaryApp10_06.app */,
+				6A4F4722271067FE00C6014C /* DrinkWaterApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6ACACB51270D9AA500B62851 /* EmotionDiaryApp10_06 */ = {
+		6A4F4724271067FE00C6014C /* DrinkWaterApp */ = {
 			isa = PBXGroup;
 			children = (
-				6ACACB52270D9AA500B62851 /* AppDelegate.swift */,
-				6ACACB54270D9AA500B62851 /* SceneDelegate.swift */,
-				6ACACB56270D9AA500B62851 /* ViewController.swift */,
-				6ACACB58270D9AA500B62851 /* Main.storyboard */,
-				6A8AF02E270FCA78007E700D /* ExampleViewController.swift */,
-				6A8AF00A270E93C3007E700D /* DDayViewController.swift */,
-				6A6C3D5E270DAFAF0032348E /* EmotionViewController.swift */,
-				6ACACB5B270D9AA600B62851 /* Assets.xcassets */,
-				6ACACB5D270D9AA600B62851 /* LaunchScreen.storyboard */,
-				6ACACB60270D9AA600B62851 /* Info.plist */,
+				6A4F4725271067FE00C6014C /* AppDelegate.swift */,
+				6A4F4727271067FE00C6014C /* SceneDelegate.swift */,
+				6A4F4729271067FE00C6014C /* ViewController.swift */,
+				6A4F472B271067FE00C6014C /* Main.storyboard */,
+				6A4F472E271067FF00C6014C /* Assets.xcassets */,
+				6A4F4730271067FF00C6014C /* LaunchScreen.storyboard */,
+				6A4F4733271067FF00C6014C /* Info.plist */,
 			);
-			path = EmotionDiaryApp10_06;
+			path = DrinkWaterApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6ACACB4E270D9AA500B62851 /* EmotionDiaryApp10_06 */ = {
+		6A4F4721271067FE00C6014C /* DrinkWaterApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6ACACB63270D9AA600B62851 /* Build configuration list for PBXNativeTarget "EmotionDiaryApp10_06" */;
+			buildConfigurationList = 6A4F4736271067FF00C6014C /* Build configuration list for PBXNativeTarget "DrinkWaterApp" */;
 			buildPhases = (
-				6ACACB4B270D9AA500B62851 /* Sources */,
-				6ACACB4C270D9AA500B62851 /* Frameworks */,
-				6ACACB4D270D9AA500B62851 /* Resources */,
+				6A4F471E271067FE00C6014C /* Sources */,
+				6A4F471F271067FE00C6014C /* Frameworks */,
+				6A4F4720271067FE00C6014C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = EmotionDiaryApp10_06;
-			packageProductDependencies = (
-				6A6C3D5C270DA4CD0032348E /* SideMenu */,
-			);
-			productName = EmotionDiaryApp10_06;
-			productReference = 6ACACB4F270D9AA500B62851 /* EmotionDiaryApp10_06.app */;
+			name = DrinkWaterApp;
+			productName = DrinkWaterApp;
+			productReference = 6A4F4722271067FE00C6014C /* DrinkWaterApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6ACACB47270D9AA500B62851 /* Project object */ = {
+		6A4F471A271067FE00C6014C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
-					6ACACB4E270D9AA500B62851 = {
+					6A4F4721271067FE00C6014C = {
 						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
-			buildConfigurationList = 6ACACB4A270D9AA500B62851 /* Build configuration list for PBXProject "EmotionDiaryApp10_06" */;
+			buildConfigurationList = 6A4F471D271067FE00C6014C /* Build configuration list for PBXProject "DrinkWaterApp" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,61 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 6ACACB46270D9AA500B62851;
-			packageReferences = (
-				6A6C3D5B270DA4CD0032348E /* XCRemoteSwiftPackageReference "SideMenu" */,
-			);
-			productRefGroup = 6ACACB50270D9AA500B62851 /* Products */;
+			mainGroup = 6A4F4719271067FE00C6014C;
+			productRefGroup = 6A4F4723271067FE00C6014C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6ACACB4E270D9AA500B62851 /* EmotionDiaryApp10_06 */,
+				6A4F4721271067FE00C6014C /* DrinkWaterApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6ACACB4D270D9AA500B62851 /* Resources */ = {
+		6A4F4720271067FE00C6014C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ACACB5F270D9AA600B62851 /* LaunchScreen.storyboard in Resources */,
-				6ACACB5C270D9AA600B62851 /* Assets.xcassets in Resources */,
-				6ACACB5A270D9AA500B62851 /* Main.storyboard in Resources */,
+				6A4F4732271067FF00C6014C /* LaunchScreen.storyboard in Resources */,
+				6A4F472F271067FF00C6014C /* Assets.xcassets in Resources */,
+				6A4F472D271067FE00C6014C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6ACACB4B270D9AA500B62851 /* Sources */ = {
+		6A4F471E271067FE00C6014C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A8AF00B270E93C3007E700D /* DDayViewController.swift in Sources */,
-				6A6C3D5F270DAFAF0032348E /* EmotionViewController.swift in Sources */,
-				6ACACB57270D9AA500B62851 /* ViewController.swift in Sources */,
-				6ACACB53270D9AA500B62851 /* AppDelegate.swift in Sources */,
-				6ACACB55270D9AA500B62851 /* SceneDelegate.swift in Sources */,
-				6A8AF02F270FCA78007E700D /* ExampleViewController.swift in Sources */,
+				6A4F472A271067FE00C6014C /* ViewController.swift in Sources */,
+				6A4F4726271067FE00C6014C /* AppDelegate.swift in Sources */,
+				6A4F4728271067FE00C6014C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6ACACB58270D9AA500B62851 /* Main.storyboard */ = {
+		6A4F472B271067FE00C6014C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6ACACB59270D9AA500B62851 /* Base */,
+				6A4F472C271067FE00C6014C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		6ACACB5D270D9AA600B62851 /* LaunchScreen.storyboard */ = {
+		6A4F4730271067FF00C6014C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6ACACB5E270D9AA600B62851 /* Base */,
+				6A4F4731271067FF00C6014C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -186,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6ACACB61270D9AA600B62851 /* Debug */ = {
+		6A4F4734271067FF00C6014C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -247,7 +227,7 @@
 			};
 			name = Debug;
 		};
-		6ACACB62270D9AA600B62851 /* Release */ = {
+		6A4F4735271067FF00C6014C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -302,7 +282,7 @@
 			};
 			name = Release;
 		};
-		6ACACB64270D9AA600B62851 /* Debug */ = {
+		6A4F4737271067FF00C6014C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -311,7 +291,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PY3HK5UPTR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EmotionDiaryApp10_06/Info.plist;
+				INFOPLIST_FILE = DrinkWaterApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -322,7 +302,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ethan.EmotionDiaryApp10-06";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ethan.DrinkWaterApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -330,7 +310,7 @@
 			};
 			name = Debug;
 		};
-		6ACACB65270D9AA600B62851 /* Release */ = {
+		6A4F4738271067FF00C6014C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -339,7 +319,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PY3HK5UPTR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EmotionDiaryApp10_06/Info.plist;
+				INFOPLIST_FILE = DrinkWaterApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -350,7 +330,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ethan.EmotionDiaryApp10-06";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ethan.DrinkWaterApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -361,44 +341,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6ACACB4A270D9AA500B62851 /* Build configuration list for PBXProject "EmotionDiaryApp10_06" */ = {
+		6A4F471D271067FE00C6014C /* Build configuration list for PBXProject "DrinkWaterApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6ACACB61270D9AA600B62851 /* Debug */,
-				6ACACB62270D9AA600B62851 /* Release */,
+				6A4F4734271067FF00C6014C /* Debug */,
+				6A4F4735271067FF00C6014C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6ACACB63270D9AA600B62851 /* Build configuration list for PBXNativeTarget "EmotionDiaryApp10_06" */ = {
+		6A4F4736271067FF00C6014C /* Build configuration list for PBXNativeTarget "DrinkWaterApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6ACACB64270D9AA600B62851 /* Debug */,
-				6ACACB65270D9AA600B62851 /* Release */,
+				6A4F4737271067FF00C6014C /* Debug */,
+				6A4F4738271067FF00C6014C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6A6C3D5B270DA4CD0032348E /* XCRemoteSwiftPackageReference "SideMenu" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6A6C3D5C270DA4CD0032348E /* SideMenu */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6A6C3D5B270DA4CD0032348E /* XCRemoteSwiftPackageReference "SideMenu" */;
-			productName = SideMenu;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 6ACACB47270D9AA500B62851 /* Project object */;
+	rootObject = 6A4F471A271067FE00C6014C /* Project object */;
 }
