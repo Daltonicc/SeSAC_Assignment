@@ -78,6 +78,7 @@ class DrinkWaterViewController: UIViewController {
         waterTextField.textAlignment = .right
         waterTextField.font = UIFont.systemFont(ofSize: 30)
         waterTextField.textColor = .white
+        waterTextField.text = "0"
         waterTextField.keyboardType = .numberPad
         
         muchWaterLabel.font = UIFont.systemFont(ofSize: 30)
@@ -105,11 +106,21 @@ class DrinkWaterViewController: UIViewController {
         super.viewWillAppear(animated)
         
         let haveToDrink = UserDefaults.standard.double(forKey: "water")
-        let nickname = UserDefaults.standard.string(forKey: "nickname")
+        var nickname = UserDefaults.standard.string(forKey: "nickname")
+        
+        if nickname == nil {
+            nickname = "아무개"
+        }
+        
         haveToDrinkLabel.text = "\(nickname!)님의 하루 물 권장 섭취량은 \(haveToDrink)L 입니다."
         
         let percent = percentCalculating()
         bottomLabel.text = "목표의 \(percent)%"
+        
+        
+        
+        
+        cactusImageAndLabelColorChange()
         
     }
     
@@ -121,7 +132,9 @@ class DrinkWaterViewController: UIViewController {
 //        navigationController?.pushViewController(vc, animated: true)
 //
 //    }
-
+    
+    
+    
     func percentCalculating() -> Int {
         
         let water = UserDefaults.standard.double(forKey: "water")

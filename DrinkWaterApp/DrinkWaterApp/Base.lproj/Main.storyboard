@@ -46,7 +46,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-1" translatesAutoresizingMaskIntoConstraints="NO" id="dt7-aP-qU6">
-                                <rect key="frame" x="70" y="318.5" width="274" height="250"/>
+                                <rect key="frame" x="70" y="288.5" width="274" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="Hwi-ms-thi"/>
                                 </constraints>
@@ -84,7 +84,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhW-Rz-qys">
-                                <rect key="frame" x="140" y="598.5" width="114" height="30"/>
+                                <rect key="frame" x="140" y="568.5" width="114" height="30"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6EC-sF-6Fa">
                                         <rect key="frame" x="0.0" y="0.0" width="72.5" height="30"/>
@@ -123,7 +123,7 @@
                             <constraint firstItem="lhW-Rz-qys" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="140" id="iKz-3s-CKM"/>
                             <constraint firstItem="T2V-pj-CQz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="k1Y-yj-0Gg"/>
                             <constraint firstItem="lhW-Rz-qys" firstAttribute="top" secondItem="dt7-aP-qU6" secondAttribute="bottom" constant="30" id="lUQ-gf-95A"/>
-                            <constraint firstItem="dt7-aP-qU6" firstAttribute="top" secondItem="T2V-pj-CQz" secondAttribute="bottom" constant="70" id="luq-V5-i3c"/>
+                            <constraint firstItem="dt7-aP-qU6" firstAttribute="top" secondItem="T2V-pj-CQz" secondAttribute="bottom" constant="40" id="luq-V5-i3c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dt7-aP-qU6" secondAttribute="trailing" constant="70" id="uZr-py-q6a"/>
                         </constraints>
                         <connections>
