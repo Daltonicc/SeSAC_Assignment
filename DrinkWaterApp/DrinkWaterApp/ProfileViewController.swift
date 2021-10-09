@@ -32,9 +32,11 @@ class ProfileViewController: UIViewController {
         
         let height = UserDefaults.standard.integer(forKey: "height")
         heightTextField.text = String(height)
+        heightTextField.keyboardType = .numberPad
         
         let weight = UserDefaults.standard.integer(forKey: "weight")
         weightTextField.text = String(weight)
+        weightTextField.keyboardType = .numberPad
         
         
     }
@@ -62,26 +64,26 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func heightTextFieldClicked(_ sender: HoshiTextField) {
-
     }
     
     @IBAction func weightTextFieldClicked(_ sender: HoshiTextField) {
-
     }
     
     
     @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
         
-        UserDefaults.standard.set(nicknameTextField.text!, forKey: "nickname")
-        UserDefaults.standard.set(heightTextField.text!, forKey: "height")
-        UserDefaults.standard.set(weightTextField.text!, forKey: "weight")
+        UserDefaults.standard.set(nicknameTextField.text, forKey: "nickname")
+        UserDefaults.standard.set(heightTextField.text, forKey: "height")
+        UserDefaults.standard.set(weightTextField.text, forKey: "weight")
         
-        let nickname = UserDefaults.standard.string(forKey: "nickname")
+        UserDefaults.standard.string(forKey: "nickname")
         let height = UserDefaults.standard.double(forKey: "height")
         let weight = UserDefaults.standard.double(forKey: "weight")
         
         let water: Double = (height + weight) / 100
         UserDefaults.standard.set(water, forKey: "water")
+        
+        
     }
     
     
