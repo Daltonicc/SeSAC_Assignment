@@ -14,6 +14,7 @@
 		6A4F472F271067FF00C6014C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A4F472E271067FF00C6014C /* Assets.xcassets */; };
 		6A4F4732271067FF00C6014C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A4F4730271067FF00C6014C /* LaunchScreen.storyboard */; };
 		6A4F473A271069D600C6014C /* DrinkWaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4F4739271069D600C6014C /* DrinkWaterViewController.swift */; };
+		6AC991D82711CD3E004E1EAA /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 6AC991D72711CD3E004E1EAA /* TextFieldEffects */; };
 		6ACD91DF271097ED00B3C599 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD91DE271097ED00B3C599 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AC991D82711CD3E004E1EAA /* TextFieldEffects in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +91,9 @@
 			dependencies = (
 			);
 			name = DrinkWaterApp;
+			packageProductDependencies = (
+				6AC991D72711CD3E004E1EAA /* TextFieldEffects */,
+			);
 			productName = DrinkWaterApp;
 			productReference = 6A4F4722271067FE00C6014C /* DrinkWaterApp.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 6A4F4719271067FE00C6014C;
+			packageReferences = (
+				6AC991D62711CD3E004E1EAA /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+			);
 			productRefGroup = 6A4F4723271067FE00C6014C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -314,7 +322,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -342,7 +350,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -368,6 +376,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6AC991D62711CD3E004E1EAA /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6AC991D72711CD3E004E1EAA /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6AC991D62711CD3E004E1EAA /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6A4F471A271067FE00C6014C /* Project object */;
 }
