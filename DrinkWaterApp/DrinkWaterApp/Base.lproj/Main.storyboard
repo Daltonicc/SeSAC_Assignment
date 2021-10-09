@@ -102,6 +102,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="dt7-aP-qU6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="0Va-IR-FXW"/>
                             <constraint firstItem="T2V-pj-CQz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="8yt-V7-G8b"/>
@@ -119,6 +120,9 @@
                             <constraint firstItem="dt7-aP-qU6" firstAttribute="top" secondItem="T2V-pj-CQz" secondAttribute="bottom" constant="100" id="luq-V5-i3c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dt7-aP-qU6" secondAttribute="trailing" constant="70" id="uZr-py-q6a"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Vm5-nD-2yb" appends="YES" id="TV8-df-GYj"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="물 마시기" leftItemsSupplementBackButton="YES" id="3rX-Y3-h44">
                         <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="bwH-IB-gHp"/>
@@ -142,8 +146,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Vm5-nD-2yb">
+                    <connections>
+                        <action selector="tapGestureClikced:" destination="BYZ-38-t0r" id="urr-XB-CMf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="717" y="113"/>
+            <point key="canvasLocation" x="1058" y="96"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="mLT-q7-WYz">
@@ -153,7 +162,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-1" translatesAutoresizingMaskIntoConstraints="NO" id="8TY-Dp-U0Z">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8TY-Dp-U0Z">
                                 <rect key="frame" x="125" y="108" width="164" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Un2-zh-o30"/>
@@ -171,6 +180,9 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nicknameTextFieldClicked:" destination="GYz-bn-6uC" eventType="editingDidEndOnExit" id="VPu-g8-t83"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CIh-xV-mNV" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="30" y="388" width="354" height="60"/>
@@ -179,6 +191,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="heightTextFieldClicked:" destination="GYz-bn-6uC" eventType="editingDidEndOnExit" id="RGq-r4-2Xm"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qyu-cC-o61" customClass="HoshiTextField" customModule="TextFieldEffects">
                                 <rect key="frame" x="30" y="478" width="354" height="60"/>
@@ -187,10 +202,14 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="weightTextFieldClicked:" destination="GYz-bn-6uC" eventType="editingDidEndOnExit" id="Vj4-Iq-LLf"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cnF-YL-IgB"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="cnF-YL-IgB" firstAttribute="trailing" secondItem="8TY-Dp-U0Z" secondAttribute="trailing" constant="125" id="9Tv-AG-3bK"/>
                             <constraint firstItem="cnF-YL-IgB" firstAttribute="trailing" secondItem="CIh-xV-mNV" secondAttribute="trailing" constant="30" id="Akq-gy-jZd"/>
@@ -205,9 +224,16 @@
                             <constraint firstItem="WH3-bK-2Wc" firstAttribute="leading" secondItem="cnF-YL-IgB" secondAttribute="leading" constant="30" id="sgT-fh-Wvq"/>
                             <constraint firstItem="CIh-xV-mNV" firstAttribute="top" secondItem="WH3-bK-2Wc" secondAttribute="bottom" constant="30" id="yz8-CA-7z1"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="tSm-vH-PhA" appends="YES" id="aZX-Nj-tLu"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="u9F-ra-hq8">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="M9Y-3C-QuN"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="M9Y-3C-QuN">
+                            <connections>
+                                <action selector="saveButtonClicked:" destination="GYz-bn-6uC" id="dbs-hC-PXl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="cactustImageView2" destination="8TY-Dp-U0Z" id="RFo-A3-8P8"/>
@@ -218,6 +244,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1y-6s-4yr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="tSm-vH-PhA">
+                    <connections>
+                        <action selector="tapGestureClicked:" destination="GYz-bn-6uC" id="tls-aT-x1u"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1701" y="96"/>
         </scene>
@@ -244,9 +275,19 @@
             <point key="canvasLocation" x="-332" y="96"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="CIh-xV-mNV">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+        <designable name="Qyu-cC-o61">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+        <designable name="WH3-bK-2Wc">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+    </designables>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="1-1" width="152" height="151"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

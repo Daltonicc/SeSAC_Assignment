@@ -90,5 +90,13 @@ class DrinkWaterViewController: UIViewController {
 //
 //    }
 
+    @IBAction func tapGestureClikced(_ sender: UITapGestureRecognizer) {
+        
+        view.endEditing(true)
+        
+    }
+    
+    
+    
 
 }

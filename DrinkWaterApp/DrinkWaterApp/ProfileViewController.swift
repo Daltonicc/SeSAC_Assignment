@@ -23,19 +23,25 @@ class ProfileViewController: UIViewController {
         
         saveButton.title = "저장"
         
-        textFieldSetting(textFieldName: nicknameTextField)
-        textFieldSetting(textFieldName: heightTextField)
-        textFieldSetting(textFieldName: weightTextField)
+        textFieldSetting(textFieldName: nicknameTextField, placeholder: "닉네임을 설정해주세요")
+        textFieldSetting(textFieldName: heightTextField, placeholder: "키(cm)를 설정해주세요")
+        textFieldSetting(textFieldName: weightTextField, placeholder: "몸무게(kg)를 설정해주세요")
         
-        nicknameTextField.placeholder = "닉네임을 설정해주세요"
-        heightTextField.placeholder = "키(cm)를 설정해주세요"
-        weightTextField.placeholder = "몸무게(kg)를 설정해주세요"
+        let nickname = UserDefaults.standard.string(forKey: "nickname")
+        nicknameTextField.text = nickname
+        
+        let height = UserDefaults.standard.integer(forKey: "height")
+        heightTextField.text = String(height)
+        
+        let weight = UserDefaults.standard.integer(forKey: "weight")
+        weightTextField.text = String(weight)
         
         
     }
     
-    func textFieldSetting(textFieldName textfield: HoshiTextField) {
+    func textFieldSetting(textFieldName textfield: HoshiTextField, placeholder place: String = "예시") {
         
+        textfield.placeholder = place
         textfield.borderStyle = .none
         textfield.placeholderColor = .white
         textfield.placeholderFontScale = 0.8
@@ -44,9 +50,40 @@ class ProfileViewController: UIViewController {
         textfield.borderActiveColor = .white
         textfield.borderInactiveColor = .white
         
-        
-        
-        
     }
 
+    @IBAction func tapGestureClicked(_ sender: UITapGestureRecognizer) {
+        
+        view.endEditing(true)
+        
+    }
+    
+    @IBAction func nicknameTextFieldClicked(_ sender: HoshiTextField) {
+    }
+    
+    @IBAction func heightTextFieldClicked(_ sender: HoshiTextField) {
+
+    }
+    
+    @IBAction func weightTextFieldClicked(_ sender: HoshiTextField) {
+
+    }
+    
+    
+    @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
+        
+        UserDefaults.standard.set(nicknameTextField.text!, forKey: "nickname")
+        UserDefaults.standard.set(heightTextField.text!, forKey: "height")
+        UserDefaults.standard.set(weightTextField.text!, forKey: "weight")
+        
+        let nickname = UserDefaults.standard.string(forKey: "nickname")
+        let height = UserDefaults.standard.double(forKey: "height")
+        let weight = UserDefaults.standard.double(forKey: "weight")
+        
+        let water: Double = (height + weight) / 100
+        UserDefaults.standard.set(water, forKey: "water")
+    }
+    
+    
+    
 }
