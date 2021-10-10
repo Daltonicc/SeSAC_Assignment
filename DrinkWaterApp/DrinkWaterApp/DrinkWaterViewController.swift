@@ -26,12 +26,13 @@ class DrinkWaterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         view.backgroundColor = UIColor(displayP3Red: 75/255, green: 157/255, blue: 125/255, alpha: 1.0)
         
         //네비게이션 바 버튼 아이템 이미지 커스텀뷰
-        //이미지 사이즈 좀만 더 크게 할 순 없나..
+        //잘못 알았던 거
         //스토리보드에 바 버튼 아이템을 가져와서 넣어야 하는데 일반 버튼 넣어놓고 왜 안되냐고 하고있었음. 진짜 멍청했다. 그래도 코드로 하는 법 알았으니 만족,,
-        
 //        let removebuttonImage = UIButton(type: .custom)
 //        removebuttonImage.setImage(UIImage(systemName: "arrow.clockwise"), for: .normal)
 //        removebuttonImage.tintColor = .white
@@ -46,7 +47,7 @@ class DrinkWaterViewController: UIViewController {
 //        removeButton.customView = removebuttonImage
 //        profileButton.customView = profileButtonImage
         
-        //새로 짠 코드
+        //위에 잘못 알았던거 해결하고 새로 짠 코드
         removeButton.image = UIImage(systemName: "arrow.clockwise")
         profileButton.image = UIImage(systemName: "person.circle")
         
@@ -62,16 +63,8 @@ class DrinkWaterViewController: UIViewController {
         middleLabel.textColor = .white
         middleLabel.font = UIFont.boldSystemFont(ofSize: 40)
         
-//        let percent = percentCalculating()
-        bottomLabel.text = "목표의 0%"
         bottomLabel.textColor = .white
         bottomLabel.font = UIFont.systemFont(ofSize: 15)
-        
-        //imageview UI
-        cactusImageView.layer.cornerRadius = cactusImageView.bounds.width / 2
-        cactusImageView.layer.masksToBounds = true
-        cactusImageView.image = UIImage(named: "1-1")
-        
         
         waterTextField.backgroundColor = UIColor(displayP3Red: 75/255, green: 157/255, blue: 125/255, alpha: 1.0)
         waterTextField.borderStyle = .none
@@ -89,12 +82,6 @@ class DrinkWaterViewController: UIViewController {
         haveToDrinkLabel.font = UIFont.systemFont(ofSize: 15)
         haveToDrinkLabel.textColor = .white
         
-//        let haveToDrink = UserDefaults.standard.double(forKey: "water")
-//        let nickname = UserDefaults.standard.string(forKey: "nickname")
-        
-        haveToDrinkLabel.text = "아무개님의 하루 물 권장 섭취량은 0L 입니다."
-        
-        
         drinkingButton.setTitle("물마시기", for: .normal)
         drinkingButton.tintColor = .black
         
@@ -104,6 +91,7 @@ class DrinkWaterViewController: UIViewController {
     //viewDidLoad는 처음에 킬 때 한 번만 호출되지 않으므로 닉네임이 프로필에서 수정을 해도 바로 반영이 안됨. 화면 전환마다 켜지는 viewWillAppear로 구현.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         
         let haveToDrink = UserDefaults.standard.double(forKey: "water")
         var nickname = UserDefaults.standard.string(forKey: "nickname")
@@ -117,9 +105,6 @@ class DrinkWaterViewController: UIViewController {
         let percent = percentCalculating()
         bottomLabel.text = "목표의 \(percent)%"
         
-        
-        
-        
         cactusImageAndLabelColorChange()
         
     }
@@ -132,12 +117,18 @@ class DrinkWaterViewController: UIViewController {
 //        navigationController?.pushViewController(vc, animated: true)
 //
 //    }
+
     
-    
-    
+    // 퍼센트 계산 함수
     func percentCalculating() -> Int {
         
-        let water = UserDefaults.standard.double(forKey: "water")
+        var water = UserDefaults.standard.double(forKey: "water")
+        
+        //UserDefaults 초기값 관련 조건문
+        if water == 0.0 {
+            water = 0.001
+        }
+        
         let sumWater = UserDefaults.standard.integer(forKey: "drinkWater2")
         let percent = Double(sumWater) / (water * 1000)
         let result = Int(round(percent * 100))
@@ -221,14 +212,25 @@ class DrinkWaterViewController: UIViewController {
         bottomLabel.textColor = .white
         cactusImageView.image = UIImage(named: "1-1")
         
-        
     }
     
     
 }
 
-// 해결해야될거 닉네임 nil값일 때 옵셔널 바인딩 처리
 
 // 초기화 버튼 눌렀을 때 정보 올 초기화 한번에
 
-// 다하고 앱삭제해서 첨부터 다시 구동해보기
+// 다만들고 앱삭제해서 첨부터 다시 구동해보기
+
+// 시뮬레이터 상에서 버튼하나 잘못눌렀더니 시뮬레이터상에서 아예 앱도 안보이고 재설치도 안된다ㅠㅠ.. -> 해결
+
+
+//보완점
+//키와 몸무게 설정에 따른 값을 받아와서 메인화면에서 값을 설정해주는 과정 코드 구현이 너무 오래 걸렸다. 아직 Userdefault에 대한 심화된 이해가 필요.
+//총 소요시간 : 14시간 (나중엔 줄겠지..)
+//IQkeyboard 라이브러리 써볼랬는데 실패함. 방법 다시 찾아봐야할 듯.
+//특정 기기에서는 UI가 깨짐. 특히 레이블 부분(adjustsFontSizeToFitWidth로 어느정도 해결 가능할듯)
+//Userdefault의 초기값 문제 해결때문에 애먹음. integer는 0, Double은 0.0, String은 nil이다.
+//네비게이션바 하단 보더 라인은 도저히 어떻게 만들어야 할지 모르겠다. 구글링해도 보더라인 없애는 것만 나오고 디폴트 값이 보더라인이 있는건가? 추후에 해결 필요.
+//선인장 이미지 설정 관련 조건문이 너무 길어졌다. 조금 간략하게 할 수 있는 방법은 없을까.
+//

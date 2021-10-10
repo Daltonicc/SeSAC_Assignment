@@ -27,7 +27,11 @@ class ProfileViewController: UIViewController {
         textFieldSetting(textFieldName: heightTextField, placeholder: "키(cm)를 설정해주세요")
         textFieldSetting(textFieldName: weightTextField, placeholder: "몸무게(kg)를 설정해주세요")
         
-        let nickname = UserDefaults.standard.string(forKey: "nickname")
+        var nickname = UserDefaults.standard.string(forKey: "nickname")
+        
+        if nickname == nil {
+            nickname = "아무개"
+        }
         nicknameTextField.text = nickname
         
         let height = UserDefaults.standard.integer(forKey: "height")
@@ -58,7 +62,12 @@ class ProfileViewController: UIViewController {
     
     func percentCalculating() -> Int {
         
-        let water = UserDefaults.standard.double(forKey: "water")
+        var water = UserDefaults.standard.double(forKey: "water")
+        
+        if water == 0.0 {
+            water = 0.001
+        }
+        
         let sumWater = UserDefaults.standard.integer(forKey: "drinkWater2")
         let percent = Double(sumWater) / (water * 1000)
         let result = Int(round(percent * 100))
