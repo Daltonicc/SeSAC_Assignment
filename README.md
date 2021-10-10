@@ -5,3 +5,4 @@
 * [10/5 BaeminApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/BaeminApp10_05)
 * [10/6 EmotionDiaryApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/EmotionDiaryApp10_06)
 * [10/7 AnniversaryApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/AnniversaryApp10_07)
+* [10/8 DrinkWaterApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/DrinkWaterApp)
