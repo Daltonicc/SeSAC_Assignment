@@ -233,4 +233,3 @@ class DrinkWaterViewController: UIViewController {
 //Userdefault의 초기값 문제 해결때문에 애먹음. integer는 0, Double은 0.0, String은 nil이다.
 //네비게이션바 하단 보더 라인은 도저히 어떻게 만들어야 할지 모르겠다. 구글링해도 보더라인 없애는 것만 나오고 디폴트 값이 보더라인이 있는건가? 추후에 해결 필요.
 //선인장 이미지 설정 관련 조건문이 너무 길어졌다. 조금 간략하게 할 수 있는 방법은 없을까.
-//
