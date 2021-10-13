@@ -6,3 +6,5 @@
 * [10/6 EmotionDiaryApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/EmotionDiaryApp10_06)
 * [10/7 AnniversaryApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/AnniversaryApp10_07)
 * [10/8 DrinkWaterApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/DrinkWaterApp)
+
+## [03Week_Study](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/03Week_Study)
