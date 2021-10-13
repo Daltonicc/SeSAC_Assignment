@@ -12,81 +12,76 @@ import UIKit
 
 class Case2TableViewController: UITableViewController {
 
+    let firstSectionList = ["공지사항", "실험실", "버전 정보"]
+    let secondSectionList = ["개인/보안", "알림", "채팅", "멀티프로필"]
+    let thirdSectionList = ["고객센터/도움말"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        view.backgroundColor = .black
+        
+        
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 3
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        if section == 0 {
+            return 3
+        } else if section == 1 {
+            return 4
+        } else {
+            return 1
+        }
+
     }
-
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell") else {
+            
+            return UITableViewCell()
+        }
+        if indexPath.section == 0 {
+            cell.textLabel?.text = firstSectionList[indexPath.row]
+        } else if indexPath.section == 1 {
+            cell.textLabel?.text = secondSectionList[indexPath.row]
+        } else {
+            cell.textLabel?.text = thirdSectionList[indexPath.row]
+        }
+        
+        cell.textLabel?.textColor = .white
+        cell.backgroundColor = .black
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
+        cell.layer.borderColor = UIColor.white.cgColor
+        
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if section == 0 {
+            return "전체 설정"
+        } else if section == 1 {
+            return "개인 설정"
+        } else {
+            return "기타"
+        }
+        
+        
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor(displayP3Red: 176/255, green: 181/255, blue: 180/255, alpha: 1.0)
+        header.textLabel?.font = UIFont.systemFont(ofSize: 18)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }
