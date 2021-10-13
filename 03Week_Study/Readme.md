@@ -1,5 +1,9 @@
 # 03Week_Study
 
+## 관련 개념
+* [Optional, Optional Binding, Optional Chaining](https://daltonic.tistory.com/14)
+
+
 ## TableViewController Assignment(10/12)
 
 * Case 1(Static Cells)
