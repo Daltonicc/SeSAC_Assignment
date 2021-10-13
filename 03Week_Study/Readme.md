@@ -26,3 +26,11 @@ Case 2
 
 스타일을 위 코드처럼 설정해보려 했으나 style은 get-only property라며 실패.
 tableview = UITableView(frame: .zero, style: .insectGrouped)도 시도해봤으나 스타일은 정상적으로 변했지만 시뮬레이터 돌려보니 일부 UI관련 코드가 작동안함.(배경색, 폰트사이즈 등)
+
+## ExchangeRate Assignment(10/13)
+
+![스크린샷 2021-10-13 오후 4 15 42(2)](https://user-images.githubusercontent.com/87598209/137104010-9e010c54-5408-48d1-8f22-c4d36c715961.png)
+
+
+## 보완 및 생각해봐야할 점
+* 명확히 이해하지 못하고 그냥 쓴 느낌이 강하다. 연산프로퍼티에 관한 정리 필요.
