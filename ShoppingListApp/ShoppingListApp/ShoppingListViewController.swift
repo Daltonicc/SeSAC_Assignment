@@ -16,8 +16,7 @@ class ShoppingListViewController: UIViewController {
         super.viewDidLoad()
 
         
+        
     }
 
-    
-    
 }
