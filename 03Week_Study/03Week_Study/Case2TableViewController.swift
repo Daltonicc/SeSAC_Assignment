@@ -20,7 +20,7 @@ class Case2TableViewController: UITableViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .black
-        
+        tableView.separatorColor = .gray
         
     }
 
@@ -40,6 +40,7 @@ class Case2TableViewController: UITableViewController {
         }
 
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell") else {
@@ -58,6 +59,8 @@ class Case2TableViewController: UITableViewController {
         cell.backgroundColor = .black
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
         cell.layer.borderColor = UIColor.white.cgColor
+        
+        
         
         
         return cell
@@ -85,3 +88,10 @@ class Case2TableViewController: UITableViewController {
     
     
 }
+
+// 보완점
+//Case 1
+//1. 어트리뷰트 인스펙터만을 활용해서 Header와 Footer의 색상 설정을 못하겠다. 불가능한건지 내가 못찾은건지 확인 필요.
+
+//Case 2
+//1. 테이블뷰스타일 관련 코드? 에러.
