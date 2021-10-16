@@ -11,8 +11,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let tvShowInformation = TvShowInformation()
     
-    
-
     @IBOutlet weak var veryTopLabel: UILabel!
     @IBOutlet weak var MovieTableView: UITableView!
     @IBOutlet weak var topImageView: UIImageView!
@@ -21,7 +19,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var middleButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +28,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         buttonSetting()
         topViewSetting()
+        navigationItemSetting()
         
     }
     
@@ -114,6 +113,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     //topview UI
     func topViewSetting() {
         
+        topImageView.image = UIImage(named: "A Tale Dark & Grimm")
+        topImageView.contentMode = .scaleAspectFill
+        
+        
         topView.layer.shadowOpacity = 0.7
         topView.layer.shadowRadius = 5
         topView.layer.shadowColor = UIColor.gray.cgColor
@@ -127,13 +130,22 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-
+    func navigationItemSetting() {
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: nil)
+        navigationItem.leftBarButtonItem?.tintColor = .gray
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchButtonClicked))
+        
+    }
+    
+    @objc func searchButtonClicked(_ sender: UIBarButtonItem) {
+        
+        
+        
+    }
+    
 }
-
-
-
-
-
 
 //보완점
 
