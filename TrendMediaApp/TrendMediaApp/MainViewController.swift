@@ -87,6 +87,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UIScreen.main.bounds.height / 1
+    }
+    
     
     //button UI
     func buttonSetting() {
@@ -136,17 +141,34 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationItem.leftBarButtonItem?.tintColor = .gray
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchButtonClicked))
+        navigationItem.rightBarButtonItem?.tintColor = .black
         
     }
     
     @objc func searchButtonClicked(_ sender: UIBarButtonItem) {
         
+        //1. 스토리보드 지정
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
+        //2. 스토리보드 안에 어떤 뷰컨트롤러로 가게 할지.
+        let vc = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        
+        
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .fullScreen
+        
+        
+        //3. Present
+        self.present(vc, animated: true, completion: nil)
+    
         
     }
     
 }
 
+
+
 //보완점
 
 //이미지 크기가 너무 큰데 어떻게 조절해야하지
+//SearchBar 상하단 보더 없애야함.

@@ -19,6 +19,7 @@
 		6AFC813B271AA2E70031716E /* TvShowInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC813A271AA2E70031716E /* TvShowInformation.swift */; };
 		6AFC813D271AA33D0031716E /* TvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC813C271AA33D0031716E /* TvShow.swift */; };
 		6AFC813F271AA6230031716E /* TvShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC813E271AA6230031716E /* TvShowTableViewCell.swift */; };
+		6AFC8141271AD4600031716E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC8140271AD4600031716E /* SearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		6AFC813A271AA2E70031716E /* TvShowInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowInformation.swift; sourceTree = "<group>"; };
 		6AFC813C271AA33D0031716E /* TvShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShow.swift; sourceTree = "<group>"; };
 		6AFC813E271AA6230031716E /* TvShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowTableViewCell.swift; sourceTree = "<group>"; };
+		6AFC8140271AD4600031716E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				6AFC813A271AA2E70031716E /* TvShowInformation.swift */,
 				6AFC813C271AA33D0031716E /* TvShow.swift */,
 				6AFC8136271A86B60031716E /* SearchViewController.swift */,
+				6AFC8140271AD4600031716E /* SearchTableViewCell.swift */,
 				6AFC8138271A86CC0031716E /* DetailViewController.swift */,
 				6AFC8129271A831B0031716E /* Assets.xcassets */,
 				6AFC812B271A831B0031716E /* LaunchScreen.storyboard */,
@@ -165,6 +168,7 @@
 				6AFC8139271A86CC0031716E /* DetailViewController.swift in Sources */,
 				6AFC8123271A831B0031716E /* SceneDelegate.swift in Sources */,
 				6AFC8135271A86AC0031716E /* MainViewController.swift in Sources */,
+				6AFC8141271AD4600031716E /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
