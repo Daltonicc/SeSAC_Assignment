@@ -17,7 +17,9 @@ class ShoppingListTableViewController: UITableViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
         inputTextField.layer.borderWidth = 2
+        inputTextField.placeholder = "무엇을 구매하실 건가요?"
         
         inputButton.setTitle("추가", for: .normal)
         inputButton.tintColor = .black
@@ -49,13 +51,11 @@ class ShoppingListTableViewController: UITableViewController {
         cell.leftCheckButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
         cell.leftCheckButton.tintColor = .black
 
-//        cell.toDoListLabel.text = "rsdede"
+//      cell.toDoListLabel.text = "rsdede"
         cell.toDoListLabel.textColor = .black
         
         cell.favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
         cell.favoriteButton.tintColor = .black
-        
-        
         
         
         
