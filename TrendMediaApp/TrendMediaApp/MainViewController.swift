@@ -164,11 +164,22 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        print(#function)
+        
+    }
 }
 
 
 
 //보완점
 
-//이미지 크기가 너무 큰데 어떻게 조절해야하지
+//총 소요시간: 7시간
+//이미지 크기가 너무 큰데 어떻게 조절해야하지,,
 //SearchBar 상하단 보더 없애야함.
+//코드로 바버튼 아이템에 이미지와 타이틀을 동시에 달 순 없나,,? 이미지 타이틀을 지정해줘봤으나 이미지만 뜨고 타이틀은 뜨지 않음.
