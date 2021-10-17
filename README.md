@@ -4,6 +4,7 @@
 * [Optional, Optional Binding, Optional Chaining](https://daltonic.tistory.com/14)
 * [Type Casting](https://daltonic.tistory.com/15?category=977963)
 * [class와 struct의 이니셜라이저(init)](https://daltonic.tistory.com/16)
+* [저장프로퍼티(Stored Properties)와 인스턴스](https://daltonic.tistory.com/13?category=977963)
 
 ## 01 ~ 02Week Study
 
