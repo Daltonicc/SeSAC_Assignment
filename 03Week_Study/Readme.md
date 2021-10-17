@@ -2,6 +2,7 @@
 
 ## 관련 개념
 * [Optional, Optional Binding, Optional Chaining](https://daltonic.tistory.com/14)
+* [Type Casting](https://daltonic.tistory.com/15?category=977963)
 
 
 ## TableViewController Assignment(10/12)
