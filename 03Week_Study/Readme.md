@@ -39,3 +39,7 @@ tableview = UITableView(frame: .zero, style: .insectGrouped)도 시도해봤으�
 
 ## 보완 및 생각해봐야할 점
 * 명확히 이해하지 못하고 그냥 쓴 느낌이 강하다. 연산프로퍼티에 관한 정리 필요.
+
+##
+### [ShoppingListApp(10/13)](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/ShoppingListApp)
+### [TrendMediaApp(10/15)](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/TrendMediaApp)
