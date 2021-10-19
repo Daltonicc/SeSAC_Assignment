@@ -76,6 +76,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.posterImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
 //        cell.posterImageView.clipsToBounds = true
         
+        cell.webButton.setImage(UIImage(systemName: "paperclip"), for: .normal)
+        cell.webButton.backgroundColor = .white
+        cell.webButton.layer.cornerRadius = 15
+        cell.webButton.tintColor = .black
+        
 
         cell.subRateLabel.text = "예상"
         cell.subRateLabel.textAlignment = .center

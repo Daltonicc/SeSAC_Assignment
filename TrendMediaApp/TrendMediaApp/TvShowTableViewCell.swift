@@ -20,6 +20,7 @@ class TvShowTableViewCell: UITableViewCell {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var showView: UIView!
     @IBOutlet weak var subRateLabel: UILabel!
+    @IBOutlet weak var webButton: UIButton!
     
     
     
