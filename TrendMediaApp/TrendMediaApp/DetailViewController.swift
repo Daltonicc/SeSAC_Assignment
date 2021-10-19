@@ -6,19 +6,40 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let tvShowInformation = TvShowInformation()
+    var tvShowData: TvShow?
+    
 
     @IBOutlet weak var CastTableView: UITableView!
+    @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet weak var headerSmallImageView: UIImageView!
+    @IBOutlet weak var headerImageNameLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let url = URL(string: tvShowData?.backdropImage ?? "https://www.themoviedb.org/t/p/original/oaGvjB0DvdhXhOAuADfHb261ZHa.jpg")
+        
+        
+        headerImageView.kf.setImage(with: url)
+        headerImageView.contentMode = .scaleAspectFill
+        
+        headerSmallImageView.image = UIImage(named: tvShowData?.title ?? "Maid")
+        headerSmallImageView.contentMode = .scaleAspectFill
+        
+        headerImageNameLabel.text = tvShowData?.title ?? "내용 없음"
+        headerImageNameLabel.textColor = .white
+        headerImageNameLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        
         CastTableView.delegate = self
         CastTableView.dataSource = self
+        
+        
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: self, action: #selector(backButtonClikced))
         navigationItem.leftBarButtonItem?.tintColor = .black
@@ -42,13 +63,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let row = tvShowInformation.tvShow[indexPath.row]
         
-        cell.actorImageView.image = UIImage(named: row.title)
+        cell.actorImageView.backgroundColor = .gray
         cell.actorImageView.layer.cornerRadius = 3
         cell.actorImageView.contentMode = .scaleAspectFill
         
-        cell.nameLabel.text = row.koreanTitle
+        cell.nameLabel.text = "배우 이름"
         
-        cell.realNamelabel.text = row.title
+        cell.realNamelabel.text = "정보 없음"
         cell.realNamelabel.textColor = .lightGray
         
         return cell

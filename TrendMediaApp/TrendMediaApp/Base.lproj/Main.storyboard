@@ -159,9 +159,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FmW-Z8-dU2">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FmW-Z8-dU2">
+                                <rect key="frame" x="0.0" y="221" width="414" height="675"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CastCell" rowHeight="97" id="OFR-YS-hQN" customClass="CastTableViewCell" customModule="TrendMediaApp" customModuleProvider="target">
@@ -209,18 +208,69 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ikb-k0-5gD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="177"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O81-gP-LMK">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="177"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gcy-u6-XwU">
+                                        <rect key="frame" x="8" y="41" width="101" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="101" id="h66-MA-q3G"/>
+                                            <constraint firstAttribute="height" constant="128" id="o4q-Tv-wOq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCO-xH-KiV">
+                                        <rect key="frame" x="186" y="148" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="n5J-cI-6aC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Gcy-u6-XwU" firstAttribute="top" secondItem="ikb-k0-5gD" secondAttribute="top" constant="41" id="38f-MV-qnI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gcy-u6-XwU" secondAttribute="trailing" constant="305" id="Gwa-sX-c5e"/>
+                                    <constraint firstItem="xCO-xH-KiV" firstAttribute="centerX" secondItem="ikb-k0-5gD" secondAttribute="centerX" id="Hgs-0U-dFH"/>
+                                    <constraint firstItem="Gcy-u6-XwU" firstAttribute="leading" secondItem="ikb-k0-5gD" secondAttribute="leading" constant="8" id="OOM-FT-C3Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="xCO-xH-KiV" secondAttribute="bottom" constant="8" id="Ou5-QO-RQd"/>
+                                    <constraint firstAttribute="height" constant="177" id="OyT-ef-PDc"/>
+                                    <constraint firstItem="O81-gP-LMK" firstAttribute="leading" secondItem="ikb-k0-5gD" secondAttribute="leading" id="RMA-Ce-n1U"/>
+                                    <constraint firstAttribute="bottom" secondItem="O81-gP-LMK" secondAttribute="bottom" id="bat-SK-Qhe"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gcy-u6-XwU" secondAttribute="bottom" constant="8" id="eWT-VS-WWe"/>
+                                    <constraint firstAttribute="trailing" secondItem="O81-gP-LMK" secondAttribute="trailing" id="kAO-jx-05A"/>
+                                    <constraint firstItem="O81-gP-LMK" firstAttribute="top" secondItem="ikb-k0-5gD" secondAttribute="top" id="sPg-1N-z9j"/>
+                                    <constraint firstAttribute="width" constant="414" id="xx4-zQ-zl5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n8y-M8-RBU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FmW-Z8-dU2" firstAttribute="trailing" secondItem="n8y-M8-RBU" secondAttribute="trailing" id="2Dc-qr-Qr9"/>
+                            <constraint firstItem="ikb-k0-5gD" firstAttribute="top" secondItem="n8y-M8-RBU" secondAttribute="top" id="KUX-iP-T8c"/>
+                            <constraint firstItem="FmW-Z8-dU2" firstAttribute="leading" secondItem="n8y-M8-RBU" secondAttribute="leading" id="Wtx-pT-FHD"/>
+                            <constraint firstItem="ikb-k0-5gD" firstAttribute="trailing" secondItem="n8y-M8-RBU" secondAttribute="trailing" id="YwO-Yx-Z49"/>
+                            <constraint firstItem="FmW-Z8-dU2" firstAttribute="top" secondItem="ikb-k0-5gD" secondAttribute="bottom" id="iQu-aL-DaN"/>
+                            <constraint firstItem="ikb-k0-5gD" firstAttribute="leading" secondItem="n8y-M8-RBU" secondAttribute="leading" id="lf3-KM-g8n"/>
+                            <constraint firstAttribute="bottom" secondItem="FmW-Z8-dU2" secondAttribute="bottom" id="x7H-Ik-yuf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bC0-gK-PEb"/>
                     <connections>
                         <outlet property="CastTableView" destination="FmW-Z8-dU2" id="iLf-1n-ZXh"/>
+                        <outlet property="headerImageNameLabel" destination="xCO-xH-KiV" id="01k-m1-Rf9"/>
+                        <outlet property="headerImageView" destination="O81-gP-LMK" id="8sd-0W-WII"/>
+                        <outlet property="headerSmallImageView" destination="Gcy-u6-XwU" id="bcg-XT-9Rd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybA-HO-1Pz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1879.7101449275365" y="745.98214285714278"/>
+            <point key="canvasLocation" x="969.56521739130437" y="737.27678571428567"/>
         </scene>
         <!--TREND MEDIA-->
         <scene sceneID="bIc-OI-ZFs">
@@ -258,6 +308,10 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="he5-RK-eAF">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="231.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="231.5" id="2vZ-6l-zQ9"/>
+                                                                <constraint firstAttribute="width" constant="374" id="pMb-05-NoF"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ir0-jD-zAT">
                                                             <rect key="frame" x="8" y="246.5" width="337" height="20.5"/>

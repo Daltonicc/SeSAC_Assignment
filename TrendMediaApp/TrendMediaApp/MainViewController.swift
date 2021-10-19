@@ -19,17 +19,23 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var middleButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        
         MovieTableView.delegate = self
         MovieTableView.dataSource = self
+        MovieTableView.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
+        
         
         buttonSetting()
         topViewSetting()
         navigationItemSetting()
-        
+    
     }
     
     
@@ -46,7 +52,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             return UITableViewCell()
         }
         
+        
         let row = tvShowInformation.tvShow[indexPath.row]
+        let url = URL(string: row.backdropImage)
         
         cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
         
@@ -84,12 +92,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.releaseLabel.textColor = .lightGray
         
         
+        
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return UIScreen.main.bounds.height / 1
+        return UIScreen.main.bounds.height / 2
     }
     
     
@@ -168,6 +178,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        //Pass Data.
+        let row = tvShowInformation.tvShow[indexPath.row]
+        
+        vc.tvShowData = row
+        
         self.navigationController?.pushViewController(vc, animated: true)
         
         print(#function)
@@ -180,6 +196,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 //보완점
 
 //총 소요시간: 7시간
-//이미지 크기가 너무 큰데 어떻게 조절해야하지,,
-//SearchBar 상하단 보더 없애야함.
+//메인화면 이미지가 너무 큰데 지금은 조절법을 모르겠다,, CSRect도 시도해보고 Frame도 해봤지만 실패. 해당 문제로 인해 각각의 셀크기가 이미지뷰 크기에 따라 모두 다 제각각임. 추후에 방법 알게되면 개선 필요.
+// -> 개선완료 오토레이아웃에서 이미지의 width값과 height값을 준뒤 heightforRowAt으로 해결.
+// SearchBar 상하단 보더 없애야함. -> SearchBar style -> minimal로 해결.
 //코드로 바버튼 아이템에 이미지와 타이틀을 동시에 달 순 없나,,? 이미지 타이틀을 지정해줘봤으나 이미지만 뜨고 타이틀은 뜨지 않음.
+//테이블뷰를 맨아래에서 위로 스크롤 하려고하면 아래부분에서 하얀색 배경이 자꾸 나타난다.
+//view.backgroundColor 가 분명 gray인데 왜 하얀 화면이 있는거지;;?
+//오토레이아웃 관련 추가학습이 필요하다. 좋은 기능들이 많은거 같은데 내가 역량이 부족해서 너무 한정적으로 쓰는 느낌이 강하다.

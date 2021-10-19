@@ -26,6 +26,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchTableView.dataSource = self
         
         view.backgroundColor = .gray
+        searchTableView.backgroundColor = .black
         
         topviewSetting()
         
@@ -77,6 +78,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchView.layer.cornerRadius = 10
                 
         showSearchBar.barTintColor = .systemGray
+        showSearchBar.searchBarStyle = .minimal
         
         cancelButton.tintColor = .white
     }
