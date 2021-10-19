@@ -19,3 +19,7 @@
 
 * [10/13 ShoppingListApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/ShoppingListApp)
 * [10/15 TrendMediaApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/TrendMediaApp)
+
+## 04Week Study
+
+* [10/15 TrendMediaApp ~](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/TrendMediaApp)
