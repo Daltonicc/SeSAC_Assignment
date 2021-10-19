@@ -18,6 +18,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var headerSmallImageView: UIImageView!
     @IBOutlet weak var headerImageNameLabel: UILabel!
+    @IBOutlet weak var headerOverViewLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -35,6 +36,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         headerImageNameLabel.text = tvShowData?.title ?? "내용 없음"
         headerImageNameLabel.textColor = .white
         headerImageNameLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        
+        headerOverViewLabel.text = tvShowData?.overview ?? "내용 없음"
+        headerOverViewLabel.numberOfLines = 0
+        
         
         CastTableView.delegate = self
         CastTableView.dataSource = self
@@ -71,6 +76,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.realNamelabel.text = "정보 없음"
         cell.realNamelabel.textColor = .lightGray
+        
+        
         
         return cell
     }

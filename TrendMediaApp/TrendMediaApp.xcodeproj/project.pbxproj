@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6AA19EF8271EC22200656B54 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6AA19EF7271EC22200656B54 /* Kingfisher */; };
+		6AA19EFF271EDF3000656B54 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA19EFD271EDF3000656B54 /* BooksCollectionViewCell.swift */; };
+		6AA19F00271EDF3000656B54 /* BooksCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA19EFE271EDF3000656B54 /* BooksCollectionViewCell.xib */; };
+		6AA19F02271EF10D00656B54 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA19F01271EF10D00656B54 /* BooksViewController.swift */; };
 		6AFC8121271A831B0031716E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC8120271A831B0031716E /* AppDelegate.swift */; };
 		6AFC8123271A831B0031716E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC8122271A831B0031716E /* SceneDelegate.swift */; };
 		6AFC8125271A831B0031716E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC8124271A831B0031716E /* ViewController.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6AA19EFD271EDF3000656B54 /* BooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewCell.swift; sourceTree = "<group>"; };
+		6AA19EFE271EDF3000656B54 /* BooksCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BooksCollectionViewCell.xib; sourceTree = "<group>"; };
+		6AA19F01271EF10D00656B54 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		6AFC811D271A831B0031716E /* TrendMediaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMediaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AFC8120271A831B0031716E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AFC8122271A831B0031716E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 				6AFC8122271A831B0031716E /* SceneDelegate.swift */,
 				6AFC8124271A831B0031716E /* ViewController.swift */,
 				6AFC8126271A831B0031716E /* Main.storyboard */,
+				6AA19F01271EF10D00656B54 /* BooksViewController.swift */,
 				6AFC8144271B0CF10031716E /* CastTableViewCell.swift */,
 				6AFC813E271AA6230031716E /* TvShowTableViewCell.swift */,
 				6AFC8134271A86AC0031716E /* MainViewController.swift */,
@@ -89,6 +96,8 @@
 				6AFC8129271A831B0031716E /* Assets.xcassets */,
 				6AFC812B271A831B0031716E /* LaunchScreen.storyboard */,
 				6AFC812E271A831B0031716E /* Info.plist */,
+				6AA19EFD271EDF3000656B54 /* BooksCollectionViewCell.swift */,
+				6AA19EFE271EDF3000656B54 /* BooksCollectionViewCell.xib */,
 			);
 			path = TrendMediaApp;
 			sourceTree = "<group>";
@@ -158,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AFC812D271A831B0031716E /* LaunchScreen.storyboard in Resources */,
+				6AA19F00271EDF3000656B54 /* BooksCollectionViewCell.xib in Resources */,
 				6AFC812A271A831B0031716E /* Assets.xcassets in Resources */,
 				6AFC8128271A831B0031716E /* Main.storyboard in Resources */,
 			);
@@ -173,8 +183,10 @@
 				6AFC813F271AA6230031716E /* TvShowTableViewCell.swift in Sources */,
 				6AFC8137271A86B60031716E /* SearchViewController.swift in Sources */,
 				6AFC8125271A831B0031716E /* ViewController.swift in Sources */,
+				6AA19F02271EF10D00656B54 /* BooksViewController.swift in Sources */,
 				6AFC813D271AA33D0031716E /* TvShow.swift in Sources */,
 				6AFC8121271A831B0031716E /* AppDelegate.swift in Sources */,
+				6AA19EFF271EDF3000656B54 /* BooksCollectionViewCell.swift in Sources */,
 				6AFC813B271AA2E70031716E /* TvShowInformation.swift in Sources */,
 				6AFC8145271B0CF10031716E /* CastTableViewCell.swift in Sources */,
 				6AFC8139271A86CC0031716E /* DetailViewController.swift in Sources */,
