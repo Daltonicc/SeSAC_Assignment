@@ -19,13 +19,26 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var headerSmallImageView: UIImageView!
     @IBOutlet weak var headerImageNameLabel: UILabel!
     @IBOutlet weak var headerOverViewLabel: UILabel!
+    @IBOutlet weak var toggleButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: tvShowData?.backdropImage ?? "https://www.themoviedb.org/t/p/original/oaGvjB0DvdhXhOAuADfHb261ZHa.jpg")
+        CastTableView.delegate = self
+        CastTableView.dataSource = self
         
+        headerViewSetting()
+        
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: self, action: #selector(backButtonClikced))
+        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationItem.title = "출연/제작"
+        
+    }
+    
+    func headerViewSetting() {
+        let url = URL(string: tvShowData?.backdropImage ?? "https://www.themoviedb.org/t/p/original/oaGvjB0DvdhXhOAuADfHb261ZHa.jpg")
         
         headerImageView.kf.setImage(with: url)
         headerImageView.contentMode = .scaleAspectFill
@@ -40,15 +53,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         headerOverViewLabel.text = tvShowData?.overview ?? "내용 없음"
         headerOverViewLabel.numberOfLines = 0
         
-        
-        CastTableView.delegate = self
-        CastTableView.dataSource = self
-        
-        
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: self, action: #selector(backButtonClikced))
-        navigationItem.leftBarButtonItem?.tintColor = .black
-        navigationItem.title = "출연/제작"
+        toggleButton.setImage(UIImage(systemName: "chevron.compact.down"), for: .normal)
+//        toggleButton.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
         
     }
     
@@ -64,9 +70,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier, for: indexPath) as? CastTableViewCell else { return UITableViewCell() }
         
-        let row = tvShowInformation.tvShow[indexPath.row]
+        
         
         cell.actorImageView.backgroundColor = .gray
         cell.actorImageView.layer.cornerRadius = 3

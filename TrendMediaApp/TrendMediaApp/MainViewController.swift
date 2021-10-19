@@ -54,7 +54,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         let row = tvShowInformation.tvShow[indexPath.row]
-        let url = URL(string: row.backdropImage)
         
         cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
         
@@ -96,10 +95,27 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.releaseLabel.text = row.releaseDate
         cell.releaseLabel.textColor = .lightGray
         
+        cell.webButton.tag = indexPath.row
+        cell.webButton.addTarget(self, action: #selector(webButtonClicked), for: .touchUpInside)
         
         
         
         return cell
+    }
+    
+    @objc func webButtonClicked(selectButton: UIButton) {
+        
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        
+        vc.tvshowdata = tvShowInformation.tvShow[selectButton.tag]
+        
+        let nav = UINavigationController(rootViewController: vc)
+        
+        self.present(nav, animated: true, completion: nil)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
