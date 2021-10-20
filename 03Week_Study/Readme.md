@@ -4,6 +4,7 @@
 * [Optional, Optional Binding, Optional Chaining](https://daltonic.tistory.com/14)
 * [Type Casting](https://daltonic.tistory.com/15?category=977963)
 * [class와 struct의 이니셜라이저(init)](https://daltonic.tistory.com/16)
+* [guard와 guard let문](https://daltonic.tistory.com/17)
 
 ## TableViewController Assignment(10/12)
 
