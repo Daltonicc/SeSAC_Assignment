@@ -168,11 +168,30 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func navigationItemSetting() {
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: nil)
-        navigationItem.leftBarButtonItem?.tintColor = .gray
+        let firstLeftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: nil)
+        firstLeftBarButtonItem.tintColor = .black
+        
+        let secondLeftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "mappin.circle"), style: .plain, target: self, action: #selector(mapButtonClicked(_:)))
+        secondLeftBarButtonItem.tintColor = .black
+        
+        let barButtonList = [firstLeftBarButtonItem, secondLeftBarButtonItem]
+        
+        
+        navigationItem.leftBarButtonItems = barButtonList
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchButtonClicked))
         navigationItem.rightBarButtonItem?.tintColor = .black
+        
+    }
+    
+    @objc func mapButtonClicked(_ sender: UIBarButtonItem) {
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
         
     }
     
@@ -224,3 +243,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 //테이블뷰를 맨아래에서 위로 스크롤 하려고하면 아래부분에서 하얀색 배경이 자꾸 나타난다.
 //view.backgroundColor 가 분명 gray인데 왜 하얀 화면이 있는거지;;?
 //오토레이아웃 관련 추가학습이 필요하다. 좋은 기능들이 많은거 같은데 내가 역량이 부족해서 너무 한정적으로 쓰는 느낌이 강하다.
+
+
+//AutomaticDimension
+//1. 코드
+// heightforrowat을 활용하자! 섹션 0번째만 디멘션 적용
+//
+//    castTableView.rowHeight = UITableView.automaticDimension
+
+
+
+//2. 레이아웃
+//3. Label Lines
+
+
+//디바이스 기준 몇퍼센트인지 -> 이미지뷰 크기 정할 때

@@ -152,6 +152,48 @@
             </objects>
             <point key="canvasLocation" x="970" y="77"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="1LL-BA-CeU">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="Z41-O2-SOQ" customClass="MapViewController" customModule="TrendMediaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ffl-Bl-8VA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VYk-nG-pkv">
+                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nal-oe-bci">
+                                <rect key="frame" x="207" y="44" width="197" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4OE-49-uUH"/>
+                                </constraints>
+                                <segments>
+                                    <segment title=""/>
+                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AaX-45-WaR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AaX-45-WaR" firstAttribute="bottom" secondItem="VYk-nG-pkv" secondAttribute="bottom" id="2wK-vk-IZu"/>
+                            <constraint firstItem="AaX-45-WaR" firstAttribute="trailing" secondItem="VYk-nG-pkv" secondAttribute="trailing" id="NHm-2T-1cp"/>
+                            <constraint firstItem="VYk-nG-pkv" firstAttribute="top" secondItem="nal-oe-bci" secondAttribute="bottom" constant="10" id="QQu-MV-Xzv"/>
+                            <constraint firstItem="nal-oe-bci" firstAttribute="top" secondItem="AaX-45-WaR" secondAttribute="top" id="XuF-fZ-NtN"/>
+                            <constraint firstItem="VYk-nG-pkv" firstAttribute="leading" secondItem="AaX-45-WaR" secondAttribute="leading" id="ZW3-fp-QUn"/>
+                            <constraint firstItem="AaX-45-WaR" firstAttribute="trailing" secondItem="nal-oe-bci" secondAttribute="trailing" constant="10" id="vpO-dW-4zx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cinemaSegmentedControl" destination="nal-oe-bci" id="di0-W8-vgP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xYG-e5-fad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839.1304347826087" y="89.0625"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="y35-Fn-fYr">
             <objects>
@@ -213,6 +255,7 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ikb-k0-5gD">
                                 <rect key="frame" x="0.0" y="44" width="414" height="185"/>
@@ -250,35 +293,23 @@
                                     <constraint firstItem="xCO-xH-KiV" firstAttribute="centerX" secondItem="ikb-k0-5gD" secondAttribute="centerX" id="wes-1U-NS5"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V0-Gx-wvp">
-                                <rect key="frame" x="0.0" y="229" width="414" height="100"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6CO-6p-vlU">
-                                <rect key="frame" x="0.0" y="329" width="414" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="yzj-SJ-6A0"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            </button>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="jBq-VW-nD7">
+                                <rect key="frame" x="0.0" y="268" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jBq-VW-nD7" id="fTv-aD-4jI">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n8y-M8-RBU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="FmW-Z8-dU2" secondAttribute="bottom" id="1xe-W1-o2F"/>
-                            <constraint firstItem="FmW-Z8-dU2" firstAttribute="top" secondItem="6CO-6p-vlU" secondAttribute="bottom" id="37V-VC-h8M"/>
-                            <constraint firstItem="6CO-6p-vlU" firstAttribute="trailing" secondItem="n8y-M8-RBU" secondAttribute="trailing" id="9Jj-KY-QK3"/>
                             <constraint firstItem="ikb-k0-5gD" firstAttribute="trailing" secondItem="n8y-M8-RBU" secondAttribute="trailing" id="Ddc-hP-vL1"/>
-                            <constraint firstItem="3V0-Gx-wvp" firstAttribute="top" secondItem="ikb-k0-5gD" secondAttribute="bottom" id="ESg-nh-Edn"/>
                             <constraint firstItem="ikb-k0-5gD" firstAttribute="leading" secondItem="n8y-M8-RBU" secondAttribute="leading" id="G19-u0-CO8"/>
                             <constraint firstItem="FmW-Z8-dU2" firstAttribute="trailing" secondItem="n8y-M8-RBU" secondAttribute="trailing" id="KhH-Jm-bon"/>
-                            <constraint firstItem="6CO-6p-vlU" firstAttribute="leading" secondItem="n8y-M8-RBU" secondAttribute="leading" id="Qwl-Rn-L0W"/>
-                            <constraint firstItem="3V0-Gx-wvp" firstAttribute="trailing" secondItem="n8y-M8-RBU" secondAttribute="trailing" id="U1l-Kq-2JO"/>
                             <constraint firstItem="FmW-Z8-dU2" firstAttribute="leading" secondItem="n8y-M8-RBU" secondAttribute="leading" id="WTg-oM-u7o"/>
-                            <constraint firstItem="6CO-6p-vlU" firstAttribute="top" secondItem="3V0-Gx-wvp" secondAttribute="bottom" id="ahZ-19-iYJ"/>
-                            <constraint firstItem="3V0-Gx-wvp" firstAttribute="leading" secondItem="n8y-M8-RBU" secondAttribute="leading" id="b1v-FJ-O7U"/>
                             <constraint firstItem="ikb-k0-5gD" firstAttribute="top" secondItem="n8y-M8-RBU" secondAttribute="top" id="tUn-ha-ugM"/>
                         </constraints>
                     </view>
@@ -287,9 +318,7 @@
                         <outlet property="CastTableView" destination="FmW-Z8-dU2" id="iLf-1n-ZXh"/>
                         <outlet property="headerImageNameLabel" destination="xCO-xH-KiV" id="01k-m1-Rf9"/>
                         <outlet property="headerImageView" destination="O81-gP-LMK" id="8sd-0W-WII"/>
-                        <outlet property="headerOverViewLabel" destination="3V0-Gx-wvp" id="p8G-og-cdJ"/>
                         <outlet property="headerSmallImageView" destination="Gcy-u6-XwU" id="bcg-XT-9Rd"/>
-                        <outlet property="toggleButton" destination="6CO-6p-vlU" id="m05-Zd-NV1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybA-HO-1Pz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -604,6 +633,7 @@
             <point key="canvasLocation" x="-9" y="-565"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

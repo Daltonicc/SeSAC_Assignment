@@ -50,11 +50,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         headerImageNameLabel.textColor = .white
         headerImageNameLabel.font = UIFont.boldSystemFont(ofSize: 18)
         
-        headerOverViewLabel.text = tvShowData?.overview ?? "내용 없음"
-        headerOverViewLabel.numberOfLines = 0
+//        headerOverViewLabel.text = tvShowData?.overview ?? "내용 없음"
+//        headerOverViewLabel.numberOfLines = 0
         
-        toggleButton.setImage(UIImage(systemName: "chevron.compact.down"), for: .normal)
-//        toggleButton.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
+//        toggleButton.setImage(UIImage(systemName: "chevron.compact.down"), for: .normal)
+////        toggleButton.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
         
     }
     
