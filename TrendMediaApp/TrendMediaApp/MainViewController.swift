@@ -95,6 +95,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.releaseLabel.text = row.releaseDate
         cell.releaseLabel.textColor = .lightGray
         
+        //버튼에 태그 부여.
         cell.webButton.tag = indexPath.row
         cell.webButton.addTarget(self, action: #selector(webButtonClicked), for: .touchUpInside)
         
