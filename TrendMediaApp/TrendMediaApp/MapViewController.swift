@@ -39,7 +39,7 @@ class MapViewController: UIViewController {
         
     }
     
-    
+    //최초 지역 세팅
     func firstRegionSetting() {
         
         //서울시청: 37.56721585217902, 126.9778526452839
@@ -52,6 +52,7 @@ class MapViewController: UIViewController {
         
     }
     
+    //영화관 어노테이션 세팅
     func TheaterAnnotationSetting(_ annotation: MKPointAnnotation, _ location: CLLocationCoordinate2D, _ title: String) {
         
         annotation.title = title
@@ -87,7 +88,6 @@ class MapViewController: UIViewController {
         
 }
     
-
 extension MapViewController: CLLocationManagerDelegate {
     
     func checkUserLocationServicesAuthorization() {
@@ -125,7 +125,8 @@ extension MapViewController: CLLocationManagerDelegate {
             print("Default")
         }
         
-        //정확도 체크.. 왜 하는걸까 설명을 들었는데 아직 잘 모르겠다.
+        //정확도 체크 - 풀 정확도시 정확한 위치, 리듀스 정확도시에는 인근의 주요 관공서나 위치를 찍어줌.
+        //왜 필요하냐? 특정 어플의 경우 정확한 위치를 줄경우 신변이나 안전에 위협을 줄 수도 있기 때문. 따라서 그런 어플에는 리듀스 정확도 부여.
         if #available(iOS 14.0, *) {
             let accurancyState = locationManager.accuracyAuthorization
             
@@ -141,10 +142,7 @@ extension MapViewController: CLLocationManagerDelegate {
         }
     }
     
-    
-    
-    
-    
+    //사용자 커스텀 위치 함수
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let coordinate = locations.last?.coordinate {
