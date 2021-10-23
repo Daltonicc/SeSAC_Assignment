@@ -30,14 +30,10 @@ class MapViewController: UIViewController {
         cinemaSegmentedControl.setTitle("메가박스", forSegmentAt: 1)
         cinemaSegmentedControl.setTitle("CGV", forSegmentAt: 2)
         
-        TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[0].latitude, longitude: mapAnnotations[0].longitude), mapAnnotations[0].location)
-        TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[1].latitude, longitude: mapAnnotations[1].longitude), mapAnnotations[1].location)
-        TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[2].latitude, longitude: mapAnnotations[2].longitude), mapAnnotations[2].location)
-        TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[3].latitude, longitude: mapAnnotations[3].longitude), mapAnnotations[3].location)
-        TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[4].latitude, longitude: mapAnnotations[4].longitude), mapAnnotations[4].location)
-        TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[5].latitude, longitude: mapAnnotations[5].longitude), mapAnnotations[5].location)
-        
-        
+        for i in 0..<6 {
+            TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[i].latitude, longitude: mapAnnotations[i].longitude), mapAnnotations[i].location)
+
+        }
         
         firstRegionSetting()
         
@@ -71,14 +67,20 @@ class MapViewController: UIViewController {
         mapView.removeAnnotations(annotations)
         
         if cinemaSegmentedControl.selectedSegmentIndex == 0 {
-            TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[0].latitude, longitude: mapAnnotations[0].longitude), mapAnnotations[0].location)
-            TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[1].latitude, longitude: mapAnnotations[1].longitude), mapAnnotations[1].location)
+            for i in 0..<2 {
+                TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[i].latitude, longitude: mapAnnotations[i].longitude), mapAnnotations[i].location)
+
+            }
         } else if cinemaSegmentedControl.selectedSegmentIndex == 1 {
-            TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[2].latitude, longitude: mapAnnotations[2].longitude), mapAnnotations[2].location)
-            TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[3].latitude, longitude: mapAnnotations[3].longitude), mapAnnotations[3].location)
+            for i in 2..<4 {
+                TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[i].latitude, longitude: mapAnnotations[i].longitude), mapAnnotations[i].location)
+
+            }
         } else {
-            TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[4].latitude, longitude: mapAnnotations[4].longitude), mapAnnotations[4].location)
-            TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[5].latitude, longitude: mapAnnotations[5].longitude), mapAnnotations[5].location)
+            for i in 4..<6 {
+                TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[i].latitude, longitude: mapAnnotations[i].longitude), mapAnnotations[i].location)
+
+            }
         }
         
     }
