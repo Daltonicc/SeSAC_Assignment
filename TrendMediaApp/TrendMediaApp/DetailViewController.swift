@@ -12,14 +12,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     let tvShowInformation = TvShowInformation()
     var tvShowData: TvShow?
-    
+    var openOrNot = false
 
     @IBOutlet weak var CastTableView: UITableView!
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var headerSmallImageView: UIImageView!
     @IBOutlet weak var headerImageNameLabel: UILabel!
-    @IBOutlet weak var headerOverViewLabel: UILabel!
-    @IBOutlet weak var toggleButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -59,38 +57,84 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @objc func backButtonClikced() {
-        
+        openOrNot.toggle()
         self.navigationController?.popViewController(animated: true)
     
     }
     
+    @IBAction func chevronButtonClicked(_ sender: UIButton) {
+        
+        openOrNot.toggle()
+        CastTableView.reloadSections(IndexSet(0...0), with: .automatic)
+        
+    }
+    
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if section == 0 {
+            return 1
+        
+        } else {
+            
         return tvShowInformation.tvShow.count
+        
+        }
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier, for: indexPath) as? CastTableViewCell else { return UITableViewCell() }
+        if indexPath.section == 0 {
+            guard let overviewCell = tableView.dequeueReusableCell(withIdentifier: OverViewTableViewCell.identifier, for: indexPath) as? OverViewTableViewCell else { return UITableViewCell() }
+            
+            overviewCell.overviewLabel.text = tvShowData?.overview ?? "줄거리 없음"
+            
+            if openOrNot == true {
+                overviewCell.chevronButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+                overviewCell.overviewLabel.numberOfLines = 0
+            } else {
+                overviewCell.chevronButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+            }
+            
+            return overviewCell
         
+        } else {
+            guard let castCell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier, for: indexPath) as? CastTableViewCell else { return UITableViewCell() }
+            
+            
+            castCell.actorImageView.backgroundColor = .gray
+            castCell.actorImageView.layer.cornerRadius = 3
+            castCell.actorImageView.contentMode = .scaleAspectFill
+            
+            castCell.nameLabel.text = "배우 이름"
+            
+            castCell.realNamelabel.text = "정보 없음"
+            castCell.realNamelabel.textColor = .lightGray
+            
+            return castCell
+            
+        }
         
-        
-        cell.actorImageView.backgroundColor = .gray
-        cell.actorImageView.layer.cornerRadius = 3
-        cell.actorImageView.contentMode = .scaleAspectFill
-        
-        cell.nameLabel.text = "배우 이름"
-        
-        cell.realNamelabel.text = "정보 없음"
-        cell.realNamelabel.textColor = .lightGray
-        
-        
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UIScreen.main.bounds.height / 10
+        
+        if indexPath.section == 0 {
+            if openOrNot == false {
+                return UIScreen.main.bounds.height / 10
+            } else {
+                return tableView.estimatedRowHeight
+            }
+        } else {
+            return UIScreen.main.bounds.height / 10
+        }
+    
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
 
 }
