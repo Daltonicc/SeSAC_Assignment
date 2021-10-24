@@ -1,6 +1,6 @@
 ## TrendMediaApp
 
-## 실행화면(10.20 기준)
+## 실행화면(10.24 기준)
 
 https://user-images.githubusercontent.com/87598209/138589814-0e8681a1-839f-42b0-90ea-740f8cd1d8b4.mp4
 
