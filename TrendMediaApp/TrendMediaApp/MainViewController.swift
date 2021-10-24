@@ -154,7 +154,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         topImageView.image = UIImage(named: "A Tale Dark & Grimm")
         topImageView.contentMode = .scaleAspectFill
         
-        
         topView.layer.shadowOpacity = 0.7
         topView.layer.shadowRadius = 5
         topView.layer.shadowColor = UIColor.gray.cgColor

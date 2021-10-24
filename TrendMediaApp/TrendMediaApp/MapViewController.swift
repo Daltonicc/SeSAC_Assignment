@@ -12,43 +12,80 @@ import MapKit
 import SwiftUI
 
 class MapViewController: UIViewController {
-    
-    
 
     @IBOutlet weak var cinemaSegmentedControl: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mapView.delegate = self
-        locationManager.delegate = self
-        
         cinemaSegmentedControl.setTitle("롯데시네마", forSegmentAt: 0)
         cinemaSegmentedControl.setTitle("메가박스", forSegmentAt: 1)
         cinemaSegmentedControl.setTitle("CGV", forSegmentAt: 2)
         
-        for i in 0..<6 {
-            TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[i].latitude, longitude: mapAnnotations[i].longitude), mapAnnotations[i].location)
-
-        }
+        mapView.delegate = self
+        locationManager.delegate = self
         
+        allTheaterSetting()
+        filterSetting()
         firstRegionSetting()
         
     }
     
     //최초 지역 세팅
     func firstRegionSetting() {
-        
-        //서울시청: 37.56721585217902, 126.9778526452839
-            
+                    
         let cityHalllocation = CLLocationCoordinate2D(latitude: 37.56721585217902, longitude: 126.9778526452839)
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: cityHalllocation, span: span)
         mapView.setRegion(region, animated: true)
         
+    }
+    
+    func filterSetting() {
+        
+        let filterBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filteraction))
+        filterBarButtonItem.tintColor = .systemGray
+
+        navigationItem.rightBarButtonItem = filterBarButtonItem
+    
+    }
+    
+    @objc func filteraction() {
+        
+        let annotations = mapView.annotations
+        mapView.removeAnnotations(annotations)
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let cgv = UIAlertAction(title: "CGV", style: .default) { _ in
+            self.cgvTheaterSetting()
+        }
+        
+        let megabox = UIAlertAction(title: "메가박스", style: .default) { _ in
+            self.megaboxTheaterSetting()
+        }
+        
+        let lotteCinema = UIAlertAction(title: "롯데시네마", style: .default) { _ in
+            self.lotteTheaterSetting()
+        }
+        
+        let allTheater = UIAlertAction(title: "전체 보기", style: .default) { _ in
+            self.allTheaterSetting()
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(cgv)
+        alert.addAction(megabox)
+        alert.addAction(lotteCinema)
+        alert.addAction(allTheater)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
         
     }
     
@@ -61,6 +98,35 @@ class MapViewController: UIViewController {
         
         }
     
+    //각 영화관 세팅
+    func allTheaterSetting() {
+    
+        for i in 0..<6 {
+            TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[i].latitude, longitude: mapAnnotations[i].longitude), mapAnnotations[i].location)
+
+        }
+    }
+    
+    func lotteTheaterSetting() {
+        for i in 0..<2 {
+            TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[i].latitude, longitude: mapAnnotations[i].longitude), mapAnnotations[i].location)
+
+        }
+    }
+    
+    func megaboxTheaterSetting() {
+        for i in 2..<4 {
+            TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[i].latitude, longitude: mapAnnotations[i].longitude), mapAnnotations[i].location)
+
+        }
+    }
+    
+    func cgvTheaterSetting() {
+        for i in 4..<6 {
+            TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[i].latitude, longitude: mapAnnotations[i].longitude), mapAnnotations[i].location)
+
+        }
+    }
     
     @IBAction func theaterSegmentedControlClicked(_ sender: UISegmentedControl) {
         
@@ -68,24 +134,15 @@ class MapViewController: UIViewController {
         mapView.removeAnnotations(annotations)
         
         if cinemaSegmentedControl.selectedSegmentIndex == 0 {
-            for i in 0..<2 {
-                TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[i].latitude, longitude: mapAnnotations[i].longitude), mapAnnotations[i].location)
-
-            }
+            lotteTheaterSetting()
         } else if cinemaSegmentedControl.selectedSegmentIndex == 1 {
-            for i in 2..<4 {
-                TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[i].latitude, longitude: mapAnnotations[i].longitude), mapAnnotations[i].location)
-
-            }
+            megaboxTheaterSetting()
         } else {
-            for i in 4..<6 {
-                TheaterAnnotationSetting(MKPointAnnotation(), CLLocationCoordinate2D(latitude: mapAnnotations[i].latitude, longitude: mapAnnotations[i].longitude), mapAnnotations[i].location)
-
-            }
+            cgvTheaterSetting()
         }
         
     }
-        
+
 }
     
 extension MapViewController: CLLocationManagerDelegate {
@@ -174,6 +231,5 @@ extension MapViewController: CLLocationManagerDelegate {
 }
 
 extension MapViewController: MKMapViewDelegate {
-    
     
 }
