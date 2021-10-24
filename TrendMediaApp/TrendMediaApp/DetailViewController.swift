@@ -19,7 +19,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var headerSmallImageView: UIImageView!
     @IBOutlet weak var headerImageNameLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +26,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         CastTableView.dataSource = self
         
         headerViewSetting()
-        
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: self, action: #selector(backButtonClikced))
         navigationItem.leftBarButtonItem?.tintColor = .black
@@ -48,12 +46,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         headerImageNameLabel.textColor = .white
         headerImageNameLabel.font = UIFont.boldSystemFont(ofSize: 18)
         
-//        headerOverViewLabel.text = tvShowData?.overview ?? "내용 없음"
-//        headerOverViewLabel.numberOfLines = 0
-        
-//        toggleButton.setImage(UIImage(systemName: "chevron.compact.down"), for: .normal)
-////        toggleButton.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)
-        
     }
     
     @objc func backButtonClikced() {
@@ -68,9 +60,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         CastTableView.reloadSections(IndexSet(0...0), with: .automatic)
         
     }
-    
-    
 
+    
+    //테이블뷰 관련 세팅
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
@@ -82,7 +74,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         }
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -102,7 +93,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         } else {
             guard let castCell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier, for: indexPath) as? CastTableViewCell else { return UITableViewCell() }
-            
             
             castCell.actorImageView.backgroundColor = .gray
             castCell.actorImageView.layer.cornerRadius = 3

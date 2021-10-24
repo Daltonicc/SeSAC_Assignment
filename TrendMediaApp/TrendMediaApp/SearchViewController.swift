@@ -8,7 +8,6 @@
 import UIKit
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
 
     let tvShowInformation = TvShowInformation()
     
@@ -17,7 +16,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var showSearchBar: UISearchBar!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var searchTableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +30,26 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-
+    //상단 뷰 UI
+    func topviewSetting() {
+        
+        topView.backgroundColor = .gray
+                
+        searchView.backgroundColor = .systemGray
+        searchView.layer.cornerRadius = 10
+                
+        showSearchBar.barTintColor = .systemGray
+        showSearchBar.searchBarStyle = .minimal
+        
+        cancelButton.tintColor = .white
+    }
+    
+    @IBAction func cancelButtonClicked(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    //테이블뷰 관련 세팅
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tvShowInformation.tvShow.count
         }
@@ -58,7 +75,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.overviewLabel.textColor = .gray
         cell.overviewLabel.numberOfLines = 0
         
-        
         return cell
     }
     
@@ -66,28 +82,5 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return UIScreen.main.bounds.height / 6
     }
-        
-    
-    
-    //상단 뷰 UI
-    func topviewSetting() {
-        
-        topView.backgroundColor = .gray
-                
-        searchView.backgroundColor = .systemGray
-        searchView.layer.cornerRadius = 10
-                
-        showSearchBar.barTintColor = .systemGray
-        showSearchBar.searchBarStyle = .minimal
-        
-        cancelButton.tintColor = .white
-    }
-    
-    @IBAction func cancelButtonClicked(_ sender: UIButton) {
-        
-        self.dismiss(animated: true, completion: nil)
-        
-    }
-    
     
 }

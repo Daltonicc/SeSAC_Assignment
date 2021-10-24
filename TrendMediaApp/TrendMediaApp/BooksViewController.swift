@@ -12,7 +12,6 @@ class BooksViewController: UIViewController {
     let tvshowInformation = TvShowInformation()
     
     @IBOutlet weak var BookCollectionView: UICollectionView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +27,7 @@ class BooksViewController: UIViewController {
     
 }
 
+//콜렉션뷰 관련 세팅
 extension BooksViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -42,8 +42,6 @@ extension BooksViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
         let item = tvshowInformation.tvShow[indexPath.item]
         
-        
-        
         cell.backgroundColor = getRandomColor()
         cell.layer.cornerRadius = 20
         
@@ -54,7 +52,6 @@ extension BooksViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.titleLabel.adjustsFontSizeToFitWidth = true
         cell.titleLabel.textAlignment = .center
         
-        
         cell.rateLabel.text = "\(item.rate)"
         cell.rateLabel.textColor = .white
         
@@ -62,8 +59,6 @@ extension BooksViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.posterImageView.layer.cornerRadius = 15
         cell.posterImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
 
-        
-        
         return cell
     }
     
@@ -83,7 +78,6 @@ extension BooksViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let width = UIScreen.main.bounds.width - (spacing * 3)
         layout.itemSize = CGSize(width: width / 2, height: (width / 2) * 1.1)
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-//        layout.minimumInteritemSpacing = spacing
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .vertical
         

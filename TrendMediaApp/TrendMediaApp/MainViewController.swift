@@ -18,113 +18,19 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
         MovieTableView.delegate = self
         MovieTableView.dataSource = self
         MovieTableView.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
-        
         
         buttonSetting()
         topViewSetting()
         navigationItemSetting()
     
     }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tvShowInformation.tvShow.count
-    
-    }
-    
-    
-    //커스텀셀 디자인
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TvShowTableViewCell.identifier, for: indexPath) as? TvShowTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        
-        let row = tvShowInformation.tvShow[indexPath.row]
-        
-        cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
-        
-        cell.showView.layer.cornerRadius = 10
-        cell.showView.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
-        cell.showView.layer.shadowOpacity = 0.7
-        cell.showView.layer.shadowRadius = 5
-        cell.showView.layer.shadowColor = UIColor.gray.cgColor
-        cell.showView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        
-        cell.genreLabel.text = "#\(row.genre)"
-        cell.genreLabel.textColor = .lightGray
-        
-        cell.titleLabel.text = row.title
-        cell.titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
-        
-        cell.posterImageView.image = UIImage(named: row.title)
-        cell.posterImageView.layer.cornerRadius = 10
-        cell.posterImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-//        cell.posterImageView.clipsToBounds = true
-        
-        cell.webButton.setImage(UIImage(systemName: "paperclip"), for: .normal)
-        cell.webButton.backgroundColor = .white
-        cell.webButton.layer.cornerRadius = 15
-        cell.webButton.tintColor = .black
-        
-
-        cell.subRateLabel.text = "예상"
-        cell.subRateLabel.textAlignment = .center
-        cell.subRateLabel.backgroundColor = .orange
-        
-        cell.rateLabel.text = "\(row.rate)"
-        cell.rateLabel.textAlignment = .center
-        cell.rateLabel.backgroundColor = .white
-        
-        cell.koreanTitleLabel.text = row.koreanTitle
-        cell.koreanTitleLabel.font = UIFont.boldSystemFont(ofSize: 25)
-        
-        cell.releaseLabel.text = row.releaseDate
-        cell.releaseLabel.textColor = .lightGray
-        
-        //버튼에 태그 부여.
-        cell.webButton.tag = indexPath.row
-        cell.webButton.addTarget(self, action: #selector(webButtonClicked), for: .touchUpInside)
-        
-        
-        
-        return cell
-    }
-    
-    @objc func webButtonClicked(selectButton: UIButton) {
-        
-        
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        
-        let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-        
-        //Pass Data.
-        vc.tvshowdata = tvShowInformation.tvShow[selectButton.tag]
-        
-        let nav = UINavigationController(rootViewController: vc)
-        
-        self.present(nav, animated: true, completion: nil)
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return UIScreen.main.bounds.height / 2
-    }
-    
     
     //button UI
     func buttonSetting() {
@@ -164,6 +70,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         veryTopLabel.font = .boldSystemFont(ofSize: 40)
         veryTopLabel.textAlignment = .center
         veryTopLabel.textColor = .white
+        veryTopLabel.adjustsFontSizeToFitWidth = true
         
     }
     
@@ -192,8 +99,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.navigationController?.pushViewController(vc, animated: true)
         
-        
-        
     }
     
     @objc func searchButtonClicked(_ sender: UIBarButtonItem) {
@@ -204,15 +109,93 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         //2. 스토리보드 안에 어떤 뷰컨트롤러로 가게 할지.
         let vc = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
         
-        
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .fullScreen
-        
         
         //3. Present
         self.present(vc, animated: true, completion: nil)
     
+    }
+    
+    //테이블 뷰 관련 세팅
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tvShowInformation.tvShow.count
+    
+    }
+
+    //커스텀셀 디자인
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TvShowTableViewCell.identifier, for: indexPath) as? TvShowTableViewCell else {
+            return UITableViewCell()
+        }
         
+        let row = tvShowInformation.tvShow[indexPath.row]
+        
+        cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
+        
+        cell.showView.layer.cornerRadius = 10
+        cell.showView.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
+        cell.showView.layer.shadowOpacity = 0.7
+        cell.showView.layer.shadowRadius = 5
+        cell.showView.layer.shadowColor = UIColor.gray.cgColor
+        cell.showView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        
+        cell.genreLabel.text = "#\(row.genre)"
+        cell.genreLabel.textColor = .lightGray
+        
+        cell.titleLabel.text = row.title
+        cell.titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
+        
+        cell.posterImageView.image = UIImage(named: row.title)
+        cell.posterImageView.layer.cornerRadius = 10
+        cell.posterImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
+        cell.webButton.setImage(UIImage(systemName: "paperclip"), for: .normal)
+        cell.webButton.backgroundColor = .white
+        cell.webButton.layer.cornerRadius = 15
+        cell.webButton.tintColor = .black
+        
+
+        cell.subRateLabel.text = "예상"
+        cell.subRateLabel.textAlignment = .center
+        cell.subRateLabel.backgroundColor = .orange
+        
+        cell.rateLabel.text = "\(row.rate)"
+        cell.rateLabel.textAlignment = .center
+        cell.rateLabel.backgroundColor = .white
+        
+        cell.koreanTitleLabel.text = row.koreanTitle
+        cell.koreanTitleLabel.font = UIFont.boldSystemFont(ofSize: 25)
+        
+        cell.releaseLabel.text = row.releaseDate
+        cell.releaseLabel.textColor = .lightGray
+        
+        //버튼에 태그 부여.
+        cell.webButton.tag = indexPath.row
+        cell.webButton.addTarget(self, action: #selector(webButtonClicked), for: .touchUpInside)
+        
+        return cell
+    }
+    
+    @objc func webButtonClicked(selectButton: UIButton) {
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        
+        //Pass Data.
+        vc.tvshowdata = tvShowInformation.tvShow[selectButton.tag]
+        
+        let nav = UINavigationController(rootViewController: vc)
+        
+        self.present(nav, animated: true, completion: nil)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 450
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -231,14 +214,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    
 }
-
-
 
 //보완점
 
-//총 소요시간: 7시간
+//총 소요시간: 22시간
 //메인화면 이미지가 너무 큰데 지금은 조절법을 모르겠다,, CSRect도 시도해보고 Frame도 해봤지만 실패. 해당 문제로 인해 각각의 셀크기가 이미지뷰 크기에 따라 모두 다 제각각임. 추후에 방법 알게되면 개선 필요.
 // -> 개선완료 오토레이아웃에서 이미지의 width값과 height값을 준뒤 heightforRowAt으로 해결.
 // SearchBar 상하단 보더 없애야함. -> SearchBar style -> minimal로 해결.
@@ -247,17 +227,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 //view.backgroundColor 가 분명 gray인데 왜 하얀 화면이 있는거지;;?
 //오토레이아웃 관련 추가학습이 필요하다. 좋은 기능들이 많은거 같은데 내가 역량이 부족해서 너무 한정적으로 쓰는 느낌이 강하다.
 
-
-//AutomaticDimension
-//1. 코드
-// heightforrowat을 활용하자! 섹션 0번째만 디멘션 적용
+//맵뷰 필터기능 구현완료.
+//특정 기기 오토레이아웃 체크완료(iPod touch 7세대, iPone SE)
 //
-//    castTableView.rowHeight = UITableView.automaticDimension
-
-
-
-//2. 레이아웃
-//3. Label Lines
-
-
-//디바이스 기준 몇퍼센트인지 -> 이미지뷰 크기 정할 때
