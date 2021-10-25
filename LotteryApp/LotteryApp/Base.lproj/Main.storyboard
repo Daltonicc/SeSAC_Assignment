@@ -16,12 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5D-ZP-g4H">
-                                <rect key="frame" x="0.0" y="590" width="414" height="306"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="306" id="Pmo-ex-etn"/>
-                                </constraints>
-                            </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SpJ-8o-V9V">
                                 <rect key="frame" x="100" y="194" width="214" height="50"/>
                                 <constraints>
@@ -29,21 +23,20 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="pickerTextfieldClicked:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="hSE-w7-UGd"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="H5D-ZP-g4H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AW9-FB-raH"/>
                             <constraint firstItem="SpJ-8o-V9V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="NHP-gh-MaZ"/>
                             <constraint firstItem="SpJ-8o-V9V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="VS4-n2-NAP"/>
-                            <constraint firstAttribute="bottom" secondItem="H5D-ZP-g4H" secondAttribute="bottom" id="fUF-zG-F0N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SpJ-8o-V9V" secondAttribute="trailing" constant="100" id="oUX-ob-2p4"/>
-                            <constraint firstItem="H5D-ZP-g4H" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ugw-Bb-8kq"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="lotteryPickerVIew" destination="H5D-ZP-g4H" id="HaY-FA-N2q"/>
                         <outlet property="lotteryTextField" destination="SpJ-8o-V9V" id="IAQ-Hc-u0G"/>
                     </connections>
                 </viewController>
