@@ -25,3 +25,7 @@
 ## 04Week Study
 
 * [10/15 TrendMediaApp ~](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/TrendMediaApp)
+
+## 05Week Study
+
+* [10/25 LotteryApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/LotteryApp)
