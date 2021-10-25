@@ -6,14 +6,34 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lotteryTextField: UITextField!
+    @IBOutlet weak var lotteryPickerVIew: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        getlotteryNumber()
     }
 
+    
+    func getlotteryNumber() {
+        
+        AF.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+            case .failure(let error):
+                print(error)
+            }
+        }
+
+    }
 
 }
 
