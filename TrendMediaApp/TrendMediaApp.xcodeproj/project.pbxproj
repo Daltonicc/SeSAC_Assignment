@@ -12,6 +12,9 @@
 		6AA19EFF271EDF3000656B54 /* BooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA19EFD271EDF3000656B54 /* BooksCollectionViewCell.swift */; };
 		6AA19F00271EDF3000656B54 /* BooksCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA19EFE271EDF3000656B54 /* BooksCollectionViewCell.xib */; };
 		6AA19F02271EF10D00656B54 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA19F01271EF10D00656B54 /* BooksViewController.swift */; };
+		6AB37CE427279D1F001CB1C4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6AB37CE327279D1F001CB1C4 /* Alamofire */; };
+		6AB37CEA27279D4B001CB1C4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 6AB37CE927279D4B001CB1C4 /* SwiftyJSON */; };
+		6AB37CEC2727A7E1001CB1C4 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB37CEB2727A7E1001CB1C4 /* MovieModel.swift */; };
 		6ABE3764271F9DC1002401FD /* OverViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABE3762271F9DC1002401FD /* OverViewTableViewCell.swift */; };
 		6ABE376927200030002401FD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABE376827200030002401FD /* MapViewController.swift */; };
 		6ABE376B272009A4002401FD /* TheaterInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABE376A272009A4002401FD /* TheaterInformation.swift */; };
@@ -37,6 +40,7 @@
 		6AA19EFD271EDF3000656B54 /* BooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		6AA19EFE271EDF3000656B54 /* BooksCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BooksCollectionViewCell.xib; sourceTree = "<group>"; };
 		6AA19F01271EF10D00656B54 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		6AB37CEB2727A7E1001CB1C4 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		6ABE3762271F9DC1002401FD /* OverViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverViewTableViewCell.swift; sourceTree = "<group>"; };
 		6ABE376827200030002401FD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6ABE376A272009A4002401FD /* TheaterInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheaterInformation.swift; sourceTree = "<group>"; };
@@ -64,7 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AB37CEA27279D4B001CB1C4 /* SwiftyJSON in Frameworks */,
 				6AA19EF8271EC22200656B54 /* Kingfisher in Frameworks */,
+				6AB37CE427279D1F001CB1C4 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +116,7 @@
 				6AFC813C271AA33D0031716E /* TvShow.swift */,
 				6ABE376A272009A4002401FD /* TheaterInformation.swift */,
 				6ABE376C272009D2002401FD /* Theater.swift */,
+				6AB37CEB2727A7E1001CB1C4 /* MovieModel.swift */,
 				6AFC8129271A831B0031716E /* Assets.xcassets */,
 				6AFC812B271A831B0031716E /* LaunchScreen.storyboard */,
 				6AFC812E271A831B0031716E /* Info.plist */,
@@ -135,6 +142,8 @@
 			name = TrendMediaApp;
 			packageProductDependencies = (
 				6AA19EF7271EC22200656B54 /* Kingfisher */,
+				6AB37CE327279D1F001CB1C4 /* Alamofire */,
+				6AB37CE927279D4B001CB1C4 /* SwiftyJSON */,
 			);
 			productName = TrendMediaApp;
 			productReference = 6AFC811D271A831B0031716E /* TrendMediaApp.app */;
@@ -166,6 +175,8 @@
 			mainGroup = 6AFC8114271A831B0031716E;
 			packageReferences = (
 				6AA19EF6271EC22200656B54 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				6AB37CE227279D1F001CB1C4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				6AB37CE827279D4B001CB1C4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 6AFC811E271A831B0031716E /* Products */;
 			projectDirPath = "";
@@ -203,6 +214,7 @@
 				6AA19F02271EF10D00656B54 /* BooksViewController.swift in Sources */,
 				6AFC813D271AA33D0031716E /* TvShow.swift in Sources */,
 				6AFC8121271A831B0031716E /* AppDelegate.swift in Sources */,
+				6AB37CEC2727A7E1001CB1C4 /* MovieModel.swift in Sources */,
 				6AA19EFF271EDF3000656B54 /* BooksCollectionViewCell.swift in Sources */,
 				6AFC813B271AA2E70031716E /* TvShowInformation.swift in Sources */,
 				6ABE376B272009A4002401FD /* TheaterInformation.swift in Sources */,
@@ -442,6 +454,22 @@
 				kind = branch;
 			};
 		};
+		6AB37CE227279D1F001CB1C4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		6AB37CE827279D4B001CB1C4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -449,6 +477,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6AA19EF6271EC22200656B54 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		6AB37CE327279D1F001CB1C4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6AB37CE227279D1F001CB1C4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		6AB37CE927279D4B001CB1C4 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6AB37CE827279D4B001CB1C4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
