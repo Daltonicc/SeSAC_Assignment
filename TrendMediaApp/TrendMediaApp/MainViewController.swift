@@ -14,9 +14,10 @@ class MainViewController: UIViewController {
     
     let tvShowInformation = TvShowInformation()
     
-    var trendData: [trendModel] = []
+    var trendData: [TrendModel] = []
     var genreData: [Int : String] = [:]
     
+    var startPage = 1
     
     @IBOutlet weak var veryTopLabel: UILabel!
     @IBOutlet weak var MovieTableView: UITableView!
@@ -31,15 +32,17 @@ class MainViewController: UIViewController {
         
         MovieTableView.delegate = self
         MovieTableView.dataSource = self
+        MovieTableView.prefetchDataSource = self
         MovieTableView.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
         
         buttonSetting()
         topViewSetting()
         navigationItemSetting()
     
-        getGenreData()
         
+        getGenreData()
         getMovieData()
+        
         
     }
     
@@ -160,8 +163,8 @@ class MainViewController: UIViewController {
     //TMDB 트렌딩 네트워크 통신
     func getMovieData() {
         
-        
-        let url = "https://api.themoviedb.org/3/trending/movie/day?api_key=0ddf09d4942a5788f4b0857f6895c28c"
+        // 혹시 TMDB movie데이터 받아올 때 항상 1페이지만 받아오는데 다음페이지 받아오게 어떻게 하셨나요?? 네이버 영화검색은 url에 start페이지 적는 부분이 있었는데 TMDB는 따로없네요;;=
+        let url = "https://api.themoviedb.org/3/trending/movie/day?api_key=0ddf09d4942a5788f4b0857f6895c28c&page=\(startPage)"
         
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
@@ -175,27 +178,37 @@ class MainViewController: UIViewController {
                     let title = item["title"].stringValue
                     let voteAverage = item["vote_average"].doubleValue
                     let overview = item["overview"].stringValue
+                    
+                    let backdropImage = item["backdrop_path"].stringValue
+                    let backdropUrl = "https://image.tmdb.org/t/p/original/\(backdropImage)"
+                    
                     let poster = item["poster_path"].stringValue
                     let posterUrl = "https://image.tmdb.org/t/p/original/\(poster)"
+                    
+                    
                     let releaseDate = item["release_date"].stringValue
+                    let movieid = item["id"].intValue
                     
                     var genreList: [Any] = []
 
                     for i in 0..<item["genre_ids"].count {
                         
-                        let genre = self.genreData[item["genre_ids"][i].intValue]!
-                        genreList.append(genre)
+                        if let genre = self.genreData[item["genre_ids"][i].intValue] {
+                            
+                            genreList.append(genre)
+                        }
+                        
                         
                     }
                     
-                    let data = trendModel(title: title, voteAverage: voteAverage, overview: overview, releaseDate: releaseDate, poster: posterUrl, genre: genreList)
+                    let data = TrendModel(title: title, voteAverage: voteAverage, overview: overview, releaseDate: releaseDate, poster: posterUrl, backdropImage: backdropUrl ,genre: genreList, moiveid: movieid)
                     
                     self.trendData.append(data)
                     
                 }
                 
                 self.MovieTableView.reloadData()
-                print(self.trendData)
+                
             case .failure(let error):
                 print(error)
             }
@@ -203,14 +216,33 @@ class MainViewController: UIViewController {
         
     }
     
+
+    
 }
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     
     //테이블 뷰 관련 세팅
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trendData.count
     
+    }
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        
+        //마지막 셀을 볼 때 새로운 데이터를 받아와 줌.
+        for indexPath in indexPaths {
+            if trendData.count - 1 == indexPath.row {
+                startPage += 1
+                getMovieData()
+                print(#function)
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        
+        
     }
 
     //커스텀셀 디자인
@@ -300,9 +332,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
         //Pass Data.
-        let row = tvShowInformation.tvShow[indexPath.row]
+//        let row = tvShowInformation.tvShow[indexPath.row]
+        let trendRow = trendData[indexPath.row]
         
-        vc.tvShowData = row
+        vc.trendData = trendRow
         
         self.navigationController?.pushViewController(vc, animated: true)
         

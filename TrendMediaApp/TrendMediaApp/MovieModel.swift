@@ -17,17 +17,26 @@ struct MovieModel {
     
 }
 
-struct trendModel {
+struct TrendModel {
     
     var title: String
     var voteAverage: Double
     var overview: String
     var releaseDate: String
     var poster: String
+    var backdropImage: String
     var genre: [Any]
+    var moiveid: Int
 }
 
-struct genreModel {
+struct GenreModel {
     
     var idAndName: [Int : String] = [:]
+}
+
+struct CastModel {
+    
+    var name: String
+    var character: String
+    var image : String
 }
