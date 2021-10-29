@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     let tvShowInformation = TvShowInformation()
     
     var trendData: [trendModel] = []
+    var genreData: [Int : String] = [:]
     
     
     @IBOutlet weak var veryTopLabel: UILabel!
@@ -36,6 +37,8 @@ class MainViewController: UIViewController {
         topViewSetting()
         navigationItemSetting()
     
+        getGenreData()
+        
         getMovieData()
         
     }
@@ -125,6 +128,35 @@ class MainViewController: UIViewController {
     
     }
     
+    func getGenreData() {
+        
+        let url = "https://api.themoviedb.org/3/genre/movie/list?api_key=0ddf09d4942a5788f4b0857f6895c28c&language=en-US"
+        
+        AF.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+                
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                //장르 딕셔너리에 담아주기
+                for item in json["genres"].arrayValue {
+                    
+                    let genreid = item["id"].intValue
+                    let genrename = item["name"].stringValue
+                    
+                    self.genreData.updateValue(genrename, forKey: genreid)
+                    
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        
+    }
+    
     //TMDB 트렌딩 네트워크 통신
     func getMovieData() {
         
@@ -147,14 +179,23 @@ class MainViewController: UIViewController {
                     let posterUrl = "https://image.tmdb.org/t/p/original/\(poster)"
                     let releaseDate = item["release_date"].stringValue
                     
-                    let data = trendModel(title: title, voteAverage: voteAverage, overview: overview, releaseDate: releaseDate, poster: posterUrl)
+                    var genreList: [Any] = []
+
+                    for i in 0..<item["genre_ids"].count {
+                        
+                        let genre = self.genreData[item["genre_ids"][i].intValue]!
+                        genreList.append(genre)
+                        
+                    }
+                    
+                    let data = trendModel(title: title, voteAverage: voteAverage, overview: overview, releaseDate: releaseDate, poster: posterUrl, genre: genreList)
                     
                     self.trendData.append(data)
                     
                 }
                 
                 self.MovieTableView.reloadData()
-                
+                print(self.trendData)
             case .failure(let error):
                 print(error)
             }
@@ -191,7 +232,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.showView.layer.shadowColor = UIColor.gray.cgColor
         cell.showView.layer.shadowOffset = CGSize(width: 5, height: 5)
         
-//        cell.genreLabel.text = "#\(row.genre)"
+        cell.genreLabel.text = ""
+        for i in 0..<trendRow.genre.count {
+            cell.genreLabel.text! += " #\(trendRow.genre[i])"
+        }
         cell.genreLabel.textColor = .lightGray
         
         cell.titleLabel.text = trendRow.title
@@ -208,7 +252,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.webButton.backgroundColor = .white
         cell.webButton.layer.cornerRadius = 15
         cell.webButton.tintColor = .black
-        
 
         cell.subRateLabel.text = "예상"
         cell.subRateLabel.textAlignment = .center
