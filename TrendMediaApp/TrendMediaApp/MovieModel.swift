@@ -16,3 +16,12 @@ struct MovieModel {
     var subtitle: String
     
 }
+
+struct trendModel {
+    
+    var title : String
+    var voteAverage : Double
+    var overview : String
+    var releaseDate: String
+    var poster: String
+}

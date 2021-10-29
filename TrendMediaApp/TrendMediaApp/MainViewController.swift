@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import Kingfisher
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController {
     
     let tvShowInformation = TvShowInformation()
+    
+    var trendData: [trendModel] = []
+    
     
     @IBOutlet weak var veryTopLabel: UILabel!
     @IBOutlet weak var MovieTableView: UITableView!
@@ -30,6 +36,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         topViewSetting()
         navigationItemSetting()
     
+        getMovieData()
+        
     }
     
     //button UI
@@ -117,9 +125,50 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     }
     
+    //TMDB 트렌딩 네트워크 통신
+    func getMovieData() {
+        
+        
+        let url = "https://api.themoviedb.org/3/trending/movie/day?api_key=0ddf09d4942a5788f4b0857f6895c28c"
+        
+        AF.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+                
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                for item in json["results"].arrayValue {
+                    
+                    let title = item["title"].stringValue
+                    let voteAverage = item["vote_average"].doubleValue
+                    let overview = item["overview"].stringValue
+                    let poster = item["poster_path"].stringValue
+                    let posterUrl = "https://image.tmdb.org/t/p/original/\(poster)"
+                    let releaseDate = item["release_date"].stringValue
+                    
+                    let data = trendModel(title: title, voteAverage: voteAverage, overview: overview, releaseDate: releaseDate, poster: posterUrl)
+                    
+                    self.trendData.append(data)
+                    
+                }
+                
+                self.MovieTableView.reloadData()
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+    }
+    
+}
+
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    
     //테이블 뷰 관련 세팅
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tvShowInformation.tvShow.count
+        return trendData.count
     
     }
 
@@ -130,7 +179,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             return UITableViewCell()
         }
         
-        let row = tvShowInformation.tvShow[indexPath.row]
+        
+        let trendRow = trendData[indexPath.row]
         
         cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
         
@@ -141,13 +191,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.showView.layer.shadowColor = UIColor.gray.cgColor
         cell.showView.layer.shadowOffset = CGSize(width: 5, height: 5)
         
-        cell.genreLabel.text = "#\(row.genre)"
+//        cell.genreLabel.text = "#\(row.genre)"
         cell.genreLabel.textColor = .lightGray
         
-        cell.titleLabel.text = row.title
+        cell.titleLabel.text = trendRow.title
         cell.titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
         
-        cell.posterImageView.image = UIImage(named: row.title)
+        if let imageurl = URL(string: trendRow.poster) {
+        cell.posterImageView.kf.setImage(with: imageurl)
+        } else { cell.posterImageView.image = UIImage(systemName: "star")}
+    
         cell.posterImageView.layer.cornerRadius = 10
         cell.posterImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
@@ -161,14 +214,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.subRateLabel.textAlignment = .center
         cell.subRateLabel.backgroundColor = .orange
         
-        cell.rateLabel.text = "\(row.rate)"
+        cell.rateLabel.text = "\(trendRow.voteAverage)"
         cell.rateLabel.textAlignment = .center
         cell.rateLabel.backgroundColor = .white
         
-        cell.koreanTitleLabel.text = row.koreanTitle
+        cell.koreanTitleLabel.text = trendRow.title
         cell.koreanTitleLabel.font = UIFont.boldSystemFont(ofSize: 25)
         
-        cell.releaseLabel.text = row.releaseDate
+        cell.releaseLabel.text = trendRow.releaseDate
         cell.releaseLabel.textColor = .lightGray
         
         //버튼에 태그 부여.
