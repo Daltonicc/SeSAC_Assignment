@@ -313,7 +313,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UITabl
         let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         
         //Pass Data.
-        vc.tvshowdata = tvShowInformation.tvShow[selectButton.tag]
+        vc.tvshowData = tvShowInformation.tvShow[selectButton.tag]
+        vc.trendData = trendData[selectButton.tag]
         
         let nav = UINavigationController(rootViewController: vc)
         
@@ -345,17 +346,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     
 }
 
-//보완점
-
-//총 소요시간: 22시간
-//메인화면 이미지가 너무 큰데 지금은 조절법을 모르겠다,, CSRect도 시도해보고 Frame도 해봤지만 실패. 해당 문제로 인해 각각의 셀크기가 이미지뷰 크기에 따라 모두 다 제각각임. 추후에 방법 알게되면 개선 필요.
-// -> 개선완료 오토레이아웃에서 이미지의 width값과 height값을 준뒤 heightforRowAt으로 해결.
-// SearchBar 상하단 보더 없애야함. -> SearchBar style -> minimal로 해결.
-//코드로 바버튼 아이템에 이미지와 타이틀을 동시에 달 순 없나,,? 이미지 타이틀을 지정해줘봤으나 이미지만 뜨고 타이틀은 뜨지 않음.
-//테이블뷰를 맨아래에서 위로 스크롤 하려고하면 아래부분에서 하얀색 배경이 자꾸 나타난다.
-//view.backgroundColor 가 분명 gray인데 왜 하얀 화면이 있는거지;;?
-//오토레이아웃 관련 추가학습이 필요하다. 좋은 기능들이 많은거 같은데 내가 역량이 부족해서 너무 한정적으로 쓰는 느낌이 강하다.
-
-//맵뷰 필터기능 구현완료.
-//특정 기기 오토레이아웃 체크완료(iPod touch 7세대, iPone SE)
-//
+//가끔씩 네트워크 통신 순서 문제인지 모르겠으나 장르 데이터를 먼저 받아오지 않음.
+//장르 데이터를 받아와서 장르 딕셔너리를 만듦 -> 영화 데이터(장르 넘버)를 받아와서 장르 레이블에 장르를 표시함.
+//요 순서대로 가야하는데 가끔 시뮬을 50번 중에 한 2~3번정도는 영화 데이터를 먼저 받아오고 장르 데이터를 받아오는 바람에 뷰에 장르가 표시가 되지 않음. 코드상으로는 장르데이터를 먼저 받게끔 했음
