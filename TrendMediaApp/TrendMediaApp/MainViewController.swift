@@ -39,10 +39,8 @@ class MainViewController: UIViewController {
         topViewSetting()
         navigationItemSetting()
     
-        
         getGenreData()
         getMovieData()
-        
         
     }
     
@@ -163,7 +161,6 @@ class MainViewController: UIViewController {
     //TMDB 트렌딩 네트워크 통신
     func getMovieData() {
         
-        // 혹시 TMDB movie데이터 받아올 때 항상 1페이지만 받아오는데 다음페이지 받아오게 어떻게 하셨나요?? 네이버 영화검색은 url에 start페이지 적는 부분이 있었는데 TMDB는 따로없네요;;=
         let url = "https://api.themoviedb.org/3/trending/movie/day?api_key=0ddf09d4942a5788f4b0857f6895c28c&page=\(startPage)"
         
         AF.request(url, method: .get).validate().responseJSON { response in
@@ -215,9 +212,6 @@ class MainViewController: UIViewController {
         }
         
     }
-    
-
-    
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
