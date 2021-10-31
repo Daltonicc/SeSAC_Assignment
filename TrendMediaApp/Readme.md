@@ -39,3 +39,5 @@ https://user-images.githubusercontent.com/87598209/139482113-34b33990-d1bf-4df5-
 ### 10/29 update
 * TMDB 네트워크 통신으로 데이터로 메인화면, 셀 클릭시 해당 영화 배우 및 역할 구현 완료.
 
+### 10/31 update
+* 각 영화별 링크 버튼 클릭시 비디오API 통신으로 예고편 재생 구현
