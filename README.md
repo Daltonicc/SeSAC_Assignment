@@ -32,3 +32,7 @@
 * [10/26 OpenWeatherApp](https://github.com/Daltonicc/OpenWeatherApp/tree/main/05Week_Class)
 * [10/26 LotteryApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/LotteryApp)
 * [10/27 KakaoOCRApp](https://github.com/Daltonicc/OpenWeatherApp/tree/main/05Week_Class)
+
+## 06Week Study
+
+* [10/15 TrendMediaApp ~](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/TrendMediaApp)
