@@ -14,11 +14,6 @@ class MainViewController: UIViewController {
     
     let tvShowInformation = TvShowInformation()
     
-//    var trendData: [TrendModel] = []
-//    var genreData: [Int : String] = [:]
-    
-//    var startPage = 1
-    
     @IBOutlet weak var veryTopLabel: UILabel!
     @IBOutlet weak var MovieTableView: UITableView!
     @IBOutlet weak var topImageView: UIImageView!
