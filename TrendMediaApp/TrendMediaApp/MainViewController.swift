@@ -14,10 +14,10 @@ class MainViewController: UIViewController {
     
     let tvShowInformation = TvShowInformation()
     
-    var trendData: [TrendModel] = []
-    var genreData: [Int : String] = [:]
+//    var trendData: [TrendModel] = []
+//    var genreData: [Int : String] = [:]
     
-    var startPage = 1
+//    var startPage = 1
     
     @IBOutlet weak var veryTopLabel: UILabel!
     @IBOutlet weak var MovieTableView: UITableView!
@@ -35,55 +35,21 @@ class MainViewController: UIViewController {
         MovieTableView.prefetchDataSource = self
         MovieTableView.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
         
-        buttonSetting()
-        topViewSetting()
+        leftButton.leftbuttonSetting()
+        middleButton.middleButtonSetting()
+        rightButton.rightButtonSetting()
+        
+        topImageView.topImageViewSetting()
+        topView.topButtonViewSetting()
+        veryTopLabel.veryTopLabelSetting()
+        
         navigationItemSetting()
-    
-        getGenreData()
-        getMovieData()
         
-    }
-    
-    //button UI
-    func buttonSetting() {
-        
-        //인스펙터에서 버튼 스타일 디폴트 줘야함
-        leftButton.setImage(UIImage(systemName: "film"), for: .normal)
-        leftButton.contentHorizontalAlignment = .fill
-        leftButton.contentVerticalAlignment = .fill
-        leftButton.tintColor = .systemGreen
-        
-        
-        middleButton.setImage(UIImage(systemName: "tv"), for: .normal)
-        middleButton.contentVerticalAlignment = .fill
-        middleButton.contentHorizontalAlignment = .fill
-        middleButton.tintColor = .systemOrange
-        
-        rightButton.setImage(UIImage(systemName: "book.closed"), for: .normal)
-        rightButton.contentVerticalAlignment = .fill
-        rightButton.contentHorizontalAlignment = .fill
-        rightButton.tintColor = .systemBlue
-        
-    }
-    
-    //topview UI
-    func topViewSetting() {
-        
-        topImageView.image = UIImage(named: "A Tale Dark & Grimm")
-        topImageView.contentMode = .scaleAspectFill
-        
-        topView.layer.shadowOpacity = 0.7
-        topView.layer.shadowRadius = 5
-        topView.layer.shadowColor = UIColor.gray.cgColor
-        topView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        topView.layer.cornerRadius = 10
-        
-        veryTopLabel.text = "OH PARK!"
-        veryTopLabel.font = .boldSystemFont(ofSize: 40)
-        veryTopLabel.textAlignment = .center
-        veryTopLabel.textColor = .white
-        veryTopLabel.adjustsFontSizeToFitWidth = true
-        
+        MainAPIManager.shared.getGenreData()
+        MainAPIManager.shared.getMovieData { json in
+            
+            self.MovieTableView.reloadData()
+        }
     }
     
     func navigationItemSetting() {
@@ -129,96 +95,13 @@ class MainViewController: UIViewController {
     
     }
     
-    func getGenreData() {
-        
-        let url = "https://api.themoviedb.org/3/genre/movie/list?api_key=0ddf09d4942a5788f4b0857f6895c28c&language=en-US"
-        
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-                
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                //장르 딕셔너리에 담아주기
-                for item in json["genres"].arrayValue {
-                    
-                    let genreid = item["id"].intValue
-                    let genrename = item["name"].stringValue
-                    
-                    self.genreData.updateValue(genrename, forKey: genreid)
-                    
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-        
-        
-    }
-    
-    //TMDB 트렌딩 네트워크 통신
-    func getMovieData() {
-        
-        let url = "https://api.themoviedb.org/3/trending/movie/day?api_key=0ddf09d4942a5788f4b0857f6895c28c&page=\(startPage)"
-        
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-                
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                for item in json["results"].arrayValue {
-                    
-                    let title = item["title"].stringValue
-                    let voteAverage = item["vote_average"].doubleValue
-                    let overview = item["overview"].stringValue
-                    
-                    let backdropImage = item["backdrop_path"].stringValue
-                    let backdropUrl = "https://image.tmdb.org/t/p/original/\(backdropImage)"
-                    
-                    let poster = item["poster_path"].stringValue
-                    let posterUrl = "https://image.tmdb.org/t/p/original/\(poster)"
-                    
-                    
-                    let releaseDate = item["release_date"].stringValue
-                    let movieid = item["id"].intValue
-                    
-                    var genreList: [Any] = []
-
-                    for i in 0..<item["genre_ids"].count {
-                        
-                        if let genre = self.genreData[item["genre_ids"][i].intValue] {
-                            
-                            genreList.append(genre)
-                        }
-                        
-                        
-                    }
-                    
-                    let data = TrendModel(title: title, voteAverage: voteAverage, overview: overview, releaseDate: releaseDate, poster: posterUrl, backdropImage: backdropUrl ,genre: genreList, moiveid: movieid)
-                    
-                    self.trendData.append(data)
-                    
-                }
-                
-                self.MovieTableView.reloadData()
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-        
-    }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     
     //테이블 뷰 관련 세팅
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trendData.count
+        return MainAPIManager.shared.trendData.count
     
     }
     
@@ -226,16 +109,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UITabl
         
         //마지막 셀을 볼 때 새로운 데이터를 받아와 줌.
         for indexPath in indexPaths {
-            if trendData.count - 1 == indexPath.row {
-                startPage += 1
-                getMovieData()
+            if MainAPIManager.shared.trendData.count - 1 == indexPath.row {
+                MainAPIManager.shared.startPage += 1
+                MainAPIManager.shared.getMovieData { json in
+                    self.MovieTableView.reloadData()
+                }
                 print(#function)
             }
         }
     }
     
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        
         
     }
 
@@ -246,17 +130,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UITabl
             return UITableViewCell()
         }
         
-        
-        let trendRow = trendData[indexPath.row]
+        let trendRow = MainAPIManager.shared.trendData[indexPath.row]
         
         cell.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
         
-        cell.showView.layer.cornerRadius = 10
-        cell.showView.backgroundColor = UIColor(displayP3Red: 255/255, green: 222/255, blue: 222/255, alpha: 1.0)
-        cell.showView.layer.shadowOpacity = 0.7
-        cell.showView.layer.shadowRadius = 5
-        cell.showView.layer.shadowColor = UIColor.gray.cgColor
-        cell.showView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        cell.showView.showViewSetting()
         
         cell.genreLabel.text = ""
         for i in 0..<trendRow.genre.count {
@@ -270,32 +148,23 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UITabl
         if let imageurl = URL(string: trendRow.poster) {
         cell.posterImageView.kf.setImage(with: imageurl)
         } else { cell.posterImageView.image = UIImage(systemName: "star")}
-    
-        cell.posterImageView.layer.cornerRadius = 10
-        cell.posterImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        cell.posterImageView.posterImageViewSetting()
         
-        cell.webButton.setImage(UIImage(systemName: "paperclip"), for: .normal)
-        cell.webButton.backgroundColor = .white
-        cell.webButton.layer.cornerRadius = 15
-        cell.webButton.tintColor = .black
+        //버튼에 태그 부여.
+        cell.webButton.tag = indexPath.row
+        cell.webButton.addTarget(self, action: #selector(webButtonClicked), for: .touchUpInside)
+        cell.webButton.webButtonSetting()
 
-        cell.subRateLabel.text = "예상"
-        cell.subRateLabel.textAlignment = .center
-        cell.subRateLabel.backgroundColor = .orange
+        cell.subRateLabel.subRateLabelSetting()
         
         cell.rateLabel.text = "\(trendRow.voteAverage)"
-        cell.rateLabel.textAlignment = .center
-        cell.rateLabel.backgroundColor = .white
+        cell.rateLabel.rateLabelSetting()
         
         cell.koreanTitleLabel.text = trendRow.title
         cell.koreanTitleLabel.font = UIFont.boldSystemFont(ofSize: 25)
         
         cell.releaseLabel.text = trendRow.releaseDate
         cell.releaseLabel.textColor = .lightGray
-        
-        //버튼에 태그 부여.
-        cell.webButton.tag = indexPath.row
-        cell.webButton.addTarget(self, action: #selector(webButtonClicked), for: .touchUpInside)
         
         return cell
     }
@@ -307,8 +176,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UITabl
         let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
         
         //Pass Data.
-        vc.tvshowData = tvShowInformation.tvShow[selectButton.tag]
-        vc.trendData = trendData[selectButton.tag]
+        vc.trendData = MainAPIManager.shared.trendData[selectButton.tag]
         
         let nav = UINavigationController(rootViewController: vc)
         
@@ -327,8 +195,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UITabl
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
         //Pass Data.
-//        let row = tvShowInformation.tvShow[indexPath.row]
-        let trendRow = trendData[indexPath.row]
+        let trendRow = MainAPIManager.shared.trendData[indexPath.row]
         
         vc.trendData = trendRow
         
@@ -339,7 +206,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     }
     
 }
-
 //가끔씩 네트워크 통신 순서 문제인지 모르겠으나 장르 데이터를 먼저 받아오지 않음.
 //장르 데이터를 받아와서 장르 딕셔너리를 만듦 -> 영화 데이터(장르 넘버)를 받아와서 장르 레이블에 장르를 표시함.
 //요 순서대로 가야하는데 가끔 시뮬을 50번 중에 한 2~3번정도는 영화 데이터를 먼저 받아오고 장르 데이터를 받아오는 바람에 뷰에 장르가 표시가 되지 않음. 코드상으로는 장르데이터를 먼저 받게끔 했음
