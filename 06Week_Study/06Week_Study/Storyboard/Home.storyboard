@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Jy-xF-zKq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Vontroller-->
+        <scene sceneID="3AO-rb-O57">
+            <objects>
+                <viewController id="2Jy-xF-zKq" customClass="HomeViewVontroller" customModule="_6Week_Study" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tRq-Y2-58j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="42j-6s-675"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5f7-ef-ifr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2727" y="-49"/>
+        </scene>
+        <!--Add View Controller-->
+        <scene sceneID="ze8-ZD-hhB">
+            <objects>
+                <viewController storyboardIdentifier="AddViewController" id="BxT-ga-fgV" customClass="AddViewController" customModule="_6Week_Study" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cwj-hf-TZX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="배경" translatesAutoresizingMaskIntoConstraints="NO" id="ZaE-uA-7L6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="hGH-Ep-wx0"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목을 입력해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ywD-Oy-gJ0">
+                                <rect key="frame" x="15" y="409" width="384" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="EIE-dC-rKa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymt-64-VRh">
+                                <rect key="frame" x="15" y="484" width="384" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="X8R-aY-SZ4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="일기 내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rvG-DX-rot">
+                                <rect key="frame" x="15" y="559" width="384" height="303"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="C1P-LM-2ve"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C1P-LM-2ve" firstAttribute="trailing" secondItem="rvG-DX-rot" secondAttribute="trailing" constant="15" id="1sp-EF-qsq"/>
+                            <constraint firstItem="ywD-Oy-gJ0" firstAttribute="top" secondItem="ZaE-uA-7L6" secondAttribute="bottom" constant="15" id="3dn-on-ZLS"/>
+                            <constraint firstItem="rvG-DX-rot" firstAttribute="top" secondItem="ymt-64-VRh" secondAttribute="bottom" constant="15" id="DSJ-XM-OVa"/>
+                            <constraint firstItem="ywD-Oy-gJ0" firstAttribute="leading" secondItem="C1P-LM-2ve" secondAttribute="leading" constant="15" id="FQK-KN-2RV"/>
+                            <constraint firstItem="ymt-64-VRh" firstAttribute="leading" secondItem="C1P-LM-2ve" secondAttribute="leading" constant="15" id="KR6-BA-TpX"/>
+                            <constraint firstItem="C1P-LM-2ve" firstAttribute="trailing" secondItem="ywD-Oy-gJ0" secondAttribute="trailing" constant="15" id="NsQ-r6-q5e"/>
+                            <constraint firstItem="C1P-LM-2ve" firstAttribute="bottom" secondItem="rvG-DX-rot" secondAttribute="bottom" id="PUF-CJ-jqS"/>
+                            <constraint firstItem="ymt-64-VRh" firstAttribute="top" secondItem="ywD-Oy-gJ0" secondAttribute="bottom" constant="15" id="VIz-9F-42h"/>
+                            <constraint firstItem="ZaE-uA-7L6" firstAttribute="top" secondItem="C1P-LM-2ve" secondAttribute="top" id="Zhr-zS-Mr3"/>
+                            <constraint firstItem="rvG-DX-rot" firstAttribute="leading" secondItem="C1P-LM-2ve" secondAttribute="leading" constant="15" id="hhL-Ej-HfQ"/>
+                            <constraint firstItem="C1P-LM-2ve" firstAttribute="trailing" secondItem="ymt-64-VRh" secondAttribute="trailing" constant="15" id="j9E-Uj-Ysl"/>
+                            <constraint firstItem="ZaE-uA-7L6" firstAttribute="leading" secondItem="C1P-LM-2ve" secondAttribute="leading" id="obF-4m-JtI"/>
+                            <constraint firstItem="ZaE-uA-7L6" firstAttribute="trailing" secondItem="C1P-LM-2ve" secondAttribute="trailing" id="sO8-gm-jCn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oWC-e1-e80"/>
+                    <connections>
+                        <outlet property="contentTextView" destination="rvG-DX-rot" id="UDh-mV-gdt"/>
+                        <outlet property="dateButton" destination="ymt-64-VRh" id="vqh-mg-jqs"/>
+                        <outlet property="titleTextField" destination="ywD-Oy-gJ0" id="ABc-SM-951"/>
+                        <outlet property="topImageView" destination="ZaE-uA-7L6" id="lTQ-lG-GWt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJg-GM-gwT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3842" y="25"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="배경" width="518" height="786"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
