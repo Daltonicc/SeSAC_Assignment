@@ -29,6 +29,12 @@ class SearchViewController: UIViewController {
         print(tasks)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        searchTableView.reloadData()
+    }
+    
 
     
 
@@ -56,6 +62,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contentLabel.text = row.diaryContent
         cell.contentLabel.font = UIFont.systemFont(ofSize: 16)
         cell.contentLabel.textColor = .gray
+        cell.contentLabel.numberOfLines = 3
         
         cell.dateLabel.text = "\(row.writeDate)"
         cell.dateLabel.font = UIFont.systemFont(ofSize: 16)

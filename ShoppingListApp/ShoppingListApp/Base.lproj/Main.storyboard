@@ -20,32 +20,66 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DpU-px-YJr">
-                                    <rect key="frame" x="23" y="20" width="301" height="48"/>
+                                    <rect key="frame" x="23" y="20" width="262" height="48"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="310" id="r9k-GB-HFI"/>
+                                        <constraint firstAttribute="width" constant="262" id="CT1-pM-59C"/>
+                                        <constraint firstAttribute="height" constant="48" id="S7V-et-UAS"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npo-En-AFP">
-                                    <rect key="frame" x="332" y="20" width="67" height="48"/>
+                                    <rect key="frame" x="366" y="20" width="40" height="48"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="67" id="DkL-uq-T76"/>
-                                        <constraint firstAttribute="height" constant="40" id="a4y-ef-dJY"/>
+                                        <constraint firstAttribute="width" constant="40" id="4RD-ZL-lT8"/>
+                                        <constraint firstAttribute="height" constant="48" id="fuF-1U-Tg1"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="inputButtonClicked:" destination="wAF-If-o9U" eventType="touchUpInside" id="5gO-p7-t4Z"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C37-y8-gOf">
+                                    <rect key="frame" x="331" y="29" width="27" height="31"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="27" id="Zbm-O7-bLh"/>
+                                        <constraint firstAttribute="height" constant="31" id="qBg-2t-ZCM"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="successButtonClicked:" destination="wAF-If-o9U" eventType="touchUpInside" id="Q2Z-dK-Eav"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idC-qL-RDF">
+                                    <rect key="frame" x="296" y="29" width="27" height="31"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="27" id="3rY-qo-hYd"/>
+                                        <constraint firstAttribute="height" constant="31" id="hvH-ui-kYF"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="favoriteButtonClicked:" destination="wAF-If-o9U" eventType="touchUpInside" id="v7P-od-dpZ"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="npo-En-AFP" secondAttribute="trailing" constant="15" id="0Au-QC-X3x"/>
-                                <constraint firstItem="DpU-px-YJr" firstAttribute="leading" secondItem="jfI-nW-uV8" secondAttribute="leading" constant="23" id="5vw-kB-YNf"/>
-                                <constraint firstAttribute="bottom" secondItem="DpU-px-YJr" secondAttribute="bottom" constant="20" id="KhV-Bx-noL"/>
-                                <constraint firstItem="DpU-px-YJr" firstAttribute="top" secondItem="jfI-nW-uV8" secondAttribute="top" constant="20" id="ZGH-qT-DGN"/>
-                                <constraint firstItem="npo-En-AFP" firstAttribute="top" secondItem="jfI-nW-uV8" secondAttribute="top" constant="20" id="aUn-Pn-97F"/>
-                                <constraint firstItem="npo-En-AFP" firstAttribute="leading" secondItem="DpU-px-YJr" secondAttribute="trailing" constant="8" id="dKb-e6-W30"/>
-                                <constraint firstAttribute="bottom" secondItem="npo-En-AFP" secondAttribute="bottom" constant="20" id="r8d-yE-0hX"/>
+                                <constraint firstAttribute="trailing" secondItem="npo-En-AFP" secondAttribute="trailing" constant="8" id="E2n-Sd-Vgi"/>
+                                <constraint firstAttribute="bottom" secondItem="DpU-px-YJr" secondAttribute="bottom" constant="20" symbolic="YES" id="FnB-Wh-LMV"/>
+                                <constraint firstItem="C37-y8-gOf" firstAttribute="leading" secondItem="idC-qL-RDF" secondAttribute="trailing" constant="8" symbolic="YES" id="GL7-4S-4RH"/>
+                                <constraint firstAttribute="bottom" secondItem="idC-qL-RDF" secondAttribute="bottom" constant="28" id="IPZ-C4-nQq"/>
+                                <constraint firstItem="npo-En-AFP" firstAttribute="leading" secondItem="C37-y8-gOf" secondAttribute="trailing" constant="8" symbolic="YES" id="JAP-Aq-6c1"/>
+                                <constraint firstAttribute="bottom" secondItem="C37-y8-gOf" secondAttribute="bottom" constant="28" id="N8Y-wy-HwQ"/>
+                                <constraint firstItem="DpU-px-YJr" firstAttribute="leading" secondItem="jfI-nW-uV8" secondAttribute="leading" constant="23" id="YPx-ob-oxM"/>
+                                <constraint firstItem="DpU-px-YJr" firstAttribute="top" secondItem="jfI-nW-uV8" secondAttribute="top" constant="20" symbolic="YES" id="g4K-Vp-MlY"/>
+                                <constraint firstItem="npo-En-AFP" firstAttribute="top" secondItem="jfI-nW-uV8" secondAttribute="top" constant="20" symbolic="YES" id="j2S-lG-7yF"/>
+                                <constraint firstItem="C37-y8-gOf" firstAttribute="top" secondItem="jfI-nW-uV8" secondAttribute="top" constant="29" id="p9p-Mu-6py"/>
+                                <constraint firstItem="idC-qL-RDF" firstAttribute="top" secondItem="jfI-nW-uV8" secondAttribute="top" constant="29" id="tae-Mx-DCE"/>
+                                <constraint firstItem="idC-qL-RDF" firstAttribute="leading" secondItem="DpU-px-YJr" secondAttribute="trailing" constant="11" id="v3o-Bb-RBu"/>
+                                <constraint firstAttribute="bottom" secondItem="npo-En-AFP" secondAttribute="bottom" constant="20" symbolic="YES" id="yFp-5o-plb"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -115,28 +149,15 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="쇼핑" id="GcO-bM-ItH"/>
                     <connections>
+                        <outlet property="favoriteButton" destination="idC-qL-RDF" id="Jpn-LL-BZA"/>
                         <outlet property="inputButton" destination="npo-En-AFP" id="PCd-QO-Ywz"/>
                         <outlet property="inputTextField" destination="DpU-px-YJr" id="CR8-O2-mTt"/>
+                        <outlet property="successButton" destination="C37-y8-gOf" id="ggq-7W-u6k"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWT-M7-hNB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151" y="113"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="c0R-Y8-hlY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xD2-ZU-1oR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GiX-vC-Caj">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="91t-tm-jyd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-494" y="119"/>
+            <point key="canvasLocation" x="145" y="507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xuk-aK-rWC">
@@ -154,7 +175,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOK-yd-G5h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-494" y="771"/>
+            <point key="canvasLocation" x="-586" y="507"/>
         </scene>
     </scenes>
     <resources>
