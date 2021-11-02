@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddViewController: UIViewController {
 
@@ -14,12 +15,15 @@ class AddViewController: UIViewController {
     @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var contentTextView: UITextView!
     
+    let localRealm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         bottomSetting()
         navigationItemSetting()
+        
+        print("Realm is located at:", localRealm.configuration.fileURL!)
         
     }
     
@@ -36,7 +40,7 @@ class AddViewController: UIViewController {
         title = "일기 작성"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(cancelButtonClicked))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(cancelButtonClicked))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
     }
     
     @objc func cancelButtonClicked() {
@@ -49,6 +53,15 @@ class AddViewController: UIViewController {
         
         topImageView.image = UIImage(named: "배경")
         topImageView.contentMode = .scaleAspectFill
+        
+    }
+    
+    @objc func saveButtonClicked() {
+        
+        let task = UserDiary(diaryTitle: titleTextField.text!, diaryContent: contentTextView.text!, writeDate: Date(), registerDate: Date() )
+        try! localRealm.write {
+            localRealm.add(task)
+        }
         
     }
 
