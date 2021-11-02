@@ -7,6 +7,7 @@
 * [저장프로퍼티(Stored Properties)와 인스턴스](https://daltonic.tistory.com/13?category=977963)
 * [guard와 guard let문](https://daltonic.tistory.com/17)
 * [클로저(1) - 1급 객체](https://daltonic.tistory.com/18)
+* [클로저(2) - 기본 클로저](https://daltonic.tistory.com/20)
 
 ## 01 ~ 02Week Study
 
