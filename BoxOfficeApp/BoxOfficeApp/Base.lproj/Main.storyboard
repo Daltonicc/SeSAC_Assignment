@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="EUA-SN-lVa">
+                            <searchBar contentMode="redraw" placeholder="&quot;날짜를 입력해 주세요. ex) 20201225" translatesAutoresizingMaskIntoConstraints="NO" id="EUA-SN-lVa">
                                 <rect key="frame" x="0.0" y="44" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -93,6 +93,7 @@
                     </view>
                     <connections>
                         <outlet property="boxOfficeTableView" destination="sH3-zI-t0G" id="3sH-0p-pOZ"/>
+                        <outlet property="dateSearchBar" destination="EUA-SN-lVa" id="MOz-ZI-knH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

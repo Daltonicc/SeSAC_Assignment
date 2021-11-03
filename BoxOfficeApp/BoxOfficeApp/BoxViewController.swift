@@ -12,6 +12,7 @@ import SwiftyJSON
 class BoxViewController: UIViewController {
 
     @IBOutlet weak var boxOfficeTableView: UITableView!
+    @IBOutlet weak var dateSearchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,10 @@ class BoxViewController: UIViewController {
         boxOfficeTableView.dataSource = self
         boxOfficeTableView.backgroundColor = .black
         
-        BoxAPIManager.shared.getBoxOfficeData { json in
+        dateSearchBar.delegate = self
+        
+        
+        BoxAPIManager.shared.getBoxOfficeData(date: "20201023") { json in
             
             self.boxOfficeTableView.reloadData()
             
@@ -31,6 +35,8 @@ class BoxViewController: UIViewController {
 
 }
 
+// MARK: - Extension
+
 extension BoxViewController: UITableViewDelegate, UITableViewDataSource {
     
     
@@ -38,8 +44,6 @@ extension BoxViewController: UITableViewDelegate, UITableViewDataSource {
         return BoxAPIManager.shared.boxData.count
         
     }
-    
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -56,12 +60,30 @@ extension BoxViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.releaseDateLabel.text = boxRow.releaseDate
         
-        
-        
-        
         return cell
     }
     
+}
+
+extension BoxViewController: UISearchBarDelegate {
     
-    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        if let text = dateSearchBar.text {
+            
+            BoxAPIManager.shared.boxData.removeAll()
+            BoxAPIManager.shared.getBoxOfficeData(date: text) { json in
+                
+                self.boxOfficeTableView.reloadData()
+            }
+            // 분명 아무 내용도 없는데 else 문으로 가지를 않는다..
+        } else {
+            let alert = UIAlertController(title: "날짜를 제대로 입력하지 않았습니다.", message: "양식에 맞춰 날짜를 입력해주세요!", preferredStyle: .alert)
+            let okay = UIAlertAction(title: "확인", style: .default)
+
+            alert.addAction(okay)
+            
+            present(alert, animated: true)
+        }
+    }
 }

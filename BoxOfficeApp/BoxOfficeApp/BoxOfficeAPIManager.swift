@@ -16,9 +16,9 @@ class BoxAPIManager {
     
     static let shared = BoxAPIManager()
 
-    func getBoxOfficeData(result:@escaping (JSON) -> () ) {
+    func getBoxOfficeData(date: String, result:@escaping (JSON) -> () ) {
         
-        let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20201101"
+        let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=\(date)"
                 
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
@@ -39,8 +39,7 @@ class BoxAPIManager {
                 }
                 
                 result(json)
-                print(self.boxData)
-                
+                                
             case .failure(let error):
                 print(error)
             }
