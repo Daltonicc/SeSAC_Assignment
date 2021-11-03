@@ -9,6 +9,7 @@ import Foundation
 
 struct BoxModel {
     
+    
     var rank: String
     var title: String
     var releaseDate: String

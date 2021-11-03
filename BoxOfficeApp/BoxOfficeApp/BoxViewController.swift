@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class BoxViewController: UIViewController {
 
@@ -17,14 +18,19 @@ class BoxViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let localRealm = try! Realm()
+        var lists: Results<BoxOfficeList>!
+        
         boxOfficeTableView.delegate = self
         boxOfficeTableView.dataSource = self
         boxOfficeTableView.backgroundColor = .black
         
         dateSearchBar.delegate = self
         
+        print("Realm is located at:", localRealm.configuration.fileURL!)
+
         
-        BoxAPIManager.shared.getBoxOfficeData(date: "20201023") { json in
+        BoxAPIManager.shared.getBoxOfficeData(date: "") { json in
             
             self.boxOfficeTableView.reloadData()
             

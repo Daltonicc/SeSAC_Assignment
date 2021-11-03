@@ -8,11 +8,16 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class BoxAPIManager {
     
     var boxData: [BoxModel] = []
-    var date: String = "20211102"
+    var date: String = ""
+    
+    let localRealm = try! Realm()
+    var lists: Results<BoxOfficeList>!
+
     
     static let shared = BoxAPIManager()
 
@@ -35,7 +40,15 @@ class BoxAPIManager {
                     
                     let data = BoxModel(rank: rank, title: title, releaseDate: releaseDate)
                     
+                    let dbData = BoxOfficeList(date: date, rank: rank, title: title, releaseDate: releaseDate)
+                    
+                    try! self.localRealm.write {
+                        self.localRealm.add(dbData)
+            
+                    }
+                    
                     self.boxData.append(data)
+                    
                 }
                 
                 result(json)
