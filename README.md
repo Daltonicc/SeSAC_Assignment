@@ -39,3 +39,5 @@
 * [10/13 ShoppingListApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/ShoppingListApp)
 * [10/15 TrendMediaApp ~](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/TrendMediaApp)
 * [11/1 MyDiaryApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/06Week_Study)
+* [11/3 BoxOfficeApp](https://github.com/Daltonicc/SeSAC_Assignment/tree/main/BoxOfficeApp)
+* 
