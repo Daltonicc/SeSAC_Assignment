@@ -97,9 +97,6 @@
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain"/>
-                                            <connections>
-                                                <action selector="leftButtonClicked:" destination="eQA-QT-xNF" eventType="touchUpInside" id="uOe-Ry-YrU"/>
-                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCe-P8-w6p">
                                             <rect key="frame" x="60" y="16" width="297" height="30"/>
@@ -117,9 +114,6 @@
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain"/>
-                                            <connections>
-                                                <action selector="favoriteButtonClicked:" destination="eQA-QT-xNF" eventType="touchUpInside" id="bRs-En-8mr"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -136,8 +130,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="checkButton" destination="eZY-0g-NtG" id="DJc-N2-PZB"/>
                                     <outlet property="favoriteButton" destination="b9D-DH-arc" id="4Ss-Qf-Mb6"/>
-                                    <outlet property="leftCheckButton" destination="eZY-0g-NtG" id="DJc-N2-PZB"/>
                                     <outlet property="toDoListLabel" destination="XCe-P8-w6p" id="ITm-TZ-8c7"/>
                                 </connections>
                             </tableViewCell>

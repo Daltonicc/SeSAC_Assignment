@@ -114,11 +114,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let tasksToUpdate = tasks[indexPath.row]
         
         //1. 수정 - 레코드에 대한 값 수정
-//        try! localRealm.write {
-//            tasksToUpdate.diaryTitle = "새롭게 수정"
-//            tasksToUpdate.diaryContent = "수정!"
-//            tableView.reloadData()
-//        }
+        try! localRealm.write {
+            tasksToUpdate.diaryTitle = "새롭게 수정"
+            tasksToUpdate.diaryContent = "수정!"
+            tableView.reloadData()
+        }
         
         //2. 일괄 수정
 //        try! localRealm.write {
@@ -134,11 +134,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 //            tableView.reloadData()
 //        }
         
-        //4.
-        try! localRealm.write {
-            localRealm.create(UserDiary.self, value: [ "_id": tasksToUpdate._id, "diaryTitle": "얘만 바꿀래"], update: .modified)
-            tableView.reloadData()
-        }
+        //4. 수정
+//        try! localRealm.write {
+//            localRealm.create(UserDiary.self, value: [ "_id": tasksToUpdate._id, "diaryTitle": "얘만 바꿀래"], update: .modified)
+//            tableView.reloadData()
+//        }
     }
     
     
