@@ -24,7 +24,8 @@ class SearchViewController: UIViewController {
         
         title = "검색"
         
-        tasks = localRealm.objects(UserDiary.self)
+        tasks = localRealm.objects(UserDiary.self) // .sorted(bykeypath: "diaryTitle", ascending: false)
+        //tasks = localRealm.objects(UserDiary.self).filter("diaryTitle == ~~")
         
         print(tasks)
     }

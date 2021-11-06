@@ -27,6 +27,9 @@
 		6A81AEB72730C8D900A4B673 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 6A81AEB62730C8D900A4B673 /* Realm */; };
 		6A81AEB92730C8D900A4B673 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6A81AEB82730C8D900A4B673 /* RealmSwift */; };
 		6A81AEBC2730C97500A4B673 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AEBB2730C97500A4B673 /* RealmModel.swift */; };
+		6A81AEFA273368D500A4B673 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A81AEF9273368D500A4B673 /* SettingViewController.swift */; };
+		6A81AEFD27336DB800A4B673 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 6A81AEFC27336DB800A4B673 /* Zip */; };
+		6A81AF002734AD8200A4B673 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 6A81AEFF2734AD8200A4B673 /* FSCalendar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,7 @@
 		6A81AEB12730542400A4B673 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		6A81AEB32730BB9600A4B673 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		6A81AEBB2730C97500A4B673 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		6A81AEF9273368D500A4B673 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A81AEFD27336DB800A4B673 /* Zip in Frameworks */,
+				6A81AF002734AD8200A4B673 /* FSCalendar in Frameworks */,
 				6A81AEB92730C8D900A4B673 /* RealmSwift in Frameworks */,
 				6A81AEB72730C8D900A4B673 /* Realm in Frameworks */,
 			);
@@ -94,6 +100,7 @@
 				6A81AE8427302A5600A4B673 /* Main.storyboard */,
 				6A81AE7E27302A5600A4B673 /* AppDelegate.swift */,
 				6A81AE8027302A5600A4B673 /* SceneDelegate.swift */,
+				6A81AEF9273368D500A4B673 /* SettingViewController.swift */,
 				6A81AEA4273051D000A4B673 /* AddViewController.swift */,
 				6A81AE8227302A5600A4B673 /* HomeViewController.swift */,
 				6A81AE9227303DE300A4B673 /* SearchViewController.swift */,
@@ -161,6 +168,8 @@
 			packageProductDependencies = (
 				6A81AEB62730C8D900A4B673 /* Realm */,
 				6A81AEB82730C8D900A4B673 /* RealmSwift */,
+				6A81AEFC27336DB800A4B673 /* Zip */,
+				6A81AEFF2734AD8200A4B673 /* FSCalendar */,
 			);
 			productName = 06Week_Study;
 			productReference = 6A81AE7B27302A5600A4B673 /* 06Week_Study.app */;
@@ -193,6 +202,8 @@
 			mainGroup = 6A81AE7227302A5500A4B673;
 			packageReferences = (
 				6A81AEB52730C8D900A4B673 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				6A81AEFB27336DB800A4B673 /* XCRemoteSwiftPackageReference "Zip" */,
+				6A81AEFE2734AD8200A4B673 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 6A81AE7C27302A5600A4B673 /* Products */;
 			projectDirPath = "";
@@ -232,6 +243,7 @@
 				6A81AEA0273041DA00A4B673 /* LocalizableStrings.swift in Sources */,
 				6A81AE9327303DE300A4B673 /* SearchViewController.swift in Sources */,
 				6A81AEBC2730C97500A4B673 /* RealmModel.swift in Sources */,
+				6A81AEFA273368D500A4B673 /* SettingViewController.swift in Sources */,
 				6A81AEA3273042D900A4B673 /* String+Extension.swift in Sources */,
 				6A81AEB42730BB9600A4B673 /* SearchTableViewCell.swift in Sources */,
 				6A81AEA5273051D000A4B673 /* AddViewController.swift in Sources */,
@@ -478,6 +490,22 @@
 				version = 10.18.0;
 			};
 		};
+		6A81AEFB27336DB800A4B673 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		6A81AEFE2734AD8200A4B673 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -490,6 +518,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6A81AEB52730C8D900A4B673 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		6A81AEFC27336DB800A4B673 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A81AEFB27336DB800A4B673 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+		6A81AEFF2734AD8200A4B673 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A81AEFE2734AD8200A4B673 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
