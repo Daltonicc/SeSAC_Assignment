@@ -58,5 +58,12 @@ class BoxAPIManager {
             }
         }
     }
+    
+    func getBoxOfficeDataFromDB(date: String) -> Results<BoxOfficeList> {
+        
+        let result = localRealm.objects(BoxOfficeList.self).filter("date == '\(date)'")
+        return result
+        
+    }
 
 }
