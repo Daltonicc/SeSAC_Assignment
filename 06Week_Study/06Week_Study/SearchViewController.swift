@@ -91,19 +91,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         let row = tasks[indexPath.row]
         
-        cell.titleLabel.text = row.diaryTitle
-        cell.titleLabel.font = UIFont.boldSystemFont(ofSize: 19)
+        //TableViewCell에다가 처리해주기
+        cell.configureCell(row: row)
         
-        cell.contentLabel.text = row.diaryContent
-        cell.contentLabel.font = UIFont.systemFont(ofSize: 16)
-        cell.contentLabel.textColor = .gray
-        cell.contentLabel.numberOfLines = 3
-        
-        cell.dateLabel.text = "\(row.writeDate)"
-        cell.dateLabel.font = UIFont.systemFont(ofSize: 16)
-        
-        cell.diaryImageView.backgroundColor = .blue
-        cell.diaryImageView.layer.cornerRadius = 10
         cell.diaryImageView.image = loadImageFromDocumentDirectory(imageName: "\(row._id).jpg")
         
         return cell

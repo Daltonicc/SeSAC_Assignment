@@ -14,16 +14,26 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var diaryImageView: UIImageView!
     
+    func configureCell(row: UserDiary) {
+        
+        titleLabel.text = row.diaryTitle
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 19)
+        
+        contentLabel.text = row.diaryContent
+        contentLabel.font = UIFont.systemFont(ofSize: 16)
+        contentLabel.textColor = .gray
+        contentLabel.numberOfLines = 3
+        
+        dateLabel.text = "\(row.writeDate)"
+        dateLabel.font = UIFont.systemFont(ofSize: 16)
+        
+        diaryImageView.backgroundColor = .blue
+        diaryImageView.layer.cornerRadius = 10
+
+        
+        
+    }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }
