@@ -11,6 +11,16 @@ class HomeViewVontroller: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    let array = [
+        Array(repeating: "a", count: 20),
+        Array(repeating: "b", count: 13),
+        Array(repeating: "c", count: 30),
+        Array(repeating: "d", count: 13),
+        Array(repeating: "e", count: 22),
+        Array(repeating: "f", count: 25),
+        Array(repeating: "g", count: 21),
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,7 +61,7 @@ class HomeViewVontroller: UIViewController {
 extension HomeViewVontroller: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return array.count
     
     }
     
@@ -60,13 +70,15 @@ extension HomeViewVontroller: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
     
         cell.categoryLabel.backgroundColor = .yellow
+        //Pass Data
+        cell.data = array[indexPath.row]
      
         cell.collectionView.backgroundColor = .lightGray
-        cell.collectionView.delegate = self
-        cell.collectionView.dataSource = self
         cell.collectionView.tag = indexPath.row
         //딱딱 맞게끔 넘어가게 하기.(단, 디바이스 width 기준일 때)
-        cell.collectionView.isPagingEnabled = true
+//        cell.collectionView.isPagingEnabled = true
+        //셀이 재사용될 때마다 콜렉션뷰도 리로딩 해줘야함.
+        
         
         return cell
         
@@ -79,45 +91,4 @@ extension HomeViewVontroller: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension HomeViewVontroller: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else { return UICollectionViewCell() }
-        
-        cell.imageView.backgroundColor = .brown
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        //테이블뷰 셀의 인덱스패스를 어떻게 가지고 와야할까
-        if collectionView.tag == 0 {
-            return CGSize(width: UIScreen.main.bounds.width, height: 100)
-        } else {
-            return CGSize(width: 150, height: 150)
-        }
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        //여백 주기
-        if collectionView.tag == 0 {
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        } else {
-            return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
-        }
-        
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return collectionView.tag == 0 ? 0 : 10
 
-    }
-}

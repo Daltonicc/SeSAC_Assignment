@@ -190,6 +190,7 @@ class ShoppingListTableViewController: UITableViewController {
             return UITableViewCell()
         }
         
+        
         let row = tasks[indexPath.row]
         
         cell.backgroundColor = .white

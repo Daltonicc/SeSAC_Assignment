@@ -164,7 +164,7 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func checkCurrentLocationAuthorization(_ authorizationStatus: CLAuthorizationStatus) {
-        
+        print("2번")
         switch authorizationStatus {
         case .notDetermined:
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
