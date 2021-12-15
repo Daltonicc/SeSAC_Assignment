@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		6A9F6F18276A311200D5D521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F6F17276A311200D5D521 /* AppDelegate.swift */; };
 		6A9F6F1A276A311200D5D521 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F6F19276A311200D5D521 /* SceneDelegate.swift */; };
-		6A9F6F1C276A311200D5D521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F6F1B276A311200D5D521 /* ViewController.swift */; };
-		6A9F6F1F276A311200D5D521 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9F6F1D276A311200D5D521 /* Main.storyboard */; };
 		6A9F6F21276A311300D5D521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9F6F20276A311300D5D521 /* Assets.xcassets */; };
 		6A9F6F24276A311300D5D521 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9F6F22276A311300D5D521 /* LaunchScreen.storyboard */; };
+		6A9F6F2C276A32DD00D5D521 /* MelonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F6F2B276A32DD00D5D521 /* MelonViewController.swift */; };
+		6A9F6F2E276A32E700D5D521 /* KakaotalkProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F6F2D276A32E700D5D521 /* KakaotalkProfileViewController.swift */; };
+		6A9F6F30276A32F000D5D521 /* BaeminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F6F2F276A32F000D5D521 /* BaeminViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6A9F6F14276A311200D5D521 /* LayoutPracticeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayoutPracticeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9F6F17276A311200D5D521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A9F6F19276A311200D5D521 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6A9F6F1B276A311200D5D521 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6A9F6F1E276A311200D5D521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6A9F6F20276A311300D5D521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A9F6F23276A311300D5D521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A9F6F25276A311300D5D521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A9F6F2B276A32DD00D5D521 /* MelonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelonViewController.swift; sourceTree = "<group>"; };
+		6A9F6F2D276A32E700D5D521 /* KakaotalkProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaotalkProfileViewController.swift; sourceTree = "<group>"; };
+		6A9F6F2F276A32F000D5D521 /* BaeminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaeminViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +60,9 @@
 			children = (
 				6A9F6F17276A311200D5D521 /* AppDelegate.swift */,
 				6A9F6F19276A311200D5D521 /* SceneDelegate.swift */,
-				6A9F6F1B276A311200D5D521 /* ViewController.swift */,
-				6A9F6F1D276A311200D5D521 /* Main.storyboard */,
+				6A9F6F2B276A32DD00D5D521 /* MelonViewController.swift */,
+				6A9F6F2D276A32E700D5D521 /* KakaotalkProfileViewController.swift */,
+				6A9F6F2F276A32F000D5D521 /* BaeminViewController.swift */,
 				6A9F6F20276A311300D5D521 /* Assets.xcassets */,
 				6A9F6F22276A311300D5D521 /* LaunchScreen.storyboard */,
 				6A9F6F25276A311300D5D521 /* Info.plist */,
@@ -127,7 +130,6 @@
 			files = (
 				6A9F6F24276A311300D5D521 /* LaunchScreen.storyboard in Resources */,
 				6A9F6F21276A311300D5D521 /* Assets.xcassets in Resources */,
-				6A9F6F1F276A311200D5D521 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +140,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A9F6F1C276A311200D5D521 /* ViewController.swift in Sources */,
 				6A9F6F18276A311200D5D521 /* AppDelegate.swift in Sources */,
+				6A9F6F2E276A32E700D5D521 /* KakaotalkProfileViewController.swift in Sources */,
+				6A9F6F2C276A32DD00D5D521 /* MelonViewController.swift in Sources */,
+				6A9F6F30276A32F000D5D521 /* BaeminViewController.swift in Sources */,
 				6A9F6F1A276A311200D5D521 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +151,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6A9F6F1D276A311200D5D521 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6A9F6F1E276A311200D5D521 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6A9F6F22276A311300D5D521 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +290,7 @@
 				INFOPLIST_FILE = LayoutPracticeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +318,7 @@
 				INFOPLIST_FILE = LayoutPracticeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
