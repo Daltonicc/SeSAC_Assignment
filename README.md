@@ -48,7 +48,7 @@
 
 ## 08~12Week Study
 
-* [출시프로젝트]()
+* [출시프로젝트](https://github.com/Daltonicc/PocketTripApp)
 
 ## 13Week Study
 
