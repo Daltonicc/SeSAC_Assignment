@@ -14,6 +14,7 @@ class MelonViewController: UIViewController {
         label.textColor = .white
         label.text = "strawberry moon"
         label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20)
         return label
     }()
     let authorLabel: UILabel = {
@@ -21,6 +22,7 @@ class MelonViewController: UIViewController {
         label.textColor = .lightGray
         label.text = "아이유"
         label.textAlignment = .center
+        label.font = .systemFont(ofSize: 15)
         return label
     }()
     let titleSideButton: UIButton = {
@@ -136,7 +138,7 @@ class MelonViewController: UIViewController {
 
         view.backgroundColor = .darkGray
         
-        let list = [titleLabel, /*authorLabel, titleSideButton, authorSideButton, albumImageView, favoriteButton, favoriteNumberLabel, similarSongButton, instaLinkButton, lyricsLabel, repeatButton, progressImageView, repeatOptionButton, songListButton, backSongButton, pauseButton, nextSongButton, eQButton*/]
+        let list = [titleLabel, authorLabel, titleSideButton, authorSideButton, albumImageView/*, favoriteButton, favoriteNumberLabel, similarSongButton, instaLinkButton, lyricsLabel, repeatButton, progressImageView, repeatOptionButton, songListButton, backSongButton, pauseButton, nextSongButton, eQButton*/]
         list.forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
@@ -150,9 +152,25 @@ class MelonViewController: UIViewController {
         NSLayoutConstraint.activate([
         
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0)
-            
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLabel.heightAnchor.constraint(equalToConstant: 20),
         
+            authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            authorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            authorLabel.heightAnchor.constraint(equalToConstant: 15),
+            
+            titleSideButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            titleSideButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            titleSideButton.heightAnchor.constraint(equalToConstant: 20),
+            titleSideButton.widthAnchor.constraint(equalToConstant: 20),
+            
+            authorSideButton.topAnchor.constraint(equalTo: titleSideButton.bottomAnchor, constant: 10),
+            authorSideButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            authorSideButton.heightAnchor.constraint(equalToConstant: 20),
+            authorSideButton.widthAnchor.constraint(equalToConstant: 20),
+            
+            albumImageView.
+            
         ])
     }
     
