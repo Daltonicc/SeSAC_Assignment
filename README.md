@@ -6,6 +6,7 @@
 * [class와 struct의 이니셜라이저(init)](https://daltonic.tistory.com/16)
 * [저장프로퍼티(Stored Properties)와 인스턴스](https://daltonic.tistory.com/13?category=977963)
 * [guard와 guard let문](https://daltonic.tistory.com/17)
+* [프로퍼티 감시자](https://daltonic.tistory.com/25)
 * [클로저(1) - 1급 객체](https://daltonic.tistory.com/18)
 * [클로저(2) - 기본 클로저](https://daltonic.tistory.com/20)
 
@@ -47,7 +48,7 @@
 
 ## 08~12Week Study
 
-* [출시프로젝트]()
+* [출시프로젝트](https://github.com/Daltonicc/PocketTripApp)
 
 ## 13Week Study
 
