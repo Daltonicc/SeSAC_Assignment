@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.snp.makeConstraints {
-            $0.top.equalTo(view).offset(0)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(0)
             $0.centerX.equalTo(view)
             $0.width.equalTo(view.snp.width)
             $0.bottom.equalTo(view).offset(-100)
@@ -89,26 +89,31 @@ class ViewController: UIViewController {
     
     func headerViewConfigure() {
         
-        headerView.backgroundColor = .brown
+        headerView.backgroundColor = .white
 
         headerView.addSubview(beerImageView)
         headerView.addSubview(informationView)
 
-        beerImageView.backgroundColor = .orange
-        beerImageView.snp.makeConstraints {
-            $0.top.equalTo(headerView.snp.top)
-            $0.leading.trailing.equalTo(headerView)
-            $0.bottom.equalTo(headerView.snp.bottom).inset(200)
-        }
-        beerImageView.image = UIImage(systemName: "star")
-        
         
         informationView.backgroundColor = .yellow
         informationView.snp.makeConstraints {
-            $0.top.equalTo(headerView.snp.top).inset(300)
+            $0.centerX.equalTo(headerView)
             $0.leading.trailing.equalTo(headerView).inset(30)
-            $0.bottom.equalTo(headerView.snp.bottom)
+            $0.top.equalTo(headerView.snp.bottom).offset(-50)
+            $0.height.equalTo(400)
+            
         }
+        
+        beerImageView.backgroundColor = .orange
+//        beerImageView.snp.makeConstraints {
+//            $0.top.equalTo(headerView.snp.top)
+//            $0.leading.trailing.equalTo(headerView)
+//            $0.bottom.equalTo(headerView.snp.bottom).inset(200)
+//        }
+        beerImageView.image = UIImage(systemName: "star")
+        
+        
+        
         
 //        informationView.addSubview(titleLabel)
 //        informationView.addSubview(subtitleLabel)
