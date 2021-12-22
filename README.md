@@ -9,6 +9,7 @@
 * [프로퍼티 감시자](https://daltonic.tistory.com/25)
 * [클로저(1) - 1급 객체](https://daltonic.tistory.com/18)
 * [클로저(2) - 기본 클로저](https://daltonic.tistory.com/20)
+* [강한참조와 약한참조 + 참조타입, ARC](https://daltonic.tistory.com/27)
 
 ## 01 ~ 02Week Study
 
