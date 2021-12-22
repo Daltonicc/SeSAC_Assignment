@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--With Storyboard View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WithStoryboardViewController" id="Y6W-OH-hqX" customClass="WithStoryboardViewController" customModule="RecommendBeerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,6 +19,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7fS-0P-RwP">
                                 <rect key="frame" x="0.0" y="382.5" width="414" height="414.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeerTableViewCell" id="tev-Sk-Epx" customClass="BeerTableViewCell" customModule="RecommendBeerApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tev-Sk-Epx" id="9ap-wS-c75">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7e-9V-nO3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="208"/>
@@ -62,6 +72,9 @@
                                         <rect key="frame" x="150" y="202.5" width="74" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="more"/>
+                                        <connections>
+                                            <action selector="moreButtonClicker:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Knz-kx-tNL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -86,16 +99,21 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Tou-wH-BLj"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="refreshButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SGJ-Zb-YfR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKa-Cx-6Bb">
                                 <rect key="frame" x="103" y="807" width="291" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="291" id="wSg-j3-kc7"/>
                                 </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="shareButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GdN-iA-j6I"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -119,6 +137,17 @@
                             <constraint firstItem="7fS-0P-RwP" firstAttribute="top" secondItem="Rae-fs-BxV" secondAttribute="bottom" constant="5" id="zcp-jR-uEV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="beerImageView" destination="U7e-9V-nO3" id="7Nr-jN-i12"/>
+                        <outlet property="beerInfoTableView" destination="7fS-0P-RwP" id="Te3-sN-tWf"/>
+                        <outlet property="contentTextView" destination="m24-kb-ZUa" id="LEB-tn-TPg"/>
+                        <outlet property="moreButton" destination="zeR-Go-yDi" id="rQP-F6-Aoy"/>
+                        <outlet property="refreshButton" destination="bx0-OD-AXh" id="djK-qu-LX8"/>
+                        <outlet property="shareButton" destination="HKa-Cx-6Bb" id="VPd-yN-ztT"/>
+                        <outlet property="subtitleLabel" destination="3vx-SG-hur" id="2wK-Si-EUc"/>
+                        <outlet property="titleLabel" destination="fSL-tl-Uyf" id="xAE-Ji-XPe"/>
+                        <outlet property="topView" destination="Rae-fs-BxV" id="s9u-8t-aSm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
