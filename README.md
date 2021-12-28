@@ -53,3 +53,8 @@
 
 ## 13Week Study
 
+* [12/20 RecommendBeerApp]()
+
+## 14Week Study
+
+* [12/27 Login/SignUpAPP](https://github.com/Daltonicc/SeSACWeek14)
