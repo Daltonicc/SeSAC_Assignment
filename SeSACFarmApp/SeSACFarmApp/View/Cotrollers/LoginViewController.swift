@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
         viewModel.postUserLogin {
 //            DispatchQueue.main.async {
                 print("1")
-                let vc = MainPostViewController()
+                let vc = MainBoardViewController()
                 let nav = UINavigationController(rootViewController: vc)
                 nav.modalPresentationStyle = .fullScreen
                 self.present(nav, animated: true, completion: nil)

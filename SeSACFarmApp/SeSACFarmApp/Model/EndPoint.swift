@@ -28,7 +28,7 @@ enum EndPoint {
     case signUP
     case changePassword
     case getPosts
-    case postPost(id: Int)
+    case postPost
     case changePost(id: Int)
     case deletePost(id: Int)
     case postComment

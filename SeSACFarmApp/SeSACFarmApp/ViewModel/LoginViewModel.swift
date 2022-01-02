@@ -17,10 +17,12 @@ class LoginViewModel {
         APIService.login(identifier: email.value, password: password.value) { userData, error in
             
             guard let userData = userData else {
-                print(userData)
                 print("noUserData")
                 return
             }
+            print(userData)
+            
+            UserDefaults.standard.set(userData.jwt, forKey: "token")
             
             completion()
         }

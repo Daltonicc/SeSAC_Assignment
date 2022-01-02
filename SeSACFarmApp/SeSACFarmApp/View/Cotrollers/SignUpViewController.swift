@@ -78,7 +78,7 @@ class SignUpViewController: UIViewController {
     @objc func signUpButtonClicked() {
         
         viewModel.postUserSignUp {
-            let vc = MainPostViewController()
+            let vc = MainBoardViewController()
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true, completion: nil)
