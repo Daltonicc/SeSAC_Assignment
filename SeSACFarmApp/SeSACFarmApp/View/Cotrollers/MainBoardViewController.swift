@@ -11,10 +11,21 @@ import UIKit
 class MainBoardViewController: UIViewController {
     
     let mainView = MainBoardView()
+    let viewModel = MainBoardViewModel()
     
     override func loadView() {
         
         self.view = mainView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.getBoardData {
+            DispatchQueue.main.async {
+                self.mainView.tableView.reloadData()
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -42,7 +53,6 @@ extension MainBoardViewController: UITableViewDelegate, UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MainBoardTableViewCell.identifier, for: indexPath) as? MainBoardTableViewCell else { return UITableViewCell() }
         
-        cell.textLabel?.text = "text"
         
         return cell
     }
