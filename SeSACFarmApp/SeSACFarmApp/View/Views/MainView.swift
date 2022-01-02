@@ -18,14 +18,14 @@ class MainView: UIView {
     }()
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "당신 근처의 퍼즐농장"
+        label.text = "당신 근처의 새싹농장"
         label.font = .boldSystemFont(ofSize: 20)
         label.textAlignment = .center
         return label
     }()
     let subTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "iOS 지식부터 여행지 확인까지\n지금 포켓트립에서 함께해보세요!"
+        label.text = "iOS 지식부터 바람의 나라까지\n지금 SeSAC에서 함께해보세요!"
         label.font = .systemFont(ofSize: 15)
         label.numberOfLines = 0
         label.textAlignment = .center

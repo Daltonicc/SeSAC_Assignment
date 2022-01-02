@@ -15,6 +15,10 @@
 		6ABAEA702780AA22004BB2C8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABAEA6F2780AA22004BB2C8 /* MainView.swift */; };
 		6ABAEA7227819203004BB2C8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABAEA7127819203004BB2C8 /* MainViewModel.swift */; };
 		6ABAEA7527819D4B004BB2C8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6ABAEA7427819D4B004BB2C8 /* SnapKit */; };
+		6ABAEA792781BAE4004BB2C8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABAEA782781BAE4004BB2C8 /* SignUpViewController.swift */; };
+		6ABAEA7B2781BC36004BB2C8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABAEA7A2781BC36004BB2C8 /* LoginViewController.swift */; };
+		6ABAEA7D2781C4D4004BB2C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABAEA7C2781C4D4004BB2C8 /* LoginView.swift */; };
+		6ABAEA7F2781DFF8004BB2C8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABAEA7E2781DFF8004BB2C8 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		6ABAEA6527809887004BB2C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ABAEA6F2780AA22004BB2C8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6ABAEA7127819203004BB2C8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		6ABAEA782781BAE4004BB2C8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		6ABAEA7A2781BC36004BB2C8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6ABAEA7C2781C4D4004BB2C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6ABAEA7E2781DFF8004BB2C8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,7 @@
 		6ABAEA6B278098E6004BB2C8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				6ABAEA7127819203004BB2C8 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -79,8 +88,8 @@
 		6ABAEA6C2780A9D1004BB2C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6ABAEA5B27809885004BB2C8 /* MainViewController.swift */,
-				6ABAEA6F2780AA22004BB2C8 /* MainView.swift */,
+				6ABAEA772781B084004BB2C8 /* Views */,
+				6ABAEA762781B07C004BB2C8 /* Cotrollers */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -88,7 +97,6 @@
 		6ABAEA6D2780A9D6004BB2C8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6ABAEA7127819203004BB2C8 /* MainViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +110,26 @@
 				6ABAEA6227809887004BB2C8 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6ABAEA762781B07C004BB2C8 /* Cotrollers */ = {
+			isa = PBXGroup;
+			children = (
+				6ABAEA5B27809885004BB2C8 /* MainViewController.swift */,
+				6ABAEA782781BAE4004BB2C8 /* SignUpViewController.swift */,
+				6ABAEA7A2781BC36004BB2C8 /* LoginViewController.swift */,
+			);
+			path = Cotrollers;
+			sourceTree = "<group>";
+		};
+		6ABAEA772781B084004BB2C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6ABAEA6F2780AA22004BB2C8 /* MainView.swift */,
+				6ABAEA7C2781C4D4004BB2C8 /* LoginView.swift */,
+				6ABAEA7E2781DFF8004BB2C8 /* SignUpView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,10 +208,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ABAEA7B2781BC36004BB2C8 /* LoginViewController.swift in Sources */,
+				6ABAEA792781BAE4004BB2C8 /* SignUpViewController.swift in Sources */,
 				6ABAEA7227819203004BB2C8 /* MainViewModel.swift in Sources */,
 				6ABAEA5C27809885004BB2C8 /* MainViewController.swift in Sources */,
 				6ABAEA702780AA22004BB2C8 /* MainView.swift in Sources */,
 				6ABAEA5827809885004BB2C8 /* AppDelegate.swift in Sources */,
+				6ABAEA7D2781C4D4004BB2C8 /* LoginView.swift in Sources */,
+				6ABAEA7F2781DFF8004BB2C8 /* SignUpView.swift in Sources */,
 				6ABAEA5A27809885004BB2C8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
