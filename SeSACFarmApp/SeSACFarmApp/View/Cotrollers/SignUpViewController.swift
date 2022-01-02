@@ -11,8 +11,10 @@ import UIKit
 class SignUpViewController: UIViewController {
     
     let mainView = SignUpView()
+    let viewModel = SignUpViewModel()
     
     override func loadView() {
+        
         self.view = mainView
     }
     
@@ -22,6 +24,7 @@ class SignUpViewController: UIViewController {
         view.backgroundColor = .white
         
         navigationItemConfig()
+        textFieldConfig()
     }
     
     func navigationItemConfig() {
@@ -34,9 +37,57 @@ class SignUpViewController: UIViewController {
         mainView.backBarButton.action = #selector(backBarButtonClicked)
     }
     
+    func textFieldConfig() {
+        
+        viewModel.email.bind { text in
+    
+            self.mainView.emailTextField.text = text
+        }
+        
+        viewModel.username.bind { text in
+            
+            self.mainView.nicknameTextField.text = text
+        }
+    
+        viewModel.password.bind { text in
+            self.mainView.passwordTextField.text = text
+        }
+        
+        mainView.emailTextField.addTarget(self, action: #selector(emailTextFieldDidChange(textField:)), for: .editingChanged)
+        mainView.nicknameTextField.addTarget(self, action: #selector(nicknameTextFieldDidChange(textField:)), for: .editingChanged)
+        mainView.passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(textField:)), for: .editingChanged)
+        mainView.signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
+        
+    }
+    
+    @objc func emailTextFieldDidChange(textField: UITextField) {
+        
+        viewModel.email.value = textField.text ?? ""
+    }
+    
+    @objc func nicknameTextFieldDidChange(textField: UITextField) {
+        
+        viewModel.username.value = textField.text ?? ""
+    }
+
+    @objc func passwordTextFieldDidChange(textField: UITextField) {
+        
+        viewModel.password.value = textField.text ?? ""
+    }
+    
+    @objc func signUpButtonClicked() {
+        
+        viewModel.postUserSignUp {
+            let vc = MainPostViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        }
+    }
+    
     @objc func backBarButtonClicked() {
         
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
 }

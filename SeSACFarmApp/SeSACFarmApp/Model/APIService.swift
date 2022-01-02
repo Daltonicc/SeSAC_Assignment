@@ -16,5 +16,21 @@ enum APIError: Error {
 
 class APIService {
     
+    static func login(identifier: String, password: String, completion: @escaping (UserData?, APIError?) -> Void ) {
+        
+        var request = URLRequest(url: EndPoint.login.url)
+        request.httpMethod = Method.POST.rawValue
+        request.httpBody = "identifier=\(identifier)&password=\(password)".data(using: .utf8, allowLossyConversion: false)
+        
+        URLSession.request(endpoint: request, completion: completion)
+    }
     
+    static func signUp(username: String, email: String, password: String, completion: @escaping (UserData?, APIError?) -> Void ) {
+        
+        var request = URLRequest(url: EndPoint.signUP.url)
+        request.httpMethod = Method.POST.rawValue
+        request.httpBody = "username=\(username)&email=\(email)&password=\(password)".data(using: .utf8, allowLossyConversion: false)
+        
+        URLSession.request(endpoint: request, completion: completion)
+    }
 }
