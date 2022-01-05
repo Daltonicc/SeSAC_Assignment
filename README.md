@@ -1,6 +1,7 @@
 # SeSAC_Assignment
 
 ## 주요 개념 정리
+* [옵셔널(Optional) 제대로 이해하기](https://daltonic.tistory.com/30)
 * [Optional, Optional Binding, Optional Chaining](https://daltonic.tistory.com/14)
 * [Type Casting](https://daltonic.tistory.com/15?category=977963)
 * [class와 struct의 이니셜라이저(init)](https://daltonic.tistory.com/16)
