@@ -13,6 +13,7 @@
 * [클로저(3) - 탈출클로저](https://daltonic.tistory.com/29)
 * [강한참조와 약한참조 + 참조타입, ARC](https://daltonic.tistory.com/27)
 * [앱의 생명주기 이해하기(App's Life Cycle)](https://daltonic.tistory.com/28?category=977963)
+* [프로토콜(1) - Property Requirements](https://daltonic.tistory.com/31)
 
 ## 01 ~ 02Week Study
 
