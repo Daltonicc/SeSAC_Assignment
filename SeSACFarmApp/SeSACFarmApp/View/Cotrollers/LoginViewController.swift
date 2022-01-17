@@ -42,9 +42,11 @@ class LoginViewController: UIViewController {
         viewModel.email.bind { text in
     
             self.mainView.emailTextField.text = text
+            // 올바른 이메일 형식
         }
         
         viewModel.password.bind { text in
+            
             self.mainView.passwordTextField.text = text
         }
         

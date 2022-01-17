@@ -46,3 +46,9 @@ class MainViewController: UIViewController {
     }
 }
 
+
+/*
+ 구현해야 할 것
+ 1. 올바른 이메일 형식 얼럿
+ 2. 보드 로딩할 때 스켈레톤 뷰
+ */
