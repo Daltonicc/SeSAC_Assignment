@@ -66,6 +66,10 @@
 * [12/27 Login/SignUpAPP](https://github.com/Daltonicc/SeSACWeek14)
 
 
-## 15Week Study
+## 15~16Week Study
 
 * [1/6 SeSACFarmApp](https://github.com/Daltonicc/SeSACFarmApp)
+
+## 17~21Week Study
+
+* [1/17 ~ 2/18 Service Level Project - SeSACFriends!]()
