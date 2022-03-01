@@ -16,6 +16,7 @@
 * [앱의 생명주기 이해하기(App's Life Cycle)](https://daltonic.tistory.com/28?category=977963)
 * [프로토콜(1) - Property Requirements](https://daltonic.tistory.com/31)
 * [Delegate Pattern 이해하기](https://daltonic.tistory.com/34)
+* [deinit이 호출되지 않는 이유](https://daltonic.tistory.com/35?category=977963)
 
 ## 01 ~ 02Week Study
 
@@ -72,4 +73,4 @@
 
 ## 17~21Week Study
 
-* [1/17 ~ 2/18 Service Level Project - SeSACFriends!]()
+* [1/17 ~ 2/25 Service Level Project - SeSACFriends!]()
