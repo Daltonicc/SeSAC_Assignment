@@ -18,6 +18,7 @@
 * [Delegate Pattern 이해하기](https://daltonic.tistory.com/34)
 * [deinit이 호출되지 않는 이유](https://daltonic.tistory.com/35?category=977963)
 * [Swift Attributes - discardableResult, frozen에 대하여](https://daltonic.tistory.com/36)
+* [타입 메서드 - class func과 static func의 차이](https://daltonic.tistory.com/37)
 
 ## 01 ~ 02Week Study
 
