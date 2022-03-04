@@ -6,6 +6,7 @@
 * [Type Casting](https://daltonic.tistory.com/15?category=977963)
 * [class와 struct의 이니셜라이저(init)](https://daltonic.tistory.com/16)
 * [저장프로퍼티(Stored Properties)와 인스턴스](https://daltonic.tistory.com/13?category=977963)
+* [지연 저장 프로퍼티(Lazy Stored Property)](https://daltonic.tistory.com/39)
 * [연산프로퍼티(Computed Properties)](https://daltonic.tistory.com/32)
 * [guard와 guard let문](https://daltonic.tistory.com/17)
 * [프로퍼티 감시자](https://daltonic.tistory.com/25)
