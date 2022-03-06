@@ -22,6 +22,7 @@
 * [타입 메서드 - class func과 static func의 차이](https://daltonic.tistory.com/37)
 * [mutating에 대하여](https://daltonic.tistory.com/38?category=977963)
 * [inout Parameter에 대하여](https://daltonic.tistory.com/40)
+* [Generic(1) - Generic Basic](https://daltonic.tistory.com/41)
 
 ## 01 ~ 02Week Study
 
