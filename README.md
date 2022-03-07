@@ -24,6 +24,8 @@
 * [inout Parameter에 대하여](https://daltonic.tistory.com/40)
 * [Generic(1) - Generic Basic](https://daltonic.tistory.com/41)
 
+[Resume](https://maze-mozzarella-6e5.notion.site/1b596cd9ac9b440b80eee08325cddda2)
+
 ## 01 ~ 02Week Study
 
 * [9/30 ZackflixApp](https://github.com/Daltonicc/ZackflixApp)
