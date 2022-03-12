@@ -23,6 +23,7 @@
 * [mutating에 대하여](https://daltonic.tistory.com/38?category=977963)
 * [inout Parameter에 대하여](https://daltonic.tistory.com/40)
 * [Generic(1) - Generic Basic](https://daltonic.tistory.com/41)
+* [Clean Architecture 적용기 (1) - MVVM과 Clean Architecture](https://daltonic.tistory.com/43)
 
 ## 01 ~ 02Week Study
 
