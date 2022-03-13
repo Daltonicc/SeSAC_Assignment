@@ -24,6 +24,7 @@
 * [inout Parameter에 대하여](https://daltonic.tistory.com/40)
 * [Generic(1) - Generic Basic](https://daltonic.tistory.com/41)
 * [Clean Architecture 적용기 (1) - MVVM과 Clean Architecture](https://daltonic.tistory.com/43)
+* [Clean Architecture 적용기 (2) - Dependency, Clean Architecture 적용 이유에 대하여](https://daltonic.tistory.com/44?category=977963)
 
 ## 01 ~ 02Week Study
 
