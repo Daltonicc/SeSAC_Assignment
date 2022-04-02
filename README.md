@@ -81,4 +81,4 @@
 
 ## 17~21Week Study
 
-* [1/17 ~ 2/25 Service Level Project - SeSACFriends!]()
+* [1/17 ~ 2/25 Service Level Project - SeSACFriends!](https://github.com/Daltonicc/SeSACFriendsApp)
