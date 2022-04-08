@@ -1,5 +1,7 @@
 # SeSAC_Assignment
 
+* [교육과정 수료 후기](https://daltonic.tistory.com/57)
+
 ## 01 ~ 02Week Study
 
 * [9/30 ZackflixApp](https://github.com/Daltonicc/ZackflixApp)
